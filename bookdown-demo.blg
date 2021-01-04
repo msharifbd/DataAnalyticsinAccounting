@@ -4,47 +4,46 @@ The top-level auxiliary file: bookdown-demo.aux
 The style file: apalike.bst
 Database file #1: book2.bib
 Database file #2: packages.bib
-Warning--I didn't find a database entry for "richins2017big"
 Warning--empty publisher in american_institute_of_certified_public_accountants_aicpa_description_2017
-You've used 21 entries,
+You've used 22 entries,
             1935 wiz_defined-function locations,
-            588 strings with 7034 characters,
-and the built_in function-call counts, 8090 in all, are:
-= -- 819
-> -- 295
+            593 strings with 7239 characters,
+and the built_in function-call counts, 8532 in all, are:
+= -- 862
+> -- 318
 < -- 11
-+ -- 102
-- -- 96
-* -- 717
-:= -- 1421
-add.period$ -- 66
-call.type$ -- 21
-change.case$ -- 152
-chr.to.int$ -- 21
-cite$ -- 22
-duplicate$ -- 282
-empty$ -- 572
-format.name$ -- 123
-if$ -- 1544
++ -- 110
+- -- 104
+* -- 760
+:= -- 1499
+add.period$ -- 69
+call.type$ -- 22
+change.case$ -- 161
+chr.to.int$ -- 22
+cite$ -- 23
+duplicate$ -- 296
+empty$ -- 600
+format.name$ -- 132
+if$ -- 1627
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 19
-newline$ -- 111
-num.names$ -- 63
-pop$ -- 102
+missing$ -- 20
+newline$ -- 116
+num.names$ -- 66
+pop$ -- 109
 preamble$ -- 1
-purify$ -- 153
+purify$ -- 162
 quote$ -- 0
-skip$ -- 215
+skip$ -- 225
 stack$ -- 0
-substring$ -- 665
-swap$ -- 18
+substring$ -- 696
+swap$ -- 19
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 124
+type$ -- 130
 warning$ -- 1
-while$ -- 76
+while$ -- 80
 width$ -- 0
-write$ -- 277
-(There were 2 warnings)
+write$ -- 290
+(There was 1 warning)

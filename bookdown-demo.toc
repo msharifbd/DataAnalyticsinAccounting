@@ -1,8 +1,5 @@
 \contentsline {chapter}{List of Tables}{v}{chapter*.2}%
 \contentsline {chapter}{List of Figures}{vii}{chapter*.3}%
-\contentsline {chapter}{Preface}{ix}{chapter*.4}%
-\contentsline {chapter}{Acknowledgements}{xi}{chapter*.7}%
-\contentsline {chapter}{About the Author}{xiii}{chapter*.8}%
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Data Analytics}{1}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Data Analytics \& Accountancy}{2}{section.1.2}%

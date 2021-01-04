@@ -42,11 +42,12 @@ lapply(c('DT', 'citr', 'formatR', 'svglite'), function(pkg) {
 ```
 
 
+# Preface  {-} 
+
 ```{r fig.align='center', echo=FALSE, include=identical(knitr:::pandoc_to(), 'html'), fig.link='https://www.crcpress.com/product/isbn/9781138700109'}
 knitr::include_graphics('images/cover.png', dpi = NA)
 ```
 
-# Preface  {-} 
 
 \renewcommand{\chaptermark}[1]{\markboth{\uppercase{#1}}{\uppercase{#1}}}
 \chaptermark{Preface}

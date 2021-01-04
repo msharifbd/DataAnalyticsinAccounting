@@ -1,6 +1,6 @@
 # Getting Data into `R` 
 
-Data lie in different places and in different formats. Therefore, getting them into `R` is not always the same. Some data are stored in local directory in our computer, while other data are available online. Moreover, sometimes we need extract data from databases. To know how to extract different forms of data from different sources is important because the explosion of social media and similar platforms has given birth to tremendous amounts of data in different formats and in different places. Though accountants and auditors are good at dealing with structured data, they should also know how to deal with unstructured and non-conventional data [@richins2017big].
+Data lie in different places and in different formats. Therefore, getting them into `R` is not always the same. Some data are stored in local directory in our computer, while other data are available online. Moreover, sometimes we need extract data from databases. To know how to extract different forms of data from different sources is important because the explosion of social media and similar platforms has given birth to tremendous amounts of data in different formats and in different places. Though accountants and auditors are good at dealing with structured data, they should also know how to deal with unstructured and non-conventional data [@richins_big_2017].
 
 ## Packages That Could Be Used To Import Data into `R`
 
