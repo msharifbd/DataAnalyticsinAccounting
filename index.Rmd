@@ -1,5 +1,5 @@
 --- 
-title: "Data Analytics in Accounting & Auditing  \nAn R Programming Approach"
+title: "Data Analytics in Accounting  \nAn R Programming Approach"
 subtitle: 
 author: "Sharif Islam, DBA, CPA, CMA  \nAssistant Professor  \nSchool of Accountancy  \nCollege of Business & Analytics  \nSouthern Illinois University Carbondale" 
 
@@ -42,12 +42,11 @@ lapply(c('DT', 'citr', 'formatR', 'svglite'), function(pkg) {
 ```
 
 
-# Preface 
-
 ```{r fig.align='center', echo=FALSE, include=identical(knitr:::pandoc_to(), 'html'), fig.link='https://www.crcpress.com/product/isbn/9781138700109'}
 knitr::include_graphics('images/cover.png', dpi = NA)
 ```
 
+# Preface  {-} 
 
 \renewcommand{\chaptermark}[1]{\markboth{\uppercase{#1}}{\uppercase{#1}}}
 \chaptermark{Preface}
@@ -66,12 +65,12 @@ This is how to read the book. The book is intended to a stand alone data analyti
 This is structure of the book.
 
 
-# Acknowledgements 
+# Acknowledgements  {-} 
 
 Here is the acknowledgements. 
 
 
-# About the Author 
+# About the Author  {-} 
 
 Sharif Islam is an Assistant Professor in School of Accountancy in Southern Illinois University Carbondale. He completed his doctorate in Accounting and Computer Information Systems from Louisiana Tech University and obtained MBA from Eastern Illinois University. He is a licensed CPA in Illinois and a CMA in Bangladesh. He has more than five years experiences in teaching and research. His research has been awarded in couple of conferences of American Accounting Association (AAA). He has a passion for Data Science, with its application in Accounting and Auditing.
 
