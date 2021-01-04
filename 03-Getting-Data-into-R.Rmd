@@ -1,0 +1,26 @@
+# Getting Data into `R` 
+
+Data lie in different places and in different formats. Therefore, getting them into `R` is not always the same. Some data are stored in local directory in our computer, while other data are available online. Moreover, sometimes we need extract data from databases. To know how to extract different forms of data from different sources is important because the explosion of social media and similar platforms has given birth to tremendous amounts of data in different formats and in different places. Though accountants and auditors are good at dealing with structured data, they should also know how to deal with unstructured and non-conventional data [@richins2017big].
+
+## Packages That Could Be Used To Import Data into `R`
+
+
+
+## Importing Data into `R` from Local Directory of Computer 
+
+Importing data from local directory of computer can be done in couple of ways. For example, we can specify the path in which the data is stored. Alternatively, we can set the working directory first; then import the data by specifying the name of the data files. 
+
+
+## Importing Data into `R` from Internet
+
+
+
+
+## Importing Data into `R` from `WRDS` Database
+
+
+
+## Some Other Sources 
+
+
+Very good website for the chapter - <https://rc2e.com/inputandoutput#recipe-id245>

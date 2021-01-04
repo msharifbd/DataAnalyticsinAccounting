@@ -1,0 +1,27 @@
+# Communication of Analytics: An `Rmarkdown` Approach
+
+## Learning Objectives {-}
+
+By the end of this chapter, students should have learned the importance of communication in data science and particulary in auditing and accounting. The students should specifically learn the following: 
+
+1. The importance of communication in data science.
+2. The importance of communication in Auditing
+3. What `Shiny` is 
+4. How `Shiny` could improve the communication of data/audit analytics. 
+
+## What is Rmarkdown 
+RMarkdown enables analysts to engage with code interactively, embrace literate programming, and rapidly produce a wide variety of high-quality data products such as documents, emails, dashboards, and websites. Emily Riederer[^2], an analytics manager at Capital One, describes how reproducible programming using RMarkdown can help R users develop better software programming practices. 
+
+Use the following website to develop this chapter - 
+<https://m-clark.github.io/Introduction-to-Rmarkdown/>
+
+Another good Website - 
+
+<https://rpubs.com/thealk/academic-writing>
+This one is one of the best  - <https://rc2e.com/rmarkdown> 
+
+For other forms of communication of analytics - <https://rmd4sci.njtierney.com/different-outputs-and-extensions.html>
+
+
+
+[^2]: https://rstudio.com/resources/rstudioconf-2020/rmarkdown-driven-development/

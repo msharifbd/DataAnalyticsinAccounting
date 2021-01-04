@@ -1,0 +1,7 @@
+# Communication of Analytics: A `Shiny` Approach
+
+## Learning Objectives {-}
+
+## Introduction to `R Shiny`
+
+This is the ___ real chapter. Good Website for `R Shiny` - <https://uvastatlab.github.io/phdplus/shinyr.html>.

@@ -1,0 +1,112 @@
+# Data Visualization
+
+## `ggplot2 ()` Package - Data Visualization Tool
+
+The package `ggplot2 ()` is a very powerful tool for data visualization. 
+
+Please use the following website to develop this chapter - 
+<https://r-graphics.org/index.html>
+
+## Scatter Plot 
+
+In scatter Plot, we use to continuous variables in x axis and y axis. The following code is run to create a scatter plot of two variables called `time_hour` and `total_delay`. See Figure \@ref(fig:scatterplot1). 
+
+```{r}
+library(nycflights13)
+library(tidyverse)
+flights <- flights %>% 
+  mutate(total_delay = dep_delay + arr_delay)
+```
+
+
+```{r scatterplot1, fig.cap= "A Scatterplot of Total Delay and Month"}
+flights %>% 
+  ggplot(mapping = aes( x = time_hour, y = total_delay))+
+  geom_point()
+```
+
+However, we can also use a thrid varible in scatter plot. See Figure \@ref(fig:scatterplot2). Also see Figure \@ref(fig:scatterplot3). 
+
+```{r scatterplot2, fig.cap= "A Scatterplot of Total Delay and Month in Departing Airports in New York"}
+flights %>% 
+  ggplot(mapping = aes( x = time_hour, y = total_delay))+
+  geom_point()+
+  facet_wrap(~origin)
+
+```
+
+
+```{r scatterplot3, fig.cap= "A Scatterplot of Total Delay and Month Using Origin as Third Variable"}
+flights %>% 
+  ggplot(mapping = aes( time_hour, total_delay, color = origin))+
+  geom_point()
+```
+
+## Line Plot  
+
+In line plot, we draw line for the points of two continuous variables. See Figure \@ref(fig:lineplot1).
+
+```{r lineplot1, fig.cap= "A lineplot of Average Delay and Month"}
+flights %>% 
+  group_by(month) %>% 
+  summarize(avg_delay = mean (total_delay, na.rm = TRUE)) %>%
+  ggplot(mapping = aes(x = month, y = avg_delay)) + 
+  geom_smooth()
+```
+
+Like scatter plot, a third variable can also be added to the line plot. See Figure \@ref(fig:lineplot2). Also see Figure \@ref(fig:lineplot3). 
+
+```{r lineplot2, fig.cap= "A lineplot of Average Delay and Month Using Origin as Third Variable" }
+flights %>% 
+  ggplot(mapping = aes(x = month, y = total_delay, color = origin)) + 
+  geom_smooth()
+```
+
+
+```{r lineplot3, fig.cap= "A lineplot of Total Delay and Day of the Week Using Origin as Third Variable"}
+flights %>% 
+  ggplot(mapping = aes(x = day, y = total_delay, color = origin)) + 
+  geom_smooth()
+```
+
+## Bar Plot  
+
+We can also create bar diagram. See Figure \@ref(fig:barplot1).
+
+```{r barplot1, fig.cap= "A barplot of Number of Flights from Departing Airports in New York"}
+ggplot(flights, aes(origin))+
+  geom_bar()
+```
+
+We can also include a second variable in bar diagram. Please see Figure \@ref(fig:barplot2). Also see Figure \@ref(fig:barplot3).
+
+```{r barplot2, fig.cap= "A barplot of Number of Flights from Departing Airports in New York in Different Months"}
+ggplot(flights, aes(origin))+
+  geom_bar(aes(fill = as.character(month)))
+```
+
+```{r barplot3, fig.cap= "A barplot of Number of Flights from Departing Airports in New York by Different Carriers"}
+ggplot(flights, aes(origin))+
+  geom_bar(aes(fill = carrier))
+```
+
+From the graph, we can figure out which carriers use which airport most. 
+
+## Box Plot 
+
+We can also create boxplot using `ggplot2`. Please see Figure \@ref(fig:boxplot1).
+
+```{r boxplot1, fig.cap= "A boxplot of Distance from Departing Airports in New York"}
+ggplot(flights, aes ( origin,distance))+
+  geom_boxplot()
+```
+
+It is evident that long distance flights use JFK because it has the highest distance. A thrid variable also can be included in box plot. Please see Figure \@ref(fig:boxplot2).
+
+```{r boxplot2, fig.cap= "A boxplot of Distance from Departing Airports in New York in Different Months"}
+ggplot(flights, aes ( origin,distance))+
+  geom_boxplot()+
+  facet_wrap(~ month)
+```
+
+Here boxplot is created for the `distance` variables by `origin` and `month` variables

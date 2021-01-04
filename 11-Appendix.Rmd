@@ -1,0 +1,69 @@
+\backmatter
+
+\appendix
+
+
+# (APPENDIX) Appendix {-} 
+
+# Appendix A
+
+## Basic Data Structure in `R` 
+
+Though in the book, most of the time we talk about `data frames` (sometimes `tibble`), `vectors` are the buliding blocks of them. Traditional learners of `R` usually start learning it using `vectors`. However, for accountants (or would-be accountants) it is better to begin with `tibbles` and work down to the underlying concepts such as `vectors`. 
+
+Basically there are two types of vectors in `R`; one is called `Atomic` vectors (also called `homogeneous vectors`) and the other is called `lists`. `Atomic` vectors contain similar types of elements, while `lists` vectors do not; `lists` can hold differnet types elements in a vector. There are six types of `Atomic` vectors - `logical`, `integer`, `double`, `character`, `complex`, and `raw`. The `integer`and `double` are together called `numeric`. Of these types, the first four are widely used and most relevant for accounting analytics. 
+
+Each vector has 2 major characteristis - `type` and `length`. The function `typeof` can be used to know about the `types` of the vectors - namely `logical`, `integer`, `double`, `character`, `complex`, or `raw`. The `length` function is used to get or set the length of a vector. The function `nchar` can be used to get the length of a string. Some examples of vectors are given below - 
+
+```{r}
+# Character type 
+a <- c("1933","1934","2002")
+length(a)
+typeof(a)
+a
+b <- c("The Securities Act", "The Securities Exchange Act", "Sarbanes-Oxley Act")
+length(b)
+typeof(b)
+nchar(b)
+b
+# Logical type 
+c <- c(TRUE, FALSE, TRUE, TRUE, TRUE, FALSE)
+length(c)
+typeof(c)
+c
+# Double type 
+d <- c(1933, 1934, 2002)
+length(d)
+typeof(d)
+d
+# Integer type 
+e <- c(1933L, 1934L, 2002L)
+length(e)
+typeof(e)
+e
+f <- list(a,b,c,d,e)
+length(f)
+typeof(f)
+f
+```
+
+Very good website - <https://rc2e.com/somebasics#recipe-id017>
+# Appendix B
+
+## Text Mining in `R`
+
+This is the text mining in `R`.
+
+## Social Media Analytics in `R`
+
+This is the social media analytics in `R`.
+
+## Web Scrapping Using `R`
+
+This is web scrapping in `R`.
+
+
+## Big Data in `R` with `sparklyr` 
+
+The best website to learn about how to use `R` with `sparklyr` for big data analytics is - <https://therinspark.com/>
+

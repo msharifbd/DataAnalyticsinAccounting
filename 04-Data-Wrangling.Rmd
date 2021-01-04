@@ -1,0 +1,8 @@
+# Data Wrangling
+
+There is an old saying that 90% of data science is data wrangling. In many cases, data wrangling is difficult as it involves dealing withg missing entries, ambiguous values, and different types of mixed data. Notwithstanding, data scientists can follow some guidelines to speed up data wrangling such as writing code in a reproducible way or using `tidy` data format. 
+
+
+This is a very good source to discuss about data wrangling - <https://dsapps-2020.github.io/Class_Slides/>
+
+The above link is also best about why `EXCEL` is not be best for Accounting & Audit Analytics. 

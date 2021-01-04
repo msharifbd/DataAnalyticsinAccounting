@@ -1,0 +1,24 @@
+
+# `R` Programming - A Great Tool for Data Science
+
+There are many tools for data science. Of these tools, `R` Programming is one of the most powerful tools. It is powerful in that it has more than 11,000 packages on the CRAN ( Comprehensive R Archive Network) and thousands of other packages on Github and other platforms. Moreover, many companies around the word use R. For example -  
+
+```{r table-simple, echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+require(pander)
+library(pander)
+panderOptions('table.split.table', Inf)
+set.caption("")
+my.data <- "
+ Companies| Companies|Companies                     
+  Facebook| Google| Twitter
+Mircrosoft| Uber  | Airbnb 
+IBM       | Boeing| Ford 
+New York Times | Wells Fargo| American Express"
+df <- read.delim(textConnection(my.data),header=FALSE,sep="|",strip.white=TRUE,stringsAsFactors=FALSE)
+names(df) <- unname(as.list(df[1,])) # put headers on
+df <- df[-1,] # remove first row
+row.names(df)<-NULL
+pander(df, style = 'rmarkdown')
+```
+
+Very good website for the introductory part - <https://rc2e.com/gettingstarted#recipe-id001> and <https://rc2e.com/navigatingthesoftware#intro-NavigatingTheSoftware>
