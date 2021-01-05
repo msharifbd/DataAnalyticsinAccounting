@@ -21,7 +21,10 @@
 \contentsline {section}{\numberline {4.1}\texttt {tidy} data}{12}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Same Data, but Different Formats (Presentations)}{12}{section.4.2}%
 \contentsline {section}{\numberline {4.3}Tidying Messy Data}{12}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}\texttt {tidyr} Package for \texttt {tidy} Data}{12}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.1}Column Hearders are Values, not Variable Names}{12}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Multiple Variables are Stored in One Column}{13}{subsection.4.3.2}%
+\contentsline {section}{\numberline {4.4}\texttt {tidyr} Package for \texttt {tidy} Data}{13}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}\texttt {pivot\_longer} function}{13}{subsection.4.4.1}%
 \contentsline {chapter}{\numberline {5}Exploratory Data Analysis (EDA)}{15}{chapter.5}%
 \contentsline {section}{\numberline {5.1}\texttt {tidyverse} package in R}{15}{section.5.1}%
 \contentsline {section}{\numberline {5.2}\texttt {dplyr} Package - Data Manipulation Tool}{15}{section.5.2}%

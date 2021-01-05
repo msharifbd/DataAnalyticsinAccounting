@@ -31,23 +31,47 @@ According to Hadley Wickham, "Tidy datasets all alike, but every messy dataset i
 * Multiple types of observational units are stored in the same table
 * A single observational unit is stored in multiple tables
 
-### `tidyr` Package for `tidy` Data 
+### Column Hearders are Values, not Variable Names
 
-The `tidyr` package is widey used to `tidy` data in `R`. Specifically, `pivot_longer`, `pivot_wider`, `separate`, and `extract` functions are widely used to make a messy data into `tidy`. 
+The following dataset is an example of this case, in which the name of the variables (columns) are numbers. Though in some cases, this data format might be useful, in many cases usually it is not useful. Below is an example of such type of dataset.  
 
 
-```{r}
-# reading the data
+```{r echo=FALSE, message= FALSE, warning=FALSE}
 library(tidyverse)
-
 mobile <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-11-10/mobile.csv')
-
-# using pivot_wider () function
-mobile %>% 
-  select(code,continent,year,mobile_subs) %>%
+variable_number <- mobile %>%
+  filter(year %in% 2000:2005) %>% 
+  slice(1:100) %>% 
+  select(entity,continent,year,mobile_subs) %>%
   pivot_wider(names_from=year, values_from=mobile_subs)
+variable_number
 ```
 
+### Multiple Variables are Stored in One Column
+
+
+
+
+
+## `tidyr` Package for `tidy` Data 
+
+The `tidyr` package is widley used to `tidy` data in `R`. Specifically, `pivot_longer`, `pivot_wider`, `separate`, and `extract` functions are widely used to make a messy data into `tidy`. 
+
+
+### `pivot_longer` function 
+
+If the dataset above (Column headers are values, not variable names) is made `tidy` using `pivot_longer` function, then it will be look like this (Assuming the name of the dataset is variable_number) - 
+
+```{r}
+# using pivot_longer () function 
+variable_number %>% 
+  pivot_longer(cols = -c("entity", "continent"),
+               names_to = "year",
+               values_to = "mobile_subs"
+               )
+```
+
+There are several arguments of `pivot_longer` function. Here three arguments are used. The `cols` argument specifies which columns should (not) be used in `pivot_longer` function. In this case, we select the variables that should not be used while using `pivot_longer` function. The second argument `names_to` specifies the name of the variable in which existing column values will be stored and finally `values_to` specifies the name of the column in which the cell values will be stored. Now, the dataset is a `tidy` dataset as it complies with the rules of `tidy` dataset. 
 
 This is a very good source to discuss about data wrangling - <https://dsapps-2020.github.io/Class_Slides/>
 
