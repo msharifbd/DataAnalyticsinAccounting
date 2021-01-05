@@ -21,4 +21,25 @@ row.names(df)<-NULL
 pander(df, style = 'rmarkdown')
 ```
 
+
+
 Very good website for the introductory part - <https://rc2e.com/gettingstarted#recipe-id001> and <https://rc2e.com/navigatingthesoftware#intro-NavigatingTheSoftware>
+
+## Starting with `R` Program
+
+
+### Installing `R`
+
+
+
+### Installing `RStudio`
+
+
+## Data Analytics Ecosystem in `R`
+
+We will adopt the following ecosystem in data analytics in `R`. 
+
+```{r fig.align='center', echo=FALSE, fig.cap= "Data Analytics Ecosystem in R"}
+knitr::include_graphics('images/data-science.png', dpi = NA)
+```
+

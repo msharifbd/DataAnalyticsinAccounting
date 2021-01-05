@@ -5,45 +5,45 @@ The style file: apalike.bst
 Database file #1: book2.bib
 Database file #2: packages.bib
 Warning--empty publisher in american_institute_of_certified_public_accountants_aicpa_description_2017
-You've used 22 entries,
+You've used 24 entries,
             1935 wiz_defined-function locations,
-            593 strings with 7239 characters,
-and the built_in function-call counts, 8532 in all, are:
-= -- 862
-> -- 318
-< -- 11
-+ -- 110
-- -- 104
-* -- 760
-:= -- 1499
-add.period$ -- 69
-call.type$ -- 22
-change.case$ -- 161
-chr.to.int$ -- 22
-cite$ -- 23
-duplicate$ -- 296
-empty$ -- 600
-format.name$ -- 132
-if$ -- 1627
+            602 strings with 7392 characters,
+and the built_in function-call counts, 9145 in all, are:
+= -- 925
+> -- 338
+< -- 13
++ -- 116
+- -- 110
+* -- 809
+:= -- 1611
+add.period$ -- 74
+call.type$ -- 24
+change.case$ -- 174
+chr.to.int$ -- 24
+cite$ -- 25
+duplicate$ -- 320
+empty$ -- 642
+format.name$ -- 142
+if$ -- 1743
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 20
-newline$ -- 116
-num.names$ -- 66
-pop$ -- 109
+missing$ -- 21
+newline$ -- 125
+num.names$ -- 72
+pop$ -- 117
 preamble$ -- 1
-purify$ -- 162
+purify$ -- 175
 quote$ -- 0
-skip$ -- 225
+skip$ -- 245
 stack$ -- 0
-substring$ -- 696
-swap$ -- 19
+substring$ -- 736
+swap$ -- 20
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 130
+type$ -- 142
 warning$ -- 1
-while$ -- 80
+while$ -- 86
 width$ -- 0
-write$ -- 290
+write$ -- 313
 (There was 1 warning)

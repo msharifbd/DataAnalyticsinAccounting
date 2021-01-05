@@ -1,6 +1,52 @@
 # Data Wrangling
 
-There is an old saying that 90% of data science is data wrangling. In many cases, data wrangling is difficult as it involves dealing withg missing entries, ambiguous values, and different types of mixed data. Notwithstanding, data scientists can follow some guidelines to speed up data wrangling such as writing code in a reproducible way or using `tidy` data format. 
+Data wrangling is the process of cleaning data, so that data become ready for further manipulation such as visualization and modeling. Sometimes, data wrangling is also called `data munging`. More specifically, data wrangling involves transforming and mapping data frome one from to another form - particularly from *raw* form to *tidy* form.
+
+There is an old saying that 90% of data science involves data wrangling. In many cases, data wrangling is difficult as it involves dealing with missing entries, ambiguous values, and different types of mixed data. In data analytics ecosystem in `R`, data wrangling involves three jobs - importing data into `R`, cleaning (tidying) the data, and tranforming the data. 
+
+```{r fig.align='center', echo=FALSE, fig.cap= "Data Wrangling in R"}
+knitr::include_graphics('images/data-science-wrangle.png', dpi = NA)
+```
+
+The first job - importing data into `R` - is discussed in chapter 03. In this chapter, cleaning (tidying) the data in `R` will be discussed. The last job will be discussed in next chapter - Exploratory Data Analysis (EDA). 
+
+## `tidy` data 
+
+Data wrangling or data munging results in `tidy` data - which is storing data that makes further manipulation on data such as transformation, visualization, and modeling easier. The following rules make a dataset `tidy` - 
+
+* Each variable must have its own column
+* Each observation must have its own row
+* Each value must have its own cell
+
+## Same Data, but Different Formats (Presentations)
+
+
+## Tidying Messy Data
+
+According to Hadley Wickham, "Tidy datasets all alike, but every messy dataset is messy in its own way" [@wickham_r_2017]. Messy data can be in many forms; for example - Wickham [-@wickham_tidy_2014] mentions the five *most common problems* with messy datasets. These problems include - 
+
+* Column headers are values, not variable names
+* Multiple variables are stored in one column
+* Variables are stored in both rows and columns
+* Multiple types of observational units are stored in the same table
+* A single observational unit is stored in multiple tables
+
+### `tidyr` Package for `tidy` Data 
+
+The `tidyr` package is widey used to `tidy` data in `R`. Specifically, `pivot_longer`, `pivot_wider`, `separate`, and `extract` functions are widely used to make a messy data into `tidy`. 
+
+
+```{r}
+# reading the data
+library(tidyverse)
+
+mobile <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-11-10/mobile.csv')
+
+# using pivot_wider () function
+mobile %>% 
+  select(code,continent,year,mobile_subs) %>%
+  pivot_wider(names_from=year, values_from=mobile_subs)
+```
 
 
 This is a very good source to discuss about data wrangling - <https://dsapps-2020.github.io/Class_Slides/>

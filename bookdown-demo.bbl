@@ -127,4 +127,13 @@ Warren~Jr, J.~D., Moffitt, K.~C., and Byrnes, P. (2015).
 \newblock How {Big} {Data} will change accounting.
 \newblock {\em Accounting Horizons}, 29(2):397--407.
 
+\bibitem[Wickham, 2014]{wickham_tidy_2014}
+Wickham, H. (2014).
+\newblock Tidy data.
+\newblock {\em Journal of Statistical Software}, 59(10):1--23.
+
+\bibitem[Wickham and Grolemund, 2017]{wickham_r_2017}
+Wickham, H. and Grolemund, G. (2017).
+\newblock R for {Data} {Science}.
+
 \end{thebibliography}
