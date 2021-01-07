@@ -1,5 +1,5 @@
-\contentsline {chapter}{List of Tables}{v}{chapter*.2}%
-\contentsline {chapter}{List of Figures}{vii}{chapter*.3}%
+\contentsline {chapter}{List of Tables}{vii}{chapter*.2}%
+\contentsline {chapter}{List of Figures}{ix}{chapter*.3}%
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Data Analytics}{1}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Data Analytics \& Accountancy}{2}{section.1.2}%
@@ -22,40 +22,46 @@
 \contentsline {section}{\numberline {4.2}Same Data, but Different Formats (Presentations)}{12}{section.4.2}%
 \contentsline {section}{\numberline {4.3}Tidying Messy Data}{12}{section.4.3}%
 \contentsline {subsection}{\numberline {4.3.1}Column Hearders are Values, not Variable Names}{12}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Multiple Variables are Stored in One Column}{13}{subsection.4.3.2}%
-\contentsline {section}{\numberline {4.4}\texttt {tidyr} Package for \texttt {tidy} Data}{13}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}\texttt {pivot\_longer} function}{13}{subsection.4.4.1}%
-\contentsline {chapter}{\numberline {5}Exploratory Data Analysis (EDA)}{15}{chapter.5}%
-\contentsline {section}{\numberline {5.1}\texttt {tidyverse} package in R}{15}{section.5.1}%
-\contentsline {section}{\numberline {5.2}\texttt {dplyr} Package - Data Manipulation Tool}{15}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Data Set for Classroom Practice}{15}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Assignment \texttt {\textless {}-} \& Pipe \texttt {\%\textgreater {}\%} operator}{16}{section.5.4}%
-\contentsline {section}{\numberline {5.5}Meta Data - Data About Data}{16}{section.5.5}%
-\contentsline {section}{\numberline {5.6}Changing the type of the variable}{18}{section.5.6}%
-\contentsline {section}{\numberline {5.7}\texttt {count()} function}{19}{section.5.7}%
-\contentsline {section}{\numberline {5.8}1st (First) verb - \texttt {select\ ()}}{20}{section.5.8}%
-\contentsline {section}{\numberline {5.9}2nd (Second) verb - \texttt {filter\ ()}}{23}{section.5.9}%
-\contentsline {section}{\numberline {5.10}3rd (Third) verb - \texttt {arrange\ ()}}{26}{section.5.10}%
-\contentsline {section}{\numberline {5.11}4th (Fourth) verb - \texttt {mutate\ ()}}{27}{section.5.11}%
-\contentsline {section}{\numberline {5.12}5th (Fifth) verb - \texttt {summarize\ ()}}{29}{section.5.12}%
-\contentsline {section}{\numberline {5.13}6th (Sixth) verb - \texttt {group\_by\ ()}}{29}{section.5.13}%
-\contentsline {chapter}{\numberline {6}Data Visualization}{33}{chapter.6}%
-\contentsline {section}{\numberline {6.1}\texttt {ggplot2\ ()} Package - Data Visualization Tool}{33}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Scatter Plot}{33}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Line Plot}{34}{section.6.3}%
-\contentsline {section}{\numberline {6.4}Bar Plot}{37}{section.6.4}%
-\contentsline {section}{\numberline {6.5}Box Plot}{38}{section.6.5}%
-\contentsline {chapter}{\numberline {7}Data Modeling}{43}{chapter.7}%
-\contentsline {chapter}{\numberline {8}Communication of Analytics: An \texttt {Rmarkdown} Approach}{45}{chapter.8}%
-\contentsline {section}{\numberline {8.1}What is Rmarkdown}{45}{section.8.1}%
-\contentsline {chapter}{\numberline {9}Communication of Analytics: A \texttt {Shiny} Approach}{47}{chapter.9}%
-\contentsline {section}{\numberline {9.1}Introduction to \texttt {R\ Shiny}}{47}{section.9.1}%
-\contentsline {chapter}{\numberline {10}Conclusion}{49}{chapter.10}%
-\contentsline {chapter}{Appendix}{51}{chapter.10}%
-\contentsline {chapter}{Appendix A}{51}{appendix*.11}%
-\contentsline {section}{\numberline {.1}Basic Data Structure in \texttt {R}}{51}{section.Alph0.1}%
-\contentsline {section}{\numberline {.2}Text Mining in \texttt {R}}{53}{section.Alph0.2}%
-\contentsline {section}{\numberline {.3}Social Media Analytics in \texttt {R}}{53}{section.Alph0.3}%
-\contentsline {section}{\numberline {.4}Web Scrapping Using \texttt {R}}{54}{section.Alph0.4}%
-\contentsline {section}{\numberline {.5}Big Data in \texttt {R} with \texttt {sparklyr}}{54}{section.Alph0.5}%
-\contentsline {chapter}{Bibliography}{55}{appendix*.12}%
+\contentsline {subsection}{\numberline {4.3.2}Multiple Variables are Stored in One Column}{12}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}Variables are Stored in Both Rows and Columns}{13}{subsection.4.3.3}%
+\contentsline {subsection}{\numberline {4.3.4}Multiple Types of Observational Units are Stored in the Same Table}{14}{subsection.4.3.4}%
+\contentsline {subsection}{\numberline {4.3.5}}{14}{subsection.4.3.5}%
+\contentsline {section}{\numberline {4.4}\texttt {tidyr} Package for \texttt {tidy} Data}{14}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}\texttt {pivot\_longer} function}{14}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}\texttt {pivot\_wider} function}{14}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.3}\texttt {separate} function}{15}{subsection.4.4.3}%
+\contentsline {subsection}{\numberline {4.4.4}\texttt {extract} function}{16}{subsection.4.4.4}%
+\contentsline {chapter}{\numberline {5}Exploratory Data Analysis (EDA)}{19}{chapter.5}%
+\contentsline {section}{\numberline {5.1}\texttt {tidyverse} package in R}{19}{section.5.1}%
+\contentsline {section}{\numberline {5.2}\texttt {dplyr} Package - Data Manipulation Tool}{19}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Data Set for Classroom Practice}{19}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Assignment \texttt {\textless {}-} \& Pipe \texttt {\%\textgreater {}\%} operator}{20}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Meta Data - Data About Data}{20}{section.5.5}%
+\contentsline {section}{\numberline {5.6}Changing the type of the variable}{22}{section.5.6}%
+\contentsline {section}{\numberline {5.7}\texttt {count()} function}{23}{section.5.7}%
+\contentsline {section}{\numberline {5.8}1st (First) verb - \texttt {select\ ()}}{24}{section.5.8}%
+\contentsline {section}{\numberline {5.9}2nd (Second) verb - \texttt {filter\ ()}}{27}{section.5.9}%
+\contentsline {section}{\numberline {5.10}3rd (Third) verb - \texttt {arrange\ ()}}{30}{section.5.10}%
+\contentsline {section}{\numberline {5.11}4th (Fourth) verb - \texttt {mutate\ ()}}{31}{section.5.11}%
+\contentsline {section}{\numberline {5.12}5th (Fifth) verb - \texttt {summarize\ ()}}{33}{section.5.12}%
+\contentsline {section}{\numberline {5.13}6th (Sixth) verb - \texttt {group\_by\ ()}}{33}{section.5.13}%
+\contentsline {chapter}{\numberline {6}Data Visualization}{37}{chapter.6}%
+\contentsline {section}{\numberline {6.1}\texttt {ggplot2\ ()} Package - Data Visualization Tool}{37}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Scatter Plot}{37}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Line Plot}{38}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Bar Plot}{41}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Box Plot}{42}{section.6.5}%
+\contentsline {chapter}{\numberline {7}Data Modeling}{47}{chapter.7}%
+\contentsline {chapter}{\numberline {8}Communication of Analytics: An \texttt {Rmarkdown} Approach}{49}{chapter.8}%
+\contentsline {section}{\numberline {8.1}What is Rmarkdown}{49}{section.8.1}%
+\contentsline {chapter}{\numberline {9}Communication of Analytics: A \texttt {Shiny} Approach}{51}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Introduction to \texttt {R\ Shiny}}{51}{section.9.1}%
+\contentsline {chapter}{\numberline {10}Conclusion}{53}{chapter.10}%
+\contentsline {chapter}{Appendix}{55}{chapter.10}%
+\contentsline {chapter}{Appendix A}{55}{appendix*.11}%
+\contentsline {section}{\numberline {.1}Basic Data Structure in \texttt {R}}{55}{section.Alph0.1}%
+\contentsline {section}{\numberline {.2}Text Mining in \texttt {R}}{57}{section.Alph0.2}%
+\contentsline {section}{\numberline {.3}Social Media Analytics in \texttt {R}}{57}{section.Alph0.3}%
+\contentsline {section}{\numberline {.4}Web Scrapping Using \texttt {R}}{58}{section.Alph0.4}%
+\contentsline {section}{\numberline {.5}Big Data in \texttt {R} with \texttt {sparklyr}}{58}{section.Alph0.5}%
+\contentsline {chapter}{Bibliography}{59}{appendix*.12}%

@@ -23,7 +23,7 @@ Data wrangling or data munging results in `tidy` data - which is storing data th
 
 ## Tidying Messy Data
 
-According to Hadley Wickham, "Tidy datasets all alike, but every messy dataset is messy in its own way" [@wickham_r_2017]. Messy data can be in many forms; for example - Wickham [-@wickham_tidy_2014] mentions the five *most common problems* with messy datasets. These problems include - 
+According to Hadley Wickham, "Tidy datasets are all alike, but every messy dataset is messy in its own way" [@wickham_r_2017]. Messy data can be in many forms; for example - Wickham [-@wickham_tidy_2014] mentions the five *most common problems* with messy datasets. These problems include - 
 
 * Column headers are values, not variable names
 * Multiple variables are stored in one column
@@ -33,46 +33,117 @@ According to Hadley Wickham, "Tidy datasets all alike, but every messy dataset i
 
 ### Column Hearders are Values, not Variable Names
 
-The following dataset is an example of this case, in which the name of the variables (columns) are numbers. Though in some cases, this data format might be useful, in many cases usually it is not useful. Below is an example of such type of dataset.  
-
+The following dataset (`total_assets`) is an example of this case, in which the name of the variables (columns) are numbers. Though in some cases, this data format might be useful, in many cases usually it is not useful.  
 
 ```{r echo=FALSE, message= FALSE, warning=FALSE}
 library(tidyverse)
-mobile <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-11-10/mobile.csv')
-variable_number <- mobile %>%
-  filter(year %in% 2000:2005) %>% 
-  slice(1:100) %>% 
-  select(entity,continent,year,mobile_subs) %>%
-  pivot_wider(names_from=year, values_from=mobile_subs)
-variable_number
+firms_fundametals <- readr::read_csv('C:/Users/mshar/OneDrive - Southern Illinois University/TEACHING/DATA ANALYTICS/MY BOOK_ACCOUNTING ANALYTICS/ACCT_ANALYTICS_BOOK_04_23_2020/daina/data-raw/firms_fundamentals.csv')
+
+total_assets <- read_csv(
+  "C:/Users/mshar/OneDrive - Southern Illinois University/TEACHING/DATA ANALYTICS/MY BOOK_ACCOUNTING ANALYTICS/ACCT_ANALYTICS_BOOK_04_23_2020/daina/data-raw/total_assets.csv"
+)
+
+netincome_asset <- read_csv(
+  "C:/Users/mshar/OneDrive - Southern Illinois University/TEACHING/DATA ANALYTICS/MY BOOK_ACCOUNTING ANALYTICS/ACCT_ANALYTICS_BOOK_04_23_2020/daina/data-raw/netincome_asset.csv"
+)
+
+sales_profit <- read_csv(
+  "C:/Users/mshar/OneDrive - Southern Illinois University/TEACHING/DATA ANALYTICS/MY BOOK_ACCOUNTING ANALYTICS/ACCT_ANALYTICS_BOOK_04_23_2020/daina/data-raw/sales_profit.csv"
+)
+```
+
+```{r}
+total_assets
 ```
 
 ### Multiple Variables are Stored in One Column
 
+The `netincome_asset` dataset is a good example of this kind of dataset. For example, the variable `VALUES` includes `net income` and `total assets` separated by `/`. This variable is very hard to manipulate. For example, if we want to calculate `Return on Assets (ROA)`, which equals to net income divided by total assets, then it is not possible to use `VALUES` column to calculate `ROA`. 
+
+```{r}
+netincome_asset
+```
+
+### Variables are Stored in Both Rows and Columns
+
+The `sales_profit` dataset is an example of this type. Here in the `ITEM` column, actually variables are included (such as `SALES` and `NETINCOME`). Also, the columns such as `2000` through `2004` should be a variable (e.g., `year`).
+
+```{r}
+sales_profit 
+```
+
+### Multiple Types of Observational Units are Stored in the Same Table
 
 
-
+### 
 
 ## `tidyr` Package for `tidy` Data 
 
 The `tidyr` package is widley used to `tidy` data in `R`. Specifically, `pivot_longer`, `pivot_wider`, `separate`, and `extract` functions are widely used to make a messy data into `tidy`. 
 
 
-### `pivot_longer` function 
+### `pivot_longer ()` function 
 
-If the dataset above (Column headers are values, not variable names) is made `tidy` using `pivot_longer` function, then it will be look like this (Assuming the name of the dataset is variable_number) - 
+If the `total_assets` dataset above (Column headers are values, not variable names) is made `tidy` using `pivot_longer` function, then it will be look like this (Assuming the name of the dataset is variable_number) - 
 
 ```{r}
 # using pivot_longer () function 
-variable_number %>% 
-  pivot_longer(cols = -c("entity", "continent"),
+total_assets %>% 
+  pivot_longer(cols = -c("TICKER", "COMPANYNAME"),
                names_to = "year",
-               values_to = "mobile_subs"
-               )
+               values_to = "TOTALASSETS"
+               ) %>% 
+  head()
 ```
 
-There are several arguments of `pivot_longer` function. Here three arguments are used. The `cols` argument specifies which columns should (not) be used in `pivot_longer` function. In this case, we select the variables that should not be used while using `pivot_longer` function. The second argument `names_to` specifies the name of the variable in which existing column values will be stored and finally `values_to` specifies the name of the column in which the cell values will be stored. Now, the dataset is a `tidy` dataset as it complies with the rules of `tidy` dataset. 
+There are several arguments of `pivot_longer` function. Here three arguments are used. The `cols` argument specifies which columns should (not) be used in `pivot_longer` function. In this case, we select the variables that should not be used while using `pivot_longer` function. The second argument `names_to` specifies the name of the variable in which existing column values will be stored and finally `values_to` specifies the name of the column in which the cell values will be stored. Now, the dataset is a `tidy` dataset. 
 
-This is a very good source to discuss about data wrangling - <https://dsapps-2020.github.io/Class_Slides/>
+### `pivot_wider ()` function 
+
+The `sales_profit` dataset can be put into `tidy` format using both `pivot_longer` and `pivot_wider` function.  
+
+```{r}
+sales_profit %>% 
+  pivot_longer(
+    cols = !c ("TICKER", "COMPANYNAME", "ITEM"),
+    names_to = "year",
+    values_to = "AMOUNT"
+  ) %>% 
+  pivot_wider(
+    names_from = ITEM, 
+    values_from = AMOUNT
+  )
+```
+
+### `separate ()` function 
+
+The `separate` function can be used when multiple variables are stored in one column. The function separates one column into multiple columns. For example, in `netincome_asset` data, the column `VALUES` should be converted into two columns called `NETINCOME` and `TOTALASSETS`. In `separate` function, `col` argument is ued to select the column that needs to be broken; `into` argument is used to create new columns; and `sep` argument is ued to identify the character in which the column will be separated. In this case, it is `/`. Finally `remove` argument is used to decide whether the column (here `VALUES`) that is separated should be in new dataset.  
+
+```{r}
+netincome_asset %>% 
+  separate(
+    col = VALUES, into = c ("NETINCMOE", "TOTALASSETS"), sep ="/",
+    remove =TRUE
+  )
+```
+
+It is clear from the above dataset that the type of columns `NETINCOME` and `TOTALASSETS` are `chr`, but they should be number (e.g., `dbl`). Actually, `separate` functions maintain the type of the columns that are separated. The type of `VALUES` column was `chr` and it is maintained in new dataset. In order to get the true type, we can use `convert` argument, which is done below.  
+
+```{r}
+netincome_asset  %>% 
+  separate(
+    col = VALUES, into = c ("NETINCMOE", "TOTALASSETS"), sep ="/",
+    remove =TRUE,convert = TRUE
+  )
+```
+
+### `extract ()` function 
+
+
+This is a very good source to discuss about data wrangling - <https://dsapps-2020.github.io/Class_Slides/> 
+
+This is the best data wrangling website - 
+<https://dcl-wrangle.stanford.edu/>
+
 
 The above link is also best about why `EXCEL` is not be best for Accounting & Audit Analytics. 
