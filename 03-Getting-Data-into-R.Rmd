@@ -2,8 +2,82 @@
 
 Data lie in different places and in different formats. Therefore, getting them into `R` is not always the same. Some data are stored in local directory in our computer, while other data are available online. Moreover, sometimes we need extract data from databases. To know how to extract different forms of data from different sources is important because the explosion of social media and similar platforms has given birth to tremendous amounts of data in different formats and in different places. Though accountants and auditors are good at dealing with structured data, they should also know how to deal with unstructured and non-conventional data [@richins_big_2017].
 
-## Packages That Could Be Used to Import Data into `R`
+## Packages That Could Be Used to Import Data into `R`.
 
+There are many packages that can be used to import data into `R` from many different sources. Of those packages, `readr`, `readxl`, and `purrr` will be discussed here. Additionally, data can be imported into `R` using `RStudio's Import Wizard`. To import data using `RStudio's Import Wizard`, one needs to go to the Environment tab and select Import Dataset; then, select appropriate type of data one wants to import and finally browse the data one wants to import. Please see Figure \@ref(fig:importwizard) to learn about how to use `RStudio's Import Wizard`. 
+
+```{r importwizard, fig.align='center', echo=FALSE, fig.cap= "Import Data Using RStudio's Import Wizard"}
+knitr::include_graphics('images/import-data-using-environment.png', dpi = NA)
+```
+
+## Knowing & Setting Your Current (Working) Directory
+
+When one wants to import the data from Personal Computer (PC), then knowing where the data reside (which is also called "Path") is necessary as this will help import the data easily. The function `getwd()` will help to know the current working directory. Unless a specific directory is set as a current (working) directory, `R` will always look for a file in the current working directory. The function `setwd()` helps to set any directory (folder) as current working directory. If you are working in an `R` project (The discussion about `R` project is in Appendix \@ref(rproject)), then the project folder (directory) is the current directory. Figure \@ref(fig:directory) is an example of the address of a directory (folder).
+
+```{r directory, fig.align='center', echo=FALSE, fig.cap= "Directory"}
+knitr::include_graphics('images/directory.png', dpi = NA)
+```
+
+If you click on the address bar of the directory (highlighted in Red), it will look like - `C:\Documents\Project Docs`. If you want to set it as your current working directory, then you have to write the code `setwd("C:/Documents/Project Docs")`. Note that though the address has back slash (`\`), in `setwd()` function, we use forward slash (`/`) as `R` cannot deal with back slash. Once you set the working directory, running `getwd()` will show you your current working directory, which is the default directory for importing and exporting data into `R` (unless you specifically mention a different path). 
+
+## Importing Data into `R` from Excel 
+
+To import data from excel, `readxl` package can be excellent. You can install `readxl` package by `install.packages("readxl")` or it will be installed when `tidyverse` package is installed. `readxl` package can deal with both `xls` and `xlsx` files. There are some built-in datasets with `readxl` package. The function `readxl_example` generates the names of the built in datasets in `readxl` package.  
+
+```{r, warning=FALSE}
+library(readxl)
+readxl_example() # These are the example files from readxl package. 
+```
+
+The `read_excel` function will read the data from excel. For example - if we want to import an excel file such as climate change data from World Bank (<https://datacatalog.worldbank.org/dataset/climate-change-data>), we can use `read_excel` function. 
+
+```{r, warning=FALSE}
+climate_change <- read_excel("data/climate_change_download_0.xls")
+# To know the names of the variables of the dataset 
+names(climate_change)
+# OR
+colnames(climate_change)
+```
+
+If the excel file `climate_change_download_0` is opened in excel, we can see that there are 3 worksheets in the files, but `read_excel` function in `climate_change` dataset only imports the first worksheet called `Data`. We can use `sheet` argument in `read_excel` function to specify which worksheet one wants to import. In `sheet` argument the position of the worksheet can be specified as well rather than the name of the worksheet. Also, `excel_sheets` functions can be used to know the names of all worksheets in a given dataset. The function `excel_format` can be used to know the format of the excel files (`xls` or `xlsx`). 
+
+```{r,  warning=FALSE}
+excel_sheets("data/climate_change_download_0.xls")
+excel_format("data/climate_change_download_0.xls")
+climate_change_country <- read_excel("data/climate_change_download_0.xls", 
+                                     sheet = "Country")
+# OR
+climate_change_country <- read_excel("data/climate_change_download_0.xls", 
+                                     sheet = 2)
+```
+
+Other arguments in `read_excel` function such as `range` can be used to import a subset of the excel file. The argument `na` are used for missing values (NA). In our dataset `climate_change` there are missing values represented by `..`. This can be replaced by `na`argument. 
+
+```{r, warning=FALSE}
+climate_change2 <- read_excel("data/climate_change_download_0.xls",
+                             na = "..")
+```
+
+Also, we can use `writexl` package to export (save) a dataset from R in excel format. The function `write_xlsx` is usually used to save the data in excel format in desired directory. 
+
+```{r, eval=FALSE, warning=FALSE}
+library(writexl)
+write_xlsx(climate_change_country, "data/climatechange_country.xlsx")
+```
+
+Alternatively, one can use `file.choose()` function within `read_excel` function to **manually** import an excel file into `R`. 
+
+```{r, eval=FALSE, warning=FALSE}
+data <- read_excel(file.choose())
+```
+
+Also, using `read.table` function allows one to copy and paste an excel file in `R`. 
+
+```{r, eval=FALSE, warning=FALSE}
+
+df <- read.table(file = "clipboard", 
+                      sep = "\t", header=TRUE)
+```
 
 
 ## Importing Data into `R` from Local Directory of Computer 

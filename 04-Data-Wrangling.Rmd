@@ -1,10 +1,10 @@
 # Data Wrangling
 
-Data wrangling is the process of cleaning data, so that data become ready for further manipulation such as visualization and modeling. Sometimes, data wrangling is also called `data munging`. More specifically, data wrangling involves transforming and mapping data frome one from to another form - particularly from *raw* form to *tidy* form.
+Data wrangling is the process of cleaning data, so that data become ready for further manipulation such as visualization and modeling. Sometimes, data wrangling is also called `Data Munging`. More specifically, data wrangling involves transforming and mapping data from one from to another form - particularly from *raw* form to *tidy* form.
 
-There is an old saying that 90% of data science involves data wrangling. In many cases, data wrangling is difficult as it involves dealing with missing entries, ambiguous values, and different types of mixed data. In data analytics ecosystem in `R`, data wrangling involves three jobs - importing data into `R`, cleaning (tidying) the data, and tranforming the data. 
+There is an old saying that 90% of data science involves data wrangling. In many cases, data wrangling is difficult as it involves dealing with missing entries, ambiguous values, and different types of mixed data. In data analytics ecosystem in `R`, data wrangling involves three jobs - importing data into `R`, cleaning (tidying) the data, and transforming the data. Please see Figure \@ref(fig:datawrangling) to learn about the data wrangling process.
 
-```{r fig.align='center', echo=FALSE, fig.cap= "Data Wrangling in R"}
+```{r datawrangling, fig.align='center', echo=FALSE, fig.cap= "Data Wrangling in R"}
 knitr::include_graphics('images/data-science-wrangle.png', dpi = NA)
 ```
 

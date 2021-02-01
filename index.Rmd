@@ -18,8 +18,8 @@ link-citations: yes
 linkcolor: 'blue'
 urlcolor: 'blue' 
 toccolor: 'blue'
-github-repo:
-description: "Everything you need (and nothing more) to start Accounting Analytics."
+github-repo: "https://github.com/msharifbd/DataAnalyticsinAccounting"
+description: "Everything you need (and nothing more) to start Data Analytics in Accounting."
 ---
 
 
@@ -52,14 +52,14 @@ knitr::include_graphics('images/cover.png', dpi = NA)
 \renewcommand{\chaptermark}[1]{\markboth{\uppercase{#1}}{\uppercase{#1}}}
 \chaptermark{Preface}
 
-Now a days, data science or data analytics has become a buzzword.The emergence of social media and some other platforms like social media have given birth to vast amount of data. The Economist [^1] reports that "the world's most valuable resource is no longer oil, but data." Data is the raw materials for gaining addtional insights and the data analytics is the means through which the insights are extracted from the data. 
+Now a days, data science or data analytics has become a buzzword.The emergence of social media and some other platforms like social media have given birth to vast amount of data. The Economist [^1] reports that "the world's most valuable resource is no longer oil, but data." Data is the raw materials for gaining additional insights and the data analytics is the means through which the insights are extracted from the data. 
 
-As we know accounting is called the "language of business" and accountants play siginificant role in generating vast amount of data about an organziation. Additionally, accountants can leverage the data science tools to help business unlock valuable insights  and thus make improved decision making. 
+As we know accounting is called the "language of business" and accountants play significant role in generating vast amount of data about an organization. Additionally, accountants can leverage the data science tools to help business unlock valuable insights and thus make improved decision making. 
 
 
 ## How to Read this Book  {-}
 
-This is how to read the book. The book is intended to a stand alone data analytics course in accounting. Alternatively, it can be used as a supplement to other accounting courses. In such cases, exercises specific to a particular accounting courses can be used. Moreover, the book is intented for both undergraduate and graduate accounting students. Further, doctoral students in Accountancy can also use the book as a preparation for research method classes in their PhD programs. 
+This is how to read the book. The book is intended to a stand alone data analytics course in accounting. Alternatively, it can be used as a supplement to other accounting courses. In such cases, exercises specific to a particular accounting courses can be used. Moreover, the book is intended for both undergraduate and graduate accounting students. Further, doctoral students in Accountancy can also use the book as a preparation for research method classes in their PhD programs. 
 
 ## Structure of the Book {-}
 
@@ -68,7 +68,7 @@ This is structure of the book.
 
 # Acknowledgements  {-} 
 
-Here is the acknowledgements. 
+I acknowledge the contributions of many whose materials online I use to prepare myself for this book.   
 
 
 # About the Author  {-} 

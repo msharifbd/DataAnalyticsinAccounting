@@ -2,21 +2,24 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Data Analytics Ecosystem in R}}{8}{figure.2.1}%
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Import Data Using RStudio's Import Wizard}}{10}{figure.3.1}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Directory}}{11}{figure.3.2}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Data Wrangling in R}}{11}{figure.4.1}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Data Wrangling in R}}{15}{figure.4.1}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces A Scatterplot of Total Delay and Month}}{38}{figure.6.1}%
-\contentsline {figure}{\numberline {6.2}{\ignorespaces A Scatterplot of Total Delay and Month in Departing Airports in New York}}{39}{figure.6.2}%
-\contentsline {figure}{\numberline {6.3}{\ignorespaces A Scatterplot of Total Delay and Month Using Origin as Third Variable}}{40}{figure.6.3}%
-\contentsline {figure}{\numberline {6.4}{\ignorespaces A lineplot of Average Delay and Month}}{40}{figure.6.4}%
-\contentsline {figure}{\numberline {6.5}{\ignorespaces A lineplot of Average Delay and Month Using Origin as Third Variable}}{41}{figure.6.5}%
-\contentsline {figure}{\numberline {6.6}{\ignorespaces A lineplot of Total Delay and Day of the Week Using Origin as Third Variable}}{42}{figure.6.6}%
-\contentsline {figure}{\numberline {6.7}{\ignorespaces A barplot of Number of Flights from Departing Airports in New York}}{43}{figure.6.7}%
-\contentsline {figure}{\numberline {6.8}{\ignorespaces A barplot of Number of Flights from Departing Airports in New York in Different Months}}{44}{figure.6.8}%
-\contentsline {figure}{\numberline {6.9}{\ignorespaces A barplot of Number of Flights from Departing Airports in New York by Different Carriers}}{45}{figure.6.9}%
-\contentsline {figure}{\numberline {6.10}{\ignorespaces A boxplot of Distance from Departing Airports in New York}}{45}{figure.6.10}%
-\contentsline {figure}{\numberline {6.11}{\ignorespaces A boxplot of Distance from Departing Airports in New York in Different Months}}{46}{figure.6.11}%
+\contentsline {figure}{\numberline {6.1}{\ignorespaces A Scatterplot of Total Delay and Month}}{42}{figure.6.1}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces A Scatterplot of Total Delay and Month in Departing Airports in New York}}{43}{figure.6.2}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces A Scatterplot of Total Delay and Month Using Origin as Third Variable}}{44}{figure.6.3}%
+\contentsline {figure}{\numberline {6.4}{\ignorespaces A lineplot of Average Delay and Month}}{44}{figure.6.4}%
+\contentsline {figure}{\numberline {6.5}{\ignorespaces A lineplot of Average Delay and Month Using Origin as Third Variable}}{45}{figure.6.5}%
+\contentsline {figure}{\numberline {6.6}{\ignorespaces A lineplot of Total Delay and Day of the Week Using Origin as Third Variable}}{46}{figure.6.6}%
+\contentsline {figure}{\numberline {6.7}{\ignorespaces A barplot of Number of Flights from Departing Airports in New York}}{47}{figure.6.7}%
+\contentsline {figure}{\numberline {6.8}{\ignorespaces A barplot of Number of Flights from Departing Airports in New York in Different Months}}{48}{figure.6.8}%
+\contentsline {figure}{\numberline {6.9}{\ignorespaces A barplot of Number of Flights from Departing Airports in New York by Different Carriers}}{49}{figure.6.9}%
+\contentsline {figure}{\numberline {6.10}{\ignorespaces A boxplot of Distance from Departing Airports in New York}}{49}{figure.6.10}%
+\contentsline {figure}{\numberline {6.11}{\ignorespaces A boxplot of Distance from Departing Airports in New York in Different Months}}{50}{figure.6.11}%
+\addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
