@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>A Appendix A | Data Analytics in Accounting An R Programming Approach</title>
+  <meta name="description" content="Everything you need (and nothing more) to start Data Analytics in Accounting." />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="A Appendix A | Data Analytics in Accounting An R Programming Approach" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:image" content="images/cover.png" />
+  <meta property="og:description" content="Everything you need (and nothing more) to start Data Analytics in Accounting." />
+  <meta name="github-repo" content="https://github.com/msharifbd/DataAnalyticsinAccounting" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="A Appendix A | Data Analytics in Accounting An R Programming Approach" />
+  
+  <meta name="twitter:description" content="Everything you need (and nothing more) to start Data Analytics in Accounting." />
+  <meta name="twitter:image" content="images/cover.png" />
+
+<meta name="author" content="Sharif Islam, DBA, CPA, CMA Assistant Professor School of Accountancy College of Business &amp; Analytics Southern Illinois University Carbondale" />
+
+
+<meta name="date" content="2021-02-01" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="conclusion.html"/>
+<link rel="next" href="appendix-b.html"/>
+<script src="libs/header-attrs/header-attrs.js"></script>
+<script src="libs/jquery/jquery.min.js"></script>
+<link href="libs/gitbook/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Data Analytics in Accounting  \nAn R Programming Approach</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#how-to-read-this-book"><i class="fa fa-check"></i>How to Read this Book</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#structure-of-the-book"><i class="fa fa-check"></i>Structure of the Book</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="acknowledgements.html"><a href="acknowledgements.html"><i class="fa fa-check"></i>Acknowledgements</a></li>
+<li class="chapter" data-level="" data-path="about-the-author.html"><a href="about-the-author.html"><i class="fa fa-check"></i>About the Author</a></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#data-analytics"><i class="fa fa-check"></i><b>1.1</b> Data Analytics</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#data-analytics-accountancy"><i class="fa fa-check"></i><b>1.2</b> Data Analytics &amp; Accountancy</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="introduction.html"><a href="introduction.html#data-analytics-in-financial-accounting"><i class="fa fa-check"></i><b>1.2.1</b> Data Analytics in Financial Accounting</a></li>
+<li class="chapter" data-level="1.2.2" data-path="introduction.html"><a href="introduction.html#data-analytics-in-management-accounting"><i class="fa fa-check"></i><b>1.2.2</b> Data Analytics in Management Accounting</a></li>
+<li class="chapter" data-level="1.2.3" data-path="introduction.html"><a href="introduction.html#data-analytics-in-auditing"><i class="fa fa-check"></i><b>1.2.3</b> Data Analytics in Auditing</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="r-programming-a-great-tool-for-data-science.html"><a href="r-programming-a-great-tool-for-data-science.html"><i class="fa fa-check"></i><b>2</b> <code>R</code> Programming - A Great Tool for Data Science</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="r-programming-a-great-tool-for-data-science.html"><a href="r-programming-a-great-tool-for-data-science.html#starting-with-r-program"><i class="fa fa-check"></i><b>2.1</b> Starting with <code>R</code> Program</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="r-programming-a-great-tool-for-data-science.html"><a href="r-programming-a-great-tool-for-data-science.html#installing-r"><i class="fa fa-check"></i><b>2.1.1</b> Installing <code>R</code></a></li>
+<li class="chapter" data-level="2.1.2" data-path="r-programming-a-great-tool-for-data-science.html"><a href="r-programming-a-great-tool-for-data-science.html#installing-rstudio"><i class="fa fa-check"></i><b>2.1.2</b> Installing <code>RStudio</code></a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="r-programming-a-great-tool-for-data-science.html"><a href="r-programming-a-great-tool-for-data-science.html#data-analytics-ecosystem-in-r"><i class="fa fa-check"></i><b>2.2</b> Data Analytics Ecosystem in <code>R</code></a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="getting-data-into-r.html"><a href="getting-data-into-r.html"><i class="fa fa-check"></i><b>3</b> Getting Data into <code>R</code></a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="getting-data-into-r.html"><a href="getting-data-into-r.html#packages-that-could-be-used-to-import-data-into-r."><i class="fa fa-check"></i><b>3.1</b> Packages That Could Be Used to Import Data into <code>R</code>.</a></li>
+<li class="chapter" data-level="3.2" data-path="getting-data-into-r.html"><a href="getting-data-into-r.html#knowing-setting-your-current-working-directory"><i class="fa fa-check"></i><b>3.2</b> Knowing &amp; Setting Your Current (Working) Directory</a></li>
+<li class="chapter" data-level="3.3" data-path="getting-data-into-r.html"><a href="getting-data-into-r.html#importing-data-into-r-from-excel"><i class="fa fa-check"></i><b>3.3</b> Importing Data into <code>R</code> from Excel</a></li>
+<li class="chapter" data-level="3.4" data-path="getting-data-into-r.html"><a href="getting-data-into-r.html#importing-data-into-r-from-local-directory-of-computer"><i class="fa fa-check"></i><b>3.4</b> Importing Data into <code>R</code> from Local Directory of Computer</a></li>
+<li class="chapter" data-level="3.5" data-path="getting-data-into-r.html"><a href="getting-data-into-r.html#importing-data-into-r-from-internet"><i class="fa fa-check"></i><b>3.5</b> Importing Data into <code>R</code> from Internet</a></li>
+<li class="chapter" data-level="3.6" data-path="getting-data-into-r.html"><a href="getting-data-into-r.html#importing-data-into-r-from-wrds-database"><i class="fa fa-check"></i><b>3.6</b> Importing Data into <code>R</code> from <code>WRDS</code> Database</a></li>
+<li class="chapter" data-level="3.7" data-path="getting-data-into-r.html"><a href="getting-data-into-r.html#some-other-sources"><i class="fa fa-check"></i><b>3.7</b> Some Other Sources</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="data-wrangling.html"><a href="data-wrangling.html"><i class="fa fa-check"></i><b>4</b> Data Wrangling</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="data-wrangling.html"><a href="data-wrangling.html#tidy-data"><i class="fa fa-check"></i><b>4.1</b> <code>tidy</code> data</a></li>
+<li class="chapter" data-level="4.2" data-path="data-wrangling.html"><a href="data-wrangling.html#same-data-but-different-formats-presentations"><i class="fa fa-check"></i><b>4.2</b> Same Data, but Different Formats (Presentations)</a></li>
+<li class="chapter" data-level="4.3" data-path="data-wrangling.html"><a href="data-wrangling.html#tidying-messy-data"><i class="fa fa-check"></i><b>4.3</b> Tidying Messy Data</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="data-wrangling.html"><a href="data-wrangling.html#column-hearders-are-values-not-variable-names"><i class="fa fa-check"></i><b>4.3.1</b> Column Hearders are Values, not Variable Names</a></li>
+<li class="chapter" data-level="4.3.2" data-path="data-wrangling.html"><a href="data-wrangling.html#multiple-variables-are-stored-in-one-column"><i class="fa fa-check"></i><b>4.3.2</b> Multiple Variables are Stored in One Column</a></li>
+<li class="chapter" data-level="4.3.3" data-path="data-wrangling.html"><a href="data-wrangling.html#variables-are-stored-in-both-rows-and-columns"><i class="fa fa-check"></i><b>4.3.3</b> Variables are Stored in Both Rows and Columns</a></li>
+<li class="chapter" data-level="4.3.4" data-path="data-wrangling.html"><a href="data-wrangling.html#multiple-types-of-observational-units-are-stored-in-the-same-table"><i class="fa fa-check"></i><b>4.3.4</b> Multiple Types of Observational Units are Stored in the Same Table</a></li>
+<li class="chapter" data-level="4.3.5" data-path="data-wrangling.html"><a href="data-wrangling.html#section"><i class="fa fa-check"></i><b>4.3.5</b> </a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="data-wrangling.html"><a href="data-wrangling.html#tidyr-package-for-tidy-data"><i class="fa fa-check"></i><b>4.4</b> <code>tidyr</code> Package for <code>tidy</code> Data</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="data-wrangling.html"><a href="data-wrangling.html#pivot_longer-function"><i class="fa fa-check"></i><b>4.4.1</b> <code>pivot_longer ()</code> function</a></li>
+<li class="chapter" data-level="4.4.2" data-path="data-wrangling.html"><a href="data-wrangling.html#pivot_wider-function"><i class="fa fa-check"></i><b>4.4.2</b> <code>pivot_wider ()</code> function</a></li>
+<li class="chapter" data-level="4.4.3" data-path="data-wrangling.html"><a href="data-wrangling.html#separate-function"><i class="fa fa-check"></i><b>4.4.3</b> <code>separate ()</code> function</a></li>
+<li class="chapter" data-level="4.4.4" data-path="data-wrangling.html"><a href="data-wrangling.html#extract-function"><i class="fa fa-check"></i><b>4.4.4</b> <code>extract ()</code> function</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="exploratory-data-analysis-eda.html"><a href="exploratory-data-analysis-eda.html"><i class="fa fa-check"></i><b>5</b> Exploratory Data Analysis (EDA)</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="exploratory-data-analysis-eda.html"><a href="exploratory-data-analysis-eda.html#tidyverse-package-in-r"><i class="fa fa-check"></i><b>5.1</b> <code>tidyverse</code> package in R</a></li>
+<li class="chapter" data-level="5.2" data-path="exploratory-data-analysis-eda.html"><a href="exploratory-data-analysis-eda.html#dplyr-package---data-manipulation-tool"><i class="fa fa-check"></i><b>5.2</b> <code>dplyr</code> Package - Data Manipulation Tool</a></li>
+<li class="chapter" data-level="5.3" data-path="exploratory-data-analysis-eda.html"><a href="exploratory-data-analysis-eda.html#data-set-for-classroom-practice"><i class="fa fa-check"></i><b>5.3</b> Data Set for Classroom Practice</a></li>
+<li class="chapter" data-level="5.4" data-path="exploratory-data-analysis-eda.html"><a href="exploratory-data-analysis-eda.html#assignment---pipe-operator"><i class="fa fa-check"></i><b>5.4</b> Assignment <code>&lt;-</code> &amp; Pipe <code>%&gt;%</code> operator</a></li>
+<li class="chapter" data-level="5.5" data-path="exploratory-data-analysis-eda.html"><a href="exploratory-data-analysis-eda.html#meta-data---data-about-data"><i class="fa fa-check"></i><b>5.5</b> Meta Data - Data About Data</a></li>
+<li class="chapter" data-level="5.6" data-path="exploratory-data-analysis-eda.html"><a href="exploratory-data-analysis-eda.html#changing-the-type-of-the-variable"><i class="fa fa-check"></i><b>5.6</b> Changing the type of the variable</a></li>
+<li class="chapter" data-level="5.7" data-path="exploratory-data-analysis-eda.html"><a href="exploratory-data-analysis-eda.html#count-function"><i class="fa fa-check"></i><b>5.7</b> <code>count()</code> function</a></li>
+<li class="chapter" data-level="5.8" data-path="exploratory-data-analysis-eda.html"><a href="exploratory-data-analysis-eda.html#st-first-verb---select"><i class="fa fa-check"></i><b>5.8</b> 1st (First) verb - <code>select ()</code></a></li>
+<li class="chapter" data-level="5.9" data-path="exploratory-data-analysis-eda.html"><a href="exploratory-data-analysis-eda.html#nd-second-verb---filter"><i class="fa fa-check"></i><b>5.9</b> 2nd (Second) verb - <code>filter ()</code></a></li>
+<li class="chapter" data-level="5.10" data-path="exploratory-data-analysis-eda.html"><a href="exploratory-data-analysis-eda.html#rd-third-verb---arrange"><i class="fa fa-check"></i><b>5.10</b> 3rd (Third) verb - <code>arrange ()</code></a></li>
+<li class="chapter" data-level="5.11" data-path="exploratory-data-analysis-eda.html"><a href="exploratory-data-analysis-eda.html#th-fourth-verb---mutate"><i class="fa fa-check"></i><b>5.11</b> 4th (Fourth) verb - <code>mutate ()</code></a></li>
+<li class="chapter" data-level="5.12" data-path="exploratory-data-analysis-eda.html"><a href="exploratory-data-analysis-eda.html#th-fifth-verb---summarize"><i class="fa fa-check"></i><b>5.12</b> 5th (Fifth) verb - <code>summarize ()</code></a></li>
+<li class="chapter" data-level="5.13" data-path="exploratory-data-analysis-eda.html"><a href="exploratory-data-analysis-eda.html#th-sixth-verb---group_by"><i class="fa fa-check"></i><b>5.13</b> 6th (Sixth) verb - <code>group_by ()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="data-visualization.html"><a href="data-visualization.html"><i class="fa fa-check"></i><b>6</b> Data Visualization</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="data-visualization.html"><a href="data-visualization.html#ggplot2-package---data-visualization-tool"><i class="fa fa-check"></i><b>6.1</b> <code>ggplot2 ()</code> Package - Data Visualization Tool</a></li>
+<li class="chapter" data-level="6.2" data-path="data-visualization.html"><a href="data-visualization.html#scatter-plot"><i class="fa fa-check"></i><b>6.2</b> Scatter Plot</a></li>
+<li class="chapter" data-level="6.3" data-path="data-visualization.html"><a href="data-visualization.html#line-plot"><i class="fa fa-check"></i><b>6.3</b> Line Plot</a></li>
+<li class="chapter" data-level="6.4" data-path="data-visualization.html"><a href="data-visualization.html#bar-plot"><i class="fa fa-check"></i><b>6.4</b> Bar Plot</a></li>
+<li class="chapter" data-level="6.5" data-path="data-visualization.html"><a href="data-visualization.html#box-plot"><i class="fa fa-check"></i><b>6.5</b> Box Plot</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="data-modeling.html"><a href="data-modeling.html"><i class="fa fa-check"></i><b>7</b> Data Modeling</a></li>
+<li class="chapter" data-level="8" data-path="communication-of-analytics-an-rmarkdown-approach.html"><a href="communication-of-analytics-an-rmarkdown-approach.html"><i class="fa fa-check"></i><b>8</b> Communication of Analytics: An <code>Rmarkdown</code> Approach</a>
+<ul>
+<li class="chapter" data-level="" data-path="communication-of-analytics-an-rmarkdown-approach.html"><a href="communication-of-analytics-an-rmarkdown-approach.html#learning-objectives"><i class="fa fa-check"></i>Learning Objectives</a></li>
+<li class="chapter" data-level="8.1" data-path="communication-of-analytics-an-rmarkdown-approach.html"><a href="communication-of-analytics-an-rmarkdown-approach.html#what-is-rmarkdown"><i class="fa fa-check"></i><b>8.1</b> What is Rmarkdown</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="communication-of-analytics-a-shiny-approach.html"><a href="communication-of-analytics-a-shiny-approach.html"><i class="fa fa-check"></i><b>9</b> Communication of Analytics: A <code>Shiny</code> Approach</a>
+<ul>
+<li class="chapter" data-level="" data-path="communication-of-analytics-a-shiny-approach.html"><a href="communication-of-analytics-a-shiny-approach.html#learning-objectives-1"><i class="fa fa-check"></i>Learning Objectives</a></li>
+<li class="chapter" data-level="9.1" data-path="communication-of-analytics-a-shiny-approach.html"><a href="communication-of-analytics-a-shiny-approach.html#introduction-to-r-shiny"><i class="fa fa-check"></i><b>9.1</b> Introduction to <code>R Shiny</code></a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>10</b> Conclusion</a></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="appendix-a.html"><a href="appendix-a.html"><i class="fa fa-check"></i><b>A</b> Appendix A</a>
+<ul>
+<li class="chapter" data-level="A.1" data-path="appendix-a.html"><a href="appendix-a.html#basic-data-structure-in-r"><i class="fa fa-check"></i><b>A.1</b> Basic Data Structure in <code>R</code></a></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="appendix-b.html"><a href="appendix-b.html"><i class="fa fa-check"></i><b>B</b> Appendix B</a>
+<ul>
+<li class="chapter" data-level="B.1" data-path="appendix-b.html"><a href="appendix-b.html#rproject"><i class="fa fa-check"></i><b>B.1</b> Starting a Project in <code>R</code></a></li>
+<li class="chapter" data-level="B.2" data-path="appendix-b.html"><a href="appendix-b.html#text-mining-in-r"><i class="fa fa-check"></i><b>B.2</b> Text Mining in <code>R</code></a></li>
+<li class="chapter" data-level="B.3" data-path="appendix-b.html"><a href="appendix-b.html#social-media-analytics-in-r"><i class="fa fa-check"></i><b>B.3</b> Social Media Analytics in <code>R</code></a></li>
+<li class="chapter" data-level="B.4" data-path="appendix-b.html"><a href="appendix-b.html#web-scrapping-using-r"><i class="fa fa-check"></i><b>B.4</b> Web Scrapping Using <code>R</code></a></li>
+<li class="chapter" data-level="B.5" data-path="appendix-b.html"><a href="appendix-b.html#big-data-in-r-with-sparklyr"><i class="fa fa-check"></i><b>B.5</b> Big Data in <code>R</code> with <code>sparklyr</code></a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Data Analytics in Accounting<br />
+An R Programming Approach</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="appendix-a" class="section level1" number="11">
+<h1><span class="header-section-number">A</span> Appendix A</h1>
+<div id="basic-data-structure-in-r" class="section level2" number="11.1">
+<h2><span class="header-section-number">A.1</span> Basic Data Structure in <code>R</code></h2>
+<p>Though in the book, most of the time we talk about <code>data frames</code> (sometimes <code>tibble</code>), <code>vectors</code> are the buliding blocks of them. Traditional learners of <code>R</code> usually start learning it using <code>vectors</code>. However, for accountants (or would-be accountants) it is better to begin with <code>tibbles</code> and work down to the underlying concepts such as <code>vectors</code>.</p>
+<p>Basically there are two types of vectors in <code>R</code>; one is called <code>Atomic</code> vectors (also called <code>homogeneous vectors</code>) and the other is called <code>lists</code>. <code>Atomic</code> vectors contain similar types of elements, while <code>lists</code> vectors do not; <code>lists</code> can hold differnet types elements in a vector. There are six types of <code>Atomic</code> vectors - <code>logical</code>, <code>integer</code>, <code>double</code>, <code>character</code>, <code>complex</code>, and <code>raw</code>. The <code>integer</code>and <code>double</code> are together called <code>numeric</code>. Of these types, the first four are widely used and most relevant for accounting analytics.</p>
+<p>Each vector has 2 major characteristis - <code>type</code> and <code>length</code>. The function <code>typeof</code> can be used to know about the <code>types</code> of the vectors - namely <code>logical</code>, <code>integer</code>, <code>double</code>, <code>character</code>, <code>complex</code>, or <code>raw</code>. The <code>length</code> function is used to get or set the length of a vector. The function <code>nchar</code> can be used to get the length of a string. Some examples of vectors are given below -</p>
+<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="appendix-a.html#cb122-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Character type </span></span>
+<span id="cb122-2"><a href="appendix-a.html#cb122-2" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;1933&quot;</span>,<span class="st">&quot;1934&quot;</span>,<span class="st">&quot;2002&quot;</span>)</span>
+<span id="cb122-3"><a href="appendix-a.html#cb122-3" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(a)</span></code></pre></div>
+<pre><code>## [1] 3</code></pre>
+<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb124-1"><a href="appendix-a.html#cb124-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(a)</span></code></pre></div>
+<pre><code>## [1] &quot;character&quot;</code></pre>
+<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb126-1"><a href="appendix-a.html#cb126-1" aria-hidden="true" tabindex="-1"></a>a</span></code></pre></div>
+<pre><code>## [1] &quot;1933&quot; &quot;1934&quot; &quot;2002&quot;</code></pre>
+<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb128-1"><a href="appendix-a.html#cb128-1" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;The Securities Act&quot;</span>, <span class="st">&quot;The Securities Exchange Act&quot;</span>, <span class="st">&quot;Sarbanes-Oxley Act&quot;</span>)</span>
+<span id="cb128-2"><a href="appendix-a.html#cb128-2" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(b)</span></code></pre></div>
+<pre><code>## [1] 3</code></pre>
+<div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb130-1"><a href="appendix-a.html#cb130-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(b)</span></code></pre></div>
+<pre><code>## [1] &quot;character&quot;</code></pre>
+<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb132-1"><a href="appendix-a.html#cb132-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nchar</span>(b)</span></code></pre></div>
+<pre><code>## [1] 18 27 18</code></pre>
+<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb134-1"><a href="appendix-a.html#cb134-1" aria-hidden="true" tabindex="-1"></a>b</span></code></pre></div>
+<pre><code>## [1] &quot;The Securities Act&quot;         
+## [2] &quot;The Securities Exchange Act&quot;
+## [3] &quot;Sarbanes-Oxley Act&quot;</code></pre>
+<div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb136-1"><a href="appendix-a.html#cb136-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Logical type </span></span>
+<span id="cb136-2"><a href="appendix-a.html#cb136-2" aria-hidden="true" tabindex="-1"></a>c <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>)</span>
+<span id="cb136-3"><a href="appendix-a.html#cb136-3" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(c)</span></code></pre></div>
+<pre><code>## [1] 6</code></pre>
+<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb138-1"><a href="appendix-a.html#cb138-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(c)</span></code></pre></div>
+<pre><code>## [1] &quot;logical&quot;</code></pre>
+<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="appendix-a.html#cb140-1" aria-hidden="true" tabindex="-1"></a>c</span></code></pre></div>
+<pre><code>## [1]  TRUE FALSE  TRUE  TRUE  TRUE FALSE</code></pre>
+<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="appendix-a.html#cb142-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Double type </span></span>
+<span id="cb142-2"><a href="appendix-a.html#cb142-2" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1933</span>, <span class="dv">1934</span>, <span class="dv">2002</span>)</span>
+<span id="cb142-3"><a href="appendix-a.html#cb142-3" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(d)</span></code></pre></div>
+<pre><code>## [1] 3</code></pre>
+<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="appendix-a.html#cb144-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(d)</span></code></pre></div>
+<pre><code>## [1] &quot;double&quot;</code></pre>
+<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="appendix-a.html#cb146-1" aria-hidden="true" tabindex="-1"></a>d</span></code></pre></div>
+<pre><code>## [1] 1933 1934 2002</code></pre>
+<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb148-1"><a href="appendix-a.html#cb148-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Integer type </span></span>
+<span id="cb148-2"><a href="appendix-a.html#cb148-2" aria-hidden="true" tabindex="-1"></a>e <span class="ot">&lt;-</span> <span class="fu">c</span>(1933L, 1934L, 2002L)</span>
+<span id="cb148-3"><a href="appendix-a.html#cb148-3" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(e)</span></code></pre></div>
+<pre><code>## [1] 3</code></pre>
+<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="appendix-a.html#cb150-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(e)</span></code></pre></div>
+<pre><code>## [1] &quot;integer&quot;</code></pre>
+<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb152-1"><a href="appendix-a.html#cb152-1" aria-hidden="true" tabindex="-1"></a>e</span></code></pre></div>
+<pre><code>## [1] 1933 1934 2002</code></pre>
+<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb154-1"><a href="appendix-a.html#cb154-1" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="fu">list</span>(a,b,c,d,e)</span>
+<span id="cb154-2"><a href="appendix-a.html#cb154-2" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(f)</span></code></pre></div>
+<pre><code>## [1] 5</code></pre>
+<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb156-1"><a href="appendix-a.html#cb156-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(f)</span></code></pre></div>
+<pre><code>## [1] &quot;list&quot;</code></pre>
+<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="appendix-a.html#cb158-1" aria-hidden="true" tabindex="-1"></a>f</span></code></pre></div>
+<pre><code>## [[1]]
+## [1] &quot;1933&quot; &quot;1934&quot; &quot;2002&quot;
+## 
+## [[2]]
+## [1] &quot;The Securities Act&quot;         
+## [2] &quot;The Securities Exchange Act&quot;
+## [3] &quot;Sarbanes-Oxley Act&quot;         
+## 
+## [[3]]
+## [1]  TRUE FALSE  TRUE  TRUE  TRUE FALSE
+## 
+## [[4]]
+## [1] 1933 1934 2002
+## 
+## [[5]]
+## [1] 1933 1934 2002</code></pre>
+<p>Very good website - <a href="https://rc2e.com/somebasics#recipe-id017" class="uri">https://rc2e.com/somebasics#recipe-id017</a></p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="conclusion.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="appendix-b.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook/js/app.min.js"></script>
+<script src="libs/gitbook/js/lunr.js"></script>
+<script src="libs/gitbook/js/clipboard.min.js"></script>
+<script src="libs/gitbook/js/plugin-search.js"></script>
+<script src="libs/gitbook/js/plugin-sharing.js"></script>
+<script src="libs/gitbook/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook/js/jquery.highlight.js"></script>
+<script src="libs/gitbook/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

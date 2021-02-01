@@ -1,0 +1,2287 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames*,x11names*}{xcolor}
+%
+\documentclass[
+]{book}
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+  \usepackage{amssymb}
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Data Analytics in Accounting An R Programming Approach},
+  pdfauthor={Sharif Islam, DBA, CPA, CMA Assistant Professor School of Accountancy College of Business \& Analytics Southern Illinois University Carbondale},
+  colorlinks=true,
+  linkcolor=blue,
+  filecolor=Maroon,
+  citecolor=Blue,
+  urlcolor=blue,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{longtable,booktabs}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\usepackage{longtable}
+\usepackage[nottoc]{tocbibind}
+\usepackage[titles]{tocloft}
+\usepackage{setspace}
+\usepackage{booktabs}
+\usepackage{amsthm}
+\makeatletter
+\def\thm@space@setup{%
+  \thm@preskip=8pt plus 2pt minus 4pt
+  \thm@postskip=\thm@preskip
+}
+\makeatother
+
+\frontmatter
+
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage[]{natbib}
+\bibliographystyle{apalike}
+
+\title{Data Analytics in Accounting\\
+An R Programming Approach}
+\author{Sharif Islam, DBA, CPA, CMA\\
+Assistant Professor\\
+School of Accountancy\\
+College of Business \& Analytics\\
+Southern Illinois University Carbondale}
+\date{February 01, 2021}
+
+\begin{document}
+\maketitle
+
+{
+\hypersetup{linkcolor=blue}
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+\listoftables
+\listoffigures
+\hypertarget{preface}{%
+\chapter*{Preface}\label{preface}}
+
+
+\renewcommand{\chaptermark}[1]{\markboth{\uppercase{#1}}{\uppercase{#1}}}
+\markboth{\uppercase{Preface}}{\uppercase{Preface}}
+
+Now a days, data science or data analytics has become a buzzword.The emergence of social media and some other platforms like social media have given birth to vast amount of data. The Economist \footnote{\url{https://www.economist.com/leaders/2017/05/06/the-worlds-most-valuable-resource-is-no-longer-oil-but-data}} reports that ``the world's most valuable resource is no longer oil, but data.'' Data is the raw materials for gaining additional insights and the data analytics is the means through which the insights are extracted from the data.
+
+As we know accounting is called the ``language of business'' and accountants play significant role in generating vast amount of data about an organization. Additionally, accountants can leverage the data science tools to help business unlock valuable insights and thus make improved decision making.
+
+\hypertarget{how-to-read-this-book}{%
+\section*{How to Read this Book}\label{how-to-read-this-book}}
+
+
+This is how to read the book. The book is intended to a stand alone data analytics course in accounting. Alternatively, it can be used as a supplement to other accounting courses. In such cases, exercises specific to a particular accounting courses can be used. Moreover, the book is intended for both undergraduate and graduate accounting students. Further, doctoral students in Accountancy can also use the book as a preparation for research method classes in their PhD programs.
+
+\hypertarget{structure-of-the-book}{%
+\section*{Structure of the Book}\label{structure-of-the-book}}
+
+
+This is structure of the book.
+
+\hypertarget{acknowledgements}{%
+\chapter*{Acknowledgements}\label{acknowledgements}}
+
+
+I acknowledge the contributions of many whose materials online I use to prepare myself for this book.
+
+\hypertarget{about-the-author}{%
+\chapter*{About the Author}\label{about-the-author}}
+
+
+Sharif Islam is an Assistant Professor in School of Accountancy in Southern Illinois University Carbondale. He completed his doctorate in Accounting and Computer Information Systems from Louisiana Tech University and obtained MBA from Eastern Illinois University. He is a licensed CPA in Illinois and a CMA in Bangladesh. He has more than five years experiences in teaching and research. His research has been awarded in couple of conferences of American Accounting Association (AAA). He has a passion for Data Science, with its application in Accounting and Auditing.
+
+\renewcommand{\chaptermark}[1]{\markboth{\uppercase{\thechapter. \ #1}}{}}
+
+\mainmatter
+
+\hypertarget{introduction}{%
+\chapter{Introduction}\label{introduction}}
+
+Given the availability of vast amount of data, companies in numerous industries exploit such data for competitive advantage, aiming to either increase revenues or decrease costs. Data Driven Decisions (DDD) are making significant differences in productivity, on Return on Assets (ROA), Return on Equity (ROE), asset utilization, and on market value \citep{provost_data_2013}. Firms using data analytics in their operations can outperform their competitors by 5\% in productivity and 6\% in profitability \citep{barton_making_2012}. In 2017, 53\% companies have adopted big data, as compared to only 17\% in 2015 \citep{columbus_53_2017}. Additionally, regulators are increasingly calling for organizations to use analytics \citep{protiviti_embracing_2017}. This emphasizes the significance of data analytics in organizations.
+
+This is the first real chapter. Very good source for my book \url{https://grantmcdermott.com/teaching/}
+
+\hypertarget{data-analytics}{%
+\section{Data Analytics}\label{data-analytics}}
+
+The meaning of (big) data analytics varies across different disciplines and there is substantive confusion between the slightly differing characterizations of ``big data,'' ``business intelligence,'' and ``data analytics'' \citep{vasarhelyi_big_2015}. Though many people consider big data in terms of quantities, it is also related to large-scale analysis of large amounts of data to generate insights and knowledge \citep{verver_six_2015}. Big data is characterized by four Vs: Volume; Velocity; Variety; and Veracity. Volume refers to the size of the dataset, velocity to the speed of data generation, variety to the multiplicity of data sources, and veracity to the elimination of noise and obtaining truthful information from big data. Sometimes big data are characterized by six Vs: Volume, Velocity, Variety, Veracity, Variability, and Value; or, even seven Vs: Volume, Velocity, Variety, Veracity, Variability, Value, and Visualization \citep{sivarajah_critical_2017}.
+
+Data analytics is defined by the \citet[p.~105]{american_institute_of_certified_public_accountants_aicpa_audit_2015} as ``the art and science of discovering and analyzing patterns, identifying anomalies, and extracting other useful information in data underlying or related to the subject matter of an audit through analysis, modeling, and visualization for the purpose of planning or performing the audit.'' Cao et al. \citeyearpar{cao_big_2015} define big data analytics as the process of inspecting, cleaning, transforming, and modeling big data to discover and communicate useful information and patterns, suggest conclusions, and to provide support for decision-making.
+
+Data analytics promises significant potential in auditing. Therefore, in accounting, sometimes data analytics becomes synonymous with audit analytics. Audit analytics involves the application of data analytics in the audit. Specifically, \citet{american_institute_of_certified_public_accountants_aicpa_description_2017} defines audit data analytics as ``the science and art of discovering and analyzing patterns, identifying anomalies and extracting other useful information in data underlying or related to the subject matter of an audit through analysis, modeling and visualization for the purpose of planning or performing the audit.'' In other words, audit data analytics are techniques that can be used to perform a number of audit procedures such as risk assessment, tests of details, and substantive analytical procedure to gather audit evidence. The benefits of using audit data analytics include improved understanding of an entity's operations and associated risk including the risk of fraud, increased potential for detecting material misstatements, and improved communications with those charged with governance of audited entities.
+
+\hypertarget{data-analytics-accountancy}{%
+\section{Data Analytics \& Accountancy}\label{data-analytics-accountancy}}
+
+Data analytics is important for accounting profession because data gathering and analytics technologies have the potential to fundamentally change accounting and auditing task processes \citep{schneider_infer_2015}. Scholars note that the emergence of data analytics will significantly change the infer/predict/assure (e.g., insight/foresight/oversight) tasks performed by accountants and auditors. Big data and analytics have increasingly important implications for accounting and will provide the means to improve managerial accounting, financial accounting, and financial reporting practices \citep{warren_jr_how_2015}. It is further suggested that big data offers an unprecedented potential for diverse, voluminous datasets and sophisticated analyses. Research indicates that big data has great potential to produce better forecast estimates, going concern calculations, fraud, and other variables that are of concern to both internal and external auditors \citep{alles_drivers_2015}. Moreover, auditors might reduce audit costs and enhance profitability and effectiveness by means of big data or data analytics. Sixty-six percent of internal audit departments currently utilize some form of data analytics as part of the audit process \citep{protiviti_embracing_2017}.
+
+\hypertarget{data-analytics-in-financial-accounting}{%
+\subsection{Data Analytics in Financial Accounting}\label{data-analytics-in-financial-accounting}}
+
+Warren et al.\citeyearpar{warren_jr_how_2015} note that ``in financial accounting, big data will improve the quality and relevance of accounting information, thereby enhancing transparency and stakeholder decision-making. In reporting, big data can assist with the creation and refinement of accounting standards, helping to ensure that the accounting profession will continue to provide useful information as the dynamic, real-time, global economy evolves.'' In particular, they suggest that big data could significantly impact the future of financial accounting and Generally Accepted Accounting Principles (GAAP). Big data can also help to supplement financial statement disclosures by accumulating, processing, and analyzing information about a given intangible of interest. Furthermore, big data or data analytics can help in narrowing the differences between accounting standards such US GAAP and International Financial Reporting Standards (IFRS) and facilitate different measurement processes such as Fair Value Accounting (FVA) by analyzing different kinds of unstructured data \citep{warren_jr_how_2015}.
+
+Crawley and Wahlen \citeyearpar{crawley_analytics_2014} noted that data analytics allows researchers to explore a large amount of qualitative information disclosed by organizations, and examines the consequences of such disclosures. Moreover, data analytics now provides the opportunity to judge the informational content of qualitative financial information. For example, Davis, Piger, and Sedor \citeyearpar{davis_beyond_2012} found that the extent of optimism expressed in firms' earnings announcements is positively associated with Return on Assets (ROA) and stock reactions. By the same token, Li \citeyearpar{li_information_2010} suggested that the tone of forward-looking statements is positively associated with future earnings performance. In addition, Feldman, Govindaraj, Livnat, and Segal \citeyearpar{feldman_managements_2010} found that changes in disclosure tone is indicative of future changes in earnings. Interestingly, research shows that even information on social media such as Twitter can predict stock market responses \citep{bollen_twitter_2011}.
+
+Data analytics helps to relate textual data to earnings quality. For example, firms having more complicated and less transparent financial statement disclosures are more likely to have poor quality earnings, less persistent positive earnings and more persistent negative earnings \citep{li_annual_2008} . Li, Lundholm, and Minnis \citeyearpar{li_measure_2013} confirmed that firms discussing their competition frequently have ROAs that mean returns more severely than the firms discussing the competition infrequently.
+
+With the help of textual data analytics, researchers recently documented the role that qualitative disclosures have in forming the information environment of organizations; such information environments include factors such as the number of analyst following a firm, characteristics of its investors, its trading activities, and the litigation it is involved with. Less readable 10-Ks are associated with greater number of analysts following the firm and a greater amount of effort needed to generate report about it \citep{lehavy_effect_2011}. They also find that less readable 10-Ks are associated with greater dispersion, lower accuracy, and greater uncertainty in analyst's earnings forecasts about a given firm.
+
+\hypertarget{data-analytics-in-management-accounting}{%
+\subsection{Data Analytics in Management Accounting}\label{data-analytics-in-management-accounting}}
+
+Warren et al.~(2015, 397) noted that ``in managerial accounting, big data will contribute to the development and evolution of effective management control systems and budgeting processes.'' In particular, they elaborate on how big data or data analytics can play a role in management control systems by discovering behaviors that have correlation with specific goal outcomes. Essentially, big data analytics can locate new kinds of behaviors that might impact goal outcomes by simplifying the identification of important motivational measurement tools linked to organizational goals. Moreover, by analyzing non-structured data, big data analytics can help discern employee morale, productivity, and customer satisfaction. Data analytics can also be used to improve ``beyond budgeting practices'' since traditional budgeting sometimes creates barriers to creativity and flexibility (Warren, Moffitt, and Byrnes 2015).
+
+Richins, Stapleton, Stratopoulos, and Wong (2017) suggest that big data analytics could improve customer service quality. They suggest that most of the time organizations use structured data that are in their records to evaluate customer service quality; however, this approach does not take into account the customer perspective. Big data analytics allow organizations to evaluate this customer perspective by using unstructured data from social media or e-commerce sites, thus permitting organizations to have a holistic view of customer service quality.
+
+Managers recognize that financial measures, alone, are insufficient to forecast future financial success or to use for performance management. Big data analytics provides opportunities to incorporate non-financial measures by incorporating unstructured data (Richins et al.~2017). Using big data analytics (particularly the analysis of unstructured data) accountants can identify the causes of underlying problems, understand ramifications, and develop plans to mitigate adverse impacts (Richins et al.~2017). Data analytics can also provide accountants with additional tools to monitor operations and product quality, discover opportunities to reduce costs, and contribute to decision-making (Dai and Vasarhelyi 2016).
+
+\hypertarget{data-analytics-in-auditing}{%
+\subsection{Data Analytics in Auditing}\label{data-analytics-in-auditing}}
+
+Data analytics has the potential to improve the effectiveness of auditing by providing new forms of audit evidence. Data analytics can be used in both auditing planning and in audit procedures, helping auditors to identify and assess risk by analyzing large volumes of data. Even organizations that have very immature capabilities indicate that a strong level of value is derived from including analytics in the audit process (Protiviti 2017).
+
+Big data is being seen by practitioners as an essential part of assurance services (Alles and Gray 2016), but its application in auditing is not as straightforward as it is in marketing and medical research. Appelbaum (2016) and Cao et al.~(2015) identified several areas that are likely to benefit from the use of big data analytics. Some of the areas are:
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  At the engagement phase -- supplementing auditors' industry and client knowledge
+\item
+  At the planning phase -- supplementing auditors' risk assessment process
+\item
+  At the substantive test phase -- verifying the management assertions
+\item
+  At the review phase -- advanced data analytical tools as analytical procedures
+\item
+  At the continuous auditing phase -- enhancing knowledge about the clients
+\end{enumerate}
+
+Yoon, Hoogduin, and Zhang (2015) suggest that big data create great opportunities through providing audit evidence. They focused on the ``sufficiency'' and ``appropriate'' criteria and noted that though there are some issues about the propriety of big data due to different kinds of ``noise,'' big data can be used as complementary audit evidence. Additionally, they discussed how big data can be integrated with traditional audit evidence in order to add value in the process. Big data or data analytics can also help auditors to test the existence of assertions (e.g.~fixed assets) using non-conventional data such as video recording (Warren, Moffitt, and Byrnes 2015). In the world of big data, potential types and sources of audit evidence have changed (Appelbaum 2016). For this reason, Krahel and Titera (2015) suggest that big data might change the focus of auditors, shifting emphasis from management to the verification of data.
+
+Data quality and reliability or verifiability have become important issues in auditors' evaluations of audit evidence. In this way, big data can be used as part of analytical procedures, which are required at the planning and review phase, but which are optional at the substantive procedure phase. However, many issues remain unresolved about how to use big data since analytical procedures and auditing standards are not very specific about the selection of analytical audit procedures; the choice depends on the professional judgment of auditors (Appelbaum, Kogan, and Vasarhelyi 2017). For this reason, auditors need to exercise increased professional skepticism in the big data era because in many cases sources of big data lack provenance and, subsequently, veracity, and sometimes auditors (particularly internal auditors) have little or no involvement in data quality evaluation of such sources (Appelbaum 2016). Considering the prediction that analytics will spell the demise of auditing, Richins et al.~(2017) suggest that auditors in the big data era are still essential because they know ``the language of business.'' Particularly, they suggest that big data analytics cannot replace the professional judgment used by auditors, suggesting that analytics will instead complement auditors' professional judgment.
+
+Alles and Gray (2016) identify four potential advantages of incorporating big data into audit practices: strong predictive power to set expectations for financial statement audits, great opportunities to identify potential fraudulent activities, increased probabilities of discovering red flags, and the possibility of developing more predictive models for going concern assumptions. To that end, internal audit groups with dedicated analytics functions and organizations that have attained a managed or optimized to the state of analytics maturity are far more likely to conduct continuous auditing (Protiviti 2017). Though big data creates many opportunities for improving auditing, it also suffers from different shortcomings that hinder its application in Continuous Auditing (CA). For example, Zhang, Yang, and Appelbaum (2015) suggest big data characteristics such as volume, velocity, variety, and veracity creates problems in its application in CA through different gaps such as data consistency, data integrity, data identification, data aggregation, and data confidentiality.
+
+Rose, Rose, Sanderson, and Thibodeau (2017) found that the timing of the introduction of data analytics tools into the audit process affects the evaluation of evidence and professional judgment. Barr-Pulliam, Brown-Liburd, and Sanderson (2017) found that jurors consider auditors more negligent when they use traditional auditing technique rather than audit data analytics techniques. Additionally, they confirmed that audit data analytics tools increase the perceptions of audit quality. Schneider et al.~(2015) suggest that data analytics can be used by auditors to evaluate the internal control effectiveness and policy compliance. They further suggest that by analyzing unusual data flows, unexpected large volumes of data, high frequency transactions, or duplicate vendor payments, auditors can better detect fraud.
+
+\hypertarget{r-programming---a-great-tool-for-data-science}{%
+\chapter{\texorpdfstring{\texttt{R} Programming - A Great Tool for Data Science}{R Programming - A Great Tool for Data Science}}\label{r-programming---a-great-tool-for-data-science}}
+
+There are many tools for data science. Of these tools, \texttt{R} Programming is one of the most powerful tools. It is powerful in that it has more than 11,000 packages on the CRAN ( Comprehensive R Archive Network) and thousands of other packages on Github and other platforms. Moreover, many companies around the word use R. For example -
+
+\begin{longtable}[]{@{}ccc@{}}
+\toprule
+Companies & Companies & Companies\tabularnewline
+\midrule
+\endhead
+Facebook & Google & Twitter\tabularnewline
+Mircrosoft & Uber & Airbnb\tabularnewline
+IBM & Boeing & Ford\tabularnewline
+New York Times & Wells Fargo & American Express\tabularnewline
+\bottomrule
+\end{longtable}
+
+Very good website for the introductory part - \url{https://rc2e.com/gettingstarted\#recipe-id001} and \url{https://rc2e.com/navigatingthesoftware\#intro-NavigatingTheSoftware}
+
+\hypertarget{starting-with-r-program}{%
+\section{\texorpdfstring{Starting with \texttt{R} Program}{Starting with R Program}}\label{starting-with-r-program}}
+
+\hypertarget{installing-r}{%
+\subsection{\texorpdfstring{Installing \texttt{R}}{Installing R}}\label{installing-r}}
+
+\hypertarget{installing-rstudio}{%
+\subsection{\texorpdfstring{Installing \texttt{RStudio}}{Installing RStudio}}\label{installing-rstudio}}
+
+\hypertarget{data-analytics-ecosystem-in-r}{%
+\section{\texorpdfstring{Data Analytics Ecosystem in \texttt{R}}{Data Analytics Ecosystem in R}}\label{data-analytics-ecosystem-in-r}}
+
+We will adopt the following ecosystem in data analytics in \texttt{R}.
+
+\begin{figure}
+
+{\centering \includegraphics{images/data-science} 
+
+}
+
+\caption{Data Analytics Ecosystem in R}\label{fig:unnamed-chunk-2}
+\end{figure}
+
+\hypertarget{getting-data-into-r}{%
+\chapter{\texorpdfstring{Getting Data into \texttt{R}}{Getting Data into R}}\label{getting-data-into-r}}
+
+Data lie in different places and in different formats. Therefore, getting them into \texttt{R} is not always the same. Some data are stored in local directory in our computer, while other data are available online. Moreover, sometimes we need extract data from databases. To know how to extract different forms of data from different sources is important because the explosion of social media and similar platforms has given birth to tremendous amounts of data in different formats and in different places. Though accountants and auditors are good at dealing with structured data, they should also know how to deal with unstructured and non-conventional data \citep{richins_big_2017}.
+
+\hypertarget{packages-that-could-be-used-to-import-data-into-r.}{%
+\section{\texorpdfstring{Packages That Could Be Used to Import Data into \texttt{R}.}{Packages That Could Be Used to Import Data into R.}}\label{packages-that-could-be-used-to-import-data-into-r.}}
+
+There are many packages that can be used to import data into \texttt{R} from many different sources. Of those packages, \texttt{readr}, \texttt{readxl}, and \texttt{purrr} will be discussed here. Additionally, data can be imported into \texttt{R} using \texttt{RStudio\textquotesingle{}s\ Import\ Wizard}. To import data using \texttt{RStudio\textquotesingle{}s\ Import\ Wizard}, one needs to go to the Environment tab and select Import Dataset; then, select appropriate type of data one wants to import and finally browse the data one wants to import. Please see Figure \ref{fig:importwizard} to learn about how to use \texttt{RStudio\textquotesingle{}s\ Import\ Wizard}.
+
+\begin{figure}
+
+{\centering \includegraphics{images/import-data-using-environment} 
+
+}
+
+\caption{Import Data Using RStudio's Import Wizard}\label{fig:importwizard}
+\end{figure}
+
+\hypertarget{knowing-setting-your-current-working-directory}{%
+\section{Knowing \& Setting Your Current (Working) Directory}\label{knowing-setting-your-current-working-directory}}
+
+When one wants to import the data from Personal Computer (PC), then knowing where the data reside (which is also called ``Path'') is necessary as this will help import the data easily. The function \texttt{getwd()} will help to know the current working directory. Unless a specific directory is set as a current (working) directory, \texttt{R} will always look for a file in the current working directory. The function \texttt{setwd()} helps to set any directory (folder) as current working directory. If you are working in an \texttt{R} project (The discussion about \texttt{R} project is in Appendix \ref{rproject}), then the project folder (directory) is the current directory. Figure \ref{fig:directory} is an example of the address of a directory (folder).
+
+\begin{figure}
+
+{\centering \includegraphics{images/directory} 
+
+}
+
+\caption{Directory}\label{fig:directory}
+\end{figure}
+
+If you click on the address bar of the directory (highlighted in Red), it will look like - \texttt{C:\textbackslash{}Documents\textbackslash{}Project\ Docs}. If you want to set it as your current working directory, then you have to write the code \texttt{setwd("C:/Documents/Project\ Docs")}. Note that though the address has back slash (\texttt{\textbackslash{}}), in \texttt{setwd()} function, we use forward slash (\texttt{/}) as \texttt{R} cannot deal with back slash. Once you set the working directory, running \texttt{getwd()} will show you your current working directory, which is the default directory for importing and exporting data into \texttt{R} (unless you specifically mention a different path).
+
+\hypertarget{importing-data-into-r-from-excel}{%
+\section{\texorpdfstring{Importing Data into \texttt{R} from Excel}{Importing Data into R from Excel}}\label{importing-data-into-r-from-excel}}
+
+To import data from excel, \texttt{readxl} package can be excellent. You can install \texttt{readxl} package by \texttt{install.packages("readxl")} or it will be installed when \texttt{tidyverse} package is installed. \texttt{readxl} package can deal with both \texttt{xls} and \texttt{xlsx} files. There are some built-in datasets with \texttt{readxl} package. The function \texttt{readxl\_example} generates the names of the built in datasets in \texttt{readxl} package.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(readxl)}
+\FunctionTok{readxl\_example}\NormalTok{() }\CommentTok{\# These are the example files from readxl package. }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] "clippy.xls"    "clippy.xlsx"   "datasets.xls" 
+##  [4] "datasets.xlsx" "deaths.xls"    "deaths.xlsx"  
+##  [7] "geometry.xls"  "geometry.xlsx" "type-me.xls"  
+## [10] "type-me.xlsx"
+\end{verbatim}
+
+The \texttt{read\_excel} function will read the data from excel. For example - if we want to import an excel file such as climate change data from World Bank (\url{https://datacatalog.worldbank.org/dataset/climate-change-data}), we can use \texttt{read\_excel} function.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{climate\_change }\OtherTok{\textless{}{-}} \FunctionTok{read\_excel}\NormalTok{(}\StringTok{"data/climate\_change\_download\_0.xls"}\NormalTok{)}
+\CommentTok{\# To know the names of the variables of the dataset }
+\FunctionTok{names}\NormalTok{(climate\_change)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] "Country code" "Country name" "Series code" 
+##  [4] "Series name"  "SCALE"        "Decimals"    
+##  [7] "1990"         "1991"         "1992"        
+## [10] "1993"         "1994"         "1995"        
+## [13] "1996"         "1997"         "1998"        
+## [16] "1999"         "2000"         "2001"        
+## [19] "2002"         "2003"         "2004"        
+## [22] "2005"         "2006"         "2007"        
+## [25] "2008"         "2009"         "2010"        
+## [28] "2011"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# OR}
+\FunctionTok{colnames}\NormalTok{(climate\_change)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] "Country code" "Country name" "Series code" 
+##  [4] "Series name"  "SCALE"        "Decimals"    
+##  [7] "1990"         "1991"         "1992"        
+## [10] "1993"         "1994"         "1995"        
+## [13] "1996"         "1997"         "1998"        
+## [16] "1999"         "2000"         "2001"        
+## [19] "2002"         "2003"         "2004"        
+## [22] "2005"         "2006"         "2007"        
+## [25] "2008"         "2009"         "2010"        
+## [28] "2011"
+\end{verbatim}
+
+If the excel file \texttt{climate\_change\_download\_0} is opened in excel, we can see that there are 3 worksheets in the files, but \texttt{read\_excel} function in \texttt{climate\_change} dataset only imports the first worksheet called \texttt{Data}. We can use \texttt{sheet} argument in \texttt{read\_excel} function to specify which worksheet one wants to import. In \texttt{sheet} argument the position of the worksheet can be specified as well rather than the name of the worksheet. Also, \texttt{excel\_sheets} functions can be used to know the names of all worksheets in a given dataset. The function \texttt{excel\_format} can be used to know the format of the excel files (\texttt{xls} or \texttt{xlsx}).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{excel\_sheets}\NormalTok{(}\StringTok{"data/climate\_change\_download\_0.xls"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "Data"    "Country" "Series"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{excel\_format}\NormalTok{(}\StringTok{"data/climate\_change\_download\_0.xls"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "xls"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{climate\_change\_country }\OtherTok{\textless{}{-}} \FunctionTok{read\_excel}\NormalTok{(}\StringTok{"data/climate\_change\_download\_0.xls"}\NormalTok{, }
+                                     \AttributeTok{sheet =} \StringTok{"Country"}\NormalTok{)}
+\CommentTok{\# OR}
+\NormalTok{climate\_change\_country }\OtherTok{\textless{}{-}} \FunctionTok{read\_excel}\NormalTok{(}\StringTok{"data/climate\_change\_download\_0.xls"}\NormalTok{, }
+                                     \AttributeTok{sheet =} \DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Other arguments in \texttt{read\_excel} function such as \texttt{range} can be used to import a subset of the excel file. The argument \texttt{na} are used for missing values (NA). In our dataset \texttt{climate\_change} there are missing values represented by \texttt{..}. This can be replaced by \texttt{na}argument.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{climate\_change2 }\OtherTok{\textless{}{-}} \FunctionTok{read\_excel}\NormalTok{(}\StringTok{"data/climate\_change\_download\_0.xls"}\NormalTok{,}
+                             \AttributeTok{na =} \StringTok{".."}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Also, we can use \texttt{writexl} package to export (save) a dataset from R in excel format. The function \texttt{write\_xlsx} is usually used to save the data in excel format in desired directory.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(writexl)}
+\FunctionTok{write\_xlsx}\NormalTok{(climate\_change\_country, }\StringTok{"data/climatechange\_country.xlsx"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Alternatively, one can use \texttt{file.choose()} function within \texttt{read\_excel} function to \textbf{manually} import an excel file into \texttt{R}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{data }\OtherTok{\textless{}{-}} \FunctionTok{read\_excel}\NormalTok{(}\FunctionTok{file.choose}\NormalTok{())}
+\end{Highlighting}
+\end{Shaded}
+
+Also, using \texttt{read.table} function allows one to copy and paste an excel file in \texttt{R}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df }\OtherTok{\textless{}{-}} \FunctionTok{read.table}\NormalTok{(}\AttributeTok{file =} \StringTok{"clipboard"}\NormalTok{, }
+                      \AttributeTok{sep =} \StringTok{"}\SpecialCharTok{\textbackslash{}t}\StringTok{"}\NormalTok{, }\AttributeTok{header=}\ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{importing-data-into-r-from-local-directory-of-computer}{%
+\section{\texorpdfstring{Importing Data into \texttt{R} from Local Directory of Computer}{Importing Data into R from Local Directory of Computer}}\label{importing-data-into-r-from-local-directory-of-computer}}
+
+Importing data from local directory of computer can be done in couple of ways. For example, we can specify the path in which the data is stored. Alternatively, we can set the working directory first; then import the data by specifying the name of the data files.
+
+\hypertarget{importing-data-into-r-from-internet}{%
+\section{\texorpdfstring{Importing Data into \texttt{R} from Internet}{Importing Data into R from Internet}}\label{importing-data-into-r-from-internet}}
+
+\hypertarget{importing-data-into-r-from-wrds-database}{%
+\section{\texorpdfstring{Importing Data into \texttt{R} from \texttt{WRDS} Database}{Importing Data into R from WRDS Database}}\label{importing-data-into-r-from-wrds-database}}
+
+\hypertarget{some-other-sources}{%
+\section{Some Other Sources}\label{some-other-sources}}
+
+Very good website for the chapter - \url{https://rc2e.com/inputandoutput\#recipe-id245}
+
+\hypertarget{data-wrangling}{%
+\chapter{Data Wrangling}\label{data-wrangling}}
+
+Data wrangling is the process of cleaning data, so that data become ready for further manipulation such as visualization and modeling. Sometimes, data wrangling is also called \texttt{Data\ Munging}. More specifically, data wrangling involves transforming and mapping data from one from to another form - particularly from \emph{raw} form to \emph{tidy} form.
+
+There is an old saying that 90\% of data science involves data wrangling. In many cases, data wrangling is difficult as it involves dealing with missing entries, ambiguous values, and different types of mixed data. In data analytics ecosystem in \texttt{R}, data wrangling involves three jobs - importing data into \texttt{R}, cleaning (tidying) the data, and transforming the data. Please see Figure \ref{fig:datawrangling} to learn about the data wrangling process.
+
+\begin{figure}
+
+{\centering \includegraphics{images/data-science-wrangle} 
+
+}
+
+\caption{Data Wrangling in R}\label{fig:datawrangling}
+\end{figure}
+
+The first job - importing data into \texttt{R} - is discussed in chapter 03. In this chapter, cleaning (tidying) the data in \texttt{R} will be discussed. The last job will be discussed in next chapter - Exploratory Data Analysis (EDA).
+
+\hypertarget{tidy-data}{%
+\section{\texorpdfstring{\texttt{tidy} data}{tidy data}}\label{tidy-data}}
+
+Data wrangling or data munging results in \texttt{tidy} data - which is storing data that makes further manipulation on data such as transformation, visualization, and modeling easier. The following rules make a dataset \texttt{tidy} -
+
+\begin{itemize}
+\tightlist
+\item
+  Each variable must have its own column
+\item
+  Each observation must have its own row
+\item
+  Each value must have its own cell
+\end{itemize}
+
+\hypertarget{same-data-but-different-formats-presentations}{%
+\section{Same Data, but Different Formats (Presentations)}\label{same-data-but-different-formats-presentations}}
+
+\hypertarget{tidying-messy-data}{%
+\section{Tidying Messy Data}\label{tidying-messy-data}}
+
+According to Hadley Wickham, ``Tidy datasets are all alike, but every messy dataset is messy in its own way'' \citep{wickham_r_2017}. Messy data can be in many forms; for example - Wickham \citeyearpar{wickham_tidy_2014} mentions the five \emph{most common problems} with messy datasets. These problems include -
+
+\begin{itemize}
+\tightlist
+\item
+  Column headers are values, not variable names
+\item
+  Multiple variables are stored in one column
+\item
+  Variables are stored in both rows and columns
+\item
+  Multiple types of observational units are stored in the same table
+\item
+  A single observational unit is stored in multiple tables
+\end{itemize}
+
+\hypertarget{column-hearders-are-values-not-variable-names}{%
+\subsection{Column Hearders are Values, not Variable Names}\label{column-hearders-are-values-not-variable-names}}
+
+The following dataset (\texttt{total\_assets}) is an example of this case, in which the name of the variables (columns) are numbers. Though in some cases, this data format might be useful, in many cases usually it is not useful.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{total\_assets}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 5 x 7
+##   TICKER COMPANYNAME `2000` `2001` `2002` `2003` `2004`
+##   <chr>  <chr>        <dbl>  <dbl>  <dbl>  <dbl>  <dbl>
+## 1 AAPL   APPLE INC    6803   6021   6298   6815  8.05e3
+## 2 WMT    WALMART INC 70349  78130  83451  94685  1.05e5
+## 3 AABA   ALTABA INC   2270.  2379.  2790.  5932. 9.18e3
+## 4 AMZN   AMAZON.COM~  2135.  1638.  1990.  2162. 3.25e3
+## 5 GOOGL  ALPHABET I~    NA     NA    287.   871. 3.31e3
+\end{verbatim}
+
+\hypertarget{multiple-variables-are-stored-in-one-column}{%
+\subsection{Multiple Variables are Stored in One Column}\label{multiple-variables-are-stored-in-one-column}}
+
+The \texttt{netincome\_asset} dataset is a good example of this kind of dataset. For example, the variable \texttt{VALUES} includes \texttt{net\ income} and \texttt{total\ assets} separated by \texttt{/}. This variable is very hard to manipulate. For example, if we want to calculate \texttt{Return\ on\ Assets\ (ROA)}, which equals to net income divided by total assets, then it is not possible to use \texttt{VALUES} column to calculate \texttt{ROA}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{netincome\_asset}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 23 x 4
+##     year TICKER COMPANYNAME VALUES     
+##    <dbl> <chr>  <chr>       <chr>      
+##  1  2000 AAPL   APPLE INC   786/6803   
+##  2  2001 AAPL   APPLE INC   -25/6021   
+##  3  2002 AAPL   APPLE INC   65/6298    
+##  4  2003 AAPL   APPLE INC   69/6815    
+##  5  2004 AAPL   APPLE INC   276/8050   
+##  6  2000 WMT    WALMART INC 5377/70349 
+##  7  2001 WMT    WALMART INC 6295/78130 
+##  8  2002 WMT    WALMART INC 6671/83451 
+##  9  2003 WMT    WALMART INC 8039/94685 
+## 10  2004 WMT    WALMART INC 9054/104912
+## # ... with 13 more rows
+\end{verbatim}
+
+\hypertarget{variables-are-stored-in-both-rows-and-columns}{%
+\subsection{Variables are Stored in Both Rows and Columns}\label{variables-are-stored-in-both-rows-and-columns}}
+
+The \texttt{sales\_profit} dataset is an example of this type. Here in the \texttt{ITEM} column, actually variables are included (such as \texttt{SALES} and \texttt{NETINCOME}). Also, the columns such as \texttt{2000} through \texttt{2004} should be a variable (e.g., \texttt{year}).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{sales\_profit }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 10 x 8
+##    TICKER COMPANYNAME ITEM   `2000`  `2001`  `2002`
+##    <chr>  <chr>       <chr>   <dbl>   <dbl>   <dbl>
+##  1 AAPL   APPLE INC   SALES  7.98e3  5.36e3  5.74e3
+##  2 AAPL   APPLE INC   NETI~  7.86e2 -2.50e1  6.50e1
+##  3 WMT    WALMART INC SALES  1.66e5  1.92e5  2.19e5
+##  4 WMT    WALMART INC NETI~  5.38e3  6.30e3  6.67e3
+##  5 AABA   ALTABA INC  SALES  1.11e3  7.17e2  9.53e2
+##  6 AABA   ALTABA INC  NETI~  7.08e1 -9.28e1  4.28e1
+##  7 AMZN   AMAZON.COM~ SALES  2.76e3  3.12e3  3.93e3
+##  8 AMZN   AMAZON.COM~ NETI~ -1.41e3 -5.67e2 -1.49e2
+##  9 GOOGL  ALPHABET I~ SALES NA      NA       4.40e2
+## 10 GOOGL  ALPHABET I~ NETI~ NA      NA       9.97e1
+## # ... with 2 more variables: `2003` <dbl>,
+## #   `2004` <dbl>
+\end{verbatim}
+
+\hypertarget{multiple-types-of-observational-units-are-stored-in-the-same-table}{%
+\subsection{Multiple Types of Observational Units are Stored in the Same Table}\label{multiple-types-of-observational-units-are-stored-in-the-same-table}}
+
+\hypertarget{section}{%
+\subsection{}\label{section}}
+
+\hypertarget{tidyr-package-for-tidy-data}{%
+\section{\texorpdfstring{\texttt{tidyr} Package for \texttt{tidy} Data}{tidyr Package for tidy Data}}\label{tidyr-package-for-tidy-data}}
+
+The \texttt{tidyr} package is widley used to \texttt{tidy} data in \texttt{R}. Specifically, \texttt{pivot\_longer}, \texttt{pivot\_wider}, \texttt{separate}, and \texttt{extract} functions are widely used to make a messy data into \texttt{tidy}.
+
+\hypertarget{pivot_longer-function}{%
+\subsection{\texorpdfstring{\texttt{pivot\_longer\ ()} function}{pivot\_longer () function}}\label{pivot_longer-function}}
+
+If the \texttt{total\_assets} dataset above (Column headers are values, not variable names) is made \texttt{tidy} using \texttt{pivot\_longer} function, then it will be look like this (Assuming the name of the dataset is variable\_number) -
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# using pivot\_longer () function }
+\NormalTok{total\_assets }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{pivot\_longer}\NormalTok{(}\AttributeTok{cols =} \SpecialCharTok{{-}}\FunctionTok{c}\NormalTok{(}\StringTok{"TICKER"}\NormalTok{, }\StringTok{"COMPANYNAME"}\NormalTok{),}
+               \AttributeTok{names\_to =} \StringTok{"year"}\NormalTok{,}
+               \AttributeTok{values\_to =} \StringTok{"TOTALASSETS"}
+\NormalTok{               ) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{head}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 6 x 4
+##   TICKER COMPANYNAME year  TOTALASSETS
+##   <chr>  <chr>       <chr>       <dbl>
+## 1 AAPL   APPLE INC   2000         6803
+## 2 AAPL   APPLE INC   2001         6021
+## 3 AAPL   APPLE INC   2002         6298
+## 4 AAPL   APPLE INC   2003         6815
+## 5 AAPL   APPLE INC   2004         8050
+## 6 WMT    WALMART INC 2000        70349
+\end{verbatim}
+
+There are several arguments of \texttt{pivot\_longer} function. Here three arguments are used. The \texttt{cols} argument specifies which columns should (not) be used in \texttt{pivot\_longer} function. In this case, we select the variables that should not be used while using \texttt{pivot\_longer} function. The second argument \texttt{names\_to} specifies the name of the variable in which existing column values will be stored and finally \texttt{values\_to} specifies the name of the column in which the cell values will be stored. Now, the dataset is a \texttt{tidy} dataset.
+
+\hypertarget{pivot_wider-function}{%
+\subsection{\texorpdfstring{\texttt{pivot\_wider\ ()} function}{pivot\_wider () function}}\label{pivot_wider-function}}
+
+The \texttt{sales\_profit} dataset can be put into \texttt{tidy} format using both \texttt{pivot\_longer} and \texttt{pivot\_wider} function.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{sales\_profit }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{pivot\_longer}\NormalTok{(}
+    \AttributeTok{cols =} \SpecialCharTok{!}\FunctionTok{c}\NormalTok{ (}\StringTok{"TICKER"}\NormalTok{, }\StringTok{"COMPANYNAME"}\NormalTok{, }\StringTok{"ITEM"}\NormalTok{),}
+    \AttributeTok{names\_to =} \StringTok{"year"}\NormalTok{,}
+    \AttributeTok{values\_to =} \StringTok{"AMOUNT"}
+\NormalTok{  ) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{pivot\_wider}\NormalTok{(}
+    \AttributeTok{names\_from =}\NormalTok{ ITEM, }
+    \AttributeTok{values\_from =}\NormalTok{ AMOUNT}
+\NormalTok{  )}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 25 x 5
+##    TICKER COMPANYNAME year   SALES NETINCOME
+##    <chr>  <chr>       <chr>  <dbl>     <dbl>
+##  1 AAPL   APPLE INC   2000    7983       786
+##  2 AAPL   APPLE INC   2001    5363       -25
+##  3 AAPL   APPLE INC   2002    5742        65
+##  4 AAPL   APPLE INC   2003    6207        69
+##  5 AAPL   APPLE INC   2004    8279       276
+##  6 WMT    WALMART INC 2000  165639      5377
+##  7 WMT    WALMART INC 2001  192003      6295
+##  8 WMT    WALMART INC 2002  218529      6671
+##  9 WMT    WALMART INC 2003  245308      8039
+## 10 WMT    WALMART INC 2004  257157      9054
+## # ... with 15 more rows
+\end{verbatim}
+
+\hypertarget{separate-function}{%
+\subsection{\texorpdfstring{\texttt{separate\ ()} function}{separate () function}}\label{separate-function}}
+
+The \texttt{separate} function can be used when multiple variables are stored in one column. The function separates one column into multiple columns. For example, in \texttt{netincome\_asset} data, the column \texttt{VALUES} should be converted into two columns called \texttt{NETINCOME} and \texttt{TOTALASSETS}. In \texttt{separate} function, \texttt{col} argument is ued to select the column that needs to be broken; \texttt{into} argument is used to create new columns; and \texttt{sep} argument is ued to identify the character in which the column will be separated. In this case, it is \texttt{/}. Finally \texttt{remove} argument is used to decide whether the column (here \texttt{VALUES}) that is separated should be in new dataset.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{netincome\_asset }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{separate}\NormalTok{(}
+    \AttributeTok{col =}\NormalTok{ VALUES, }\AttributeTok{into =} \FunctionTok{c}\NormalTok{ (}\StringTok{"NETINCMOE"}\NormalTok{, }\StringTok{"TOTALASSETS"}\NormalTok{), }\AttributeTok{sep =}\StringTok{"/"}\NormalTok{,}
+    \AttributeTok{remove =}\ConstantTok{TRUE}
+\NormalTok{  )}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 23 x 5
+##     year TICKER COMPANYNAME NETINCMOE TOTALASSETS
+##    <dbl> <chr>  <chr>       <chr>     <chr>      
+##  1  2000 AAPL   APPLE INC   786       6803       
+##  2  2001 AAPL   APPLE INC   -25       6021       
+##  3  2002 AAPL   APPLE INC   65        6298       
+##  4  2003 AAPL   APPLE INC   69        6815       
+##  5  2004 AAPL   APPLE INC   276       8050       
+##  6  2000 WMT    WALMART INC 5377      70349      
+##  7  2001 WMT    WALMART INC 6295      78130      
+##  8  2002 WMT    WALMART INC 6671      83451      
+##  9  2003 WMT    WALMART INC 8039      94685      
+## 10  2004 WMT    WALMART INC 9054      104912     
+## # ... with 13 more rows
+\end{verbatim}
+
+It is clear from the above dataset that the type of columns \texttt{NETINCOME} and \texttt{TOTALASSETS} are \texttt{chr}, but they should be number (e.g., \texttt{dbl}). Actually, \texttt{separate} functions maintain the type of the columns that are separated. The type of \texttt{VALUES} column was \texttt{chr} and it is maintained in new dataset. In order to get the true type, we can use \texttt{convert} argument, which is done below.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{netincome\_asset  }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{separate}\NormalTok{(}
+    \AttributeTok{col =}\NormalTok{ VALUES, }\AttributeTok{into =} \FunctionTok{c}\NormalTok{ (}\StringTok{"NETINCMOE"}\NormalTok{, }\StringTok{"TOTALASSETS"}\NormalTok{), }\AttributeTok{sep =}\StringTok{"/"}\NormalTok{,}
+    \AttributeTok{remove =}\ConstantTok{TRUE}\NormalTok{,}\AttributeTok{convert =} \ConstantTok{TRUE}
+\NormalTok{  )}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 23 x 5
+##     year TICKER COMPANYNAME NETINCMOE TOTALASSETS
+##    <dbl> <chr>  <chr>           <dbl>       <dbl>
+##  1  2000 AAPL   APPLE INC         786        6803
+##  2  2001 AAPL   APPLE INC         -25        6021
+##  3  2002 AAPL   APPLE INC          65        6298
+##  4  2003 AAPL   APPLE INC          69        6815
+##  5  2004 AAPL   APPLE INC         276        8050
+##  6  2000 WMT    WALMART INC      5377       70349
+##  7  2001 WMT    WALMART INC      6295       78130
+##  8  2002 WMT    WALMART INC      6671       83451
+##  9  2003 WMT    WALMART INC      8039       94685
+## 10  2004 WMT    WALMART INC      9054      104912
+## # ... with 13 more rows
+\end{verbatim}
+
+\hypertarget{extract-function}{%
+\subsection{\texorpdfstring{\texttt{extract\ ()} function}{extract () function}}\label{extract-function}}
+
+This is a very good source to discuss about data wrangling - \url{https://dsapps-2020.github.io/Class_Slides/}
+
+This is the best data wrangling website -
+\url{https://dcl-wrangle.stanford.edu/}
+
+The above link is also best about why \texttt{EXCEL} is not be best for Accounting \& Audit Analytics.
+
+\hypertarget{exploratory-data-analysis-eda}{%
+\chapter{Exploratory Data Analysis (EDA)}\label{exploratory-data-analysis-eda}}
+
+\hypertarget{tidyverse-package-in-r}{%
+\section{\texorpdfstring{\texttt{tidyverse} package in R}{tidyverse package in R}}\label{tidyverse-package-in-r}}
+
+The \texttt{tidyverse} package in R is a very useful package for manipulating data. The \texttt{tidyverse} is a collection of a set of packages. Of these packages, we will particularly focus on two pacakages - \texttt{dplyr} and \texttt{ggplot2}. The \texttt{dplyr} is for \textbf{data manipulation} and the \texttt{ggplot2} is for \textbf{data visualization}. In R, to install a package, you need to write \texttt{install.packages\ ()} code and to load the package, you need to write \texttt{library\ ()} code. Therefore, to install the package, you should write \texttt{install.packages("tidyverse")} and to load the follwing code -
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(tidyverse)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{dplyr-package---data-manipulation-tool}{%
+\section{\texorpdfstring{\texttt{dplyr} Package - Data Manipulation Tool}{dplyr Package - Data Manipulation Tool}}\label{dplyr-package---data-manipulation-tool}}
+
+As stated above, the \texttt{dplyr} package is for \textbf{data manipulation}. There are many functions in \texttt{dplyr}; however, of these functions, six (06) functons are very much essential for data manipulation. In this project, we will learn those six necessary functions. These functions include - \texttt{select}, \texttt{filter}, \texttt{arrange}, \texttt{mutate}, \texttt{summarize} and , \texttt{group\_by}. In additon to these functions, we will also use some other functions such as \texttt{glimpse}, \texttt{count}, \texttt{dim}, \texttt{str} and so on.
+
+\hypertarget{data-set-for-classroom-practice}{%
+\section{Data Set for Classroom Practice}\label{data-set-for-classroom-practice}}
+
+There are many sources from which you can collect the data and manipulate in R. Some of the data sets are already included in some packages. In our class room, we will use a package called \texttt{nycflights13} and install it by writing the code \texttt{install.packages("nycflights13")}. In the package, there are several data set, but we will use the \texttt{flights} data set. In order to get the data set in R Environment, you need to first install the package and load the data set and the following codes should be executed -
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(nycflights13)}
+\NormalTok{flights }\OtherTok{\textless{}{-}}\NormalTok{ flights}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{assignment---pipe-operator}{%
+\section{\texorpdfstring{Assignment \texttt{\textless{}-} \& Pipe \texttt{\%\textgreater{}\%} operator}{Assignment \textless- \& Pipe \%\textgreater\% operator}}\label{assignment---pipe-operator}}
+
+Frequently, we will use the assignment \texttt{\textless{}-} and pipe \texttt{\%\textgreater{}\%} operator. The keyboard shortcurt for \texttt{\textless{}-} is \textbf{alt+-} and \texttt{\%\textgreater{}\%} is \textbf{ctrl+shift+M}
+
+\hypertarget{meta-data---data-about-data}{%
+\section{Meta Data - Data About Data}\label{meta-data---data-about-data}}
+
+Once you load a data set in R, your next job should be to learn about some characteristcs about the data. To do so, you first need to load the \texttt{tidyverse} package by running the code \texttt{library(tidyverse)}. Then you should write the following code. See the Table \ref{tab:tab1}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(tidyverse)}
+\FunctionTok{glimpse}\NormalTok{(flights)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Rows: 336,776
+## Columns: 19
+## $ year           <int> 2013, 2013, 2013, 2013, 201...
+## $ month          <int> 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+## $ day            <int> 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+## $ dep_time       <int> 517, 533, 542, 544, 554, 55...
+## $ sched_dep_time <int> 515, 529, 540, 545, 600, 55...
+## $ dep_delay      <dbl> 2, 4, 2, -1, -6, -4, -5, -3...
+## $ arr_time       <int> 830, 850, 923, 1004, 812, 7...
+## $ sched_arr_time <int> 819, 830, 850, 1022, 837, 7...
+## $ arr_delay      <dbl> 11, 20, 33, -18, -25, 12, 1...
+## $ carrier        <chr> "UA", "UA", "AA", "B6", "DL...
+## $ flight         <int> 1545, 1714, 1141, 725, 461,...
+## $ tailnum        <chr> "N14228", "N24211", "N619AA...
+## $ origin         <chr> "EWR", "LGA", "JFK", "JFK",...
+## $ dest           <chr> "IAH", "IAH", "MIA", "BQN",...
+## $ air_time       <dbl> 227, 227, 160, 183, 116, 15...
+## $ distance       <dbl> 1400, 1416, 1089, 1576, 762...
+## $ hour           <dbl> 5, 5, 5, 5, 6, 5, 6, 6, 6, ...
+## $ minute         <dbl> 15, 29, 40, 45, 0, 58, 0, 0...
+## $ time_hour      <dttm> 2013-01-01 05:00:00, 2013-...
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{knitr}\SpecialCharTok{::}\FunctionTok{kable}\NormalTok{(}\FunctionTok{head}\NormalTok{(flights[,}\DecValTok{1}\SpecialCharTok{:}\DecValTok{5}\NormalTok{]), }\AttributeTok{caption =} \StringTok{"A Table of First Five Variables."}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{table}
+
+\caption{\label{tab:tab1}A Table of First Five Variables.}
+\centering
+\begin{tabular}[t]{r|r|r|r|r}
+\hline
+year & month & day & dep\_time & sched\_dep\_time\\
+\hline
+2013 & 1 & 1 & 517 & 515\\
+\hline
+2013 & 1 & 1 & 533 & 529\\
+\hline
+2013 & 1 & 1 & 542 & 540\\
+\hline
+2013 & 1 & 1 & 544 & 545\\
+\hline
+2013 & 1 & 1 & 554 & 600\\
+\hline
+2013 & 1 & 1 & 554 & 558\\
+\hline
+\end{tabular}
+\end{table}
+
+It can be seen that there are 336,776 observations and 19 variables. Additionally, the label of the variables can be identified. For examplem, the variable ``year'' is \textbf{integer}, the variable ``carrier'' is \textbf{character} variable, and the variable ``time\_hour'' is \textbf{date} variable. This metadata is important for further manipulation of the data. You can also use \texttt{dim\ ()} to see the number of rows and columns. Furhter, \texttt{str()} can be used. The \texttt{names\ ()} function gives you the names of the variables of the data set.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{dim}\NormalTok{(flights)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 336776     19
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{str}\NormalTok{(flights)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## tibble [336,776 x 19] (S3: tbl_df/tbl/data.frame)
+##  $ year          : int [1:336776] 2013 2013 2013 2013 2013 2013 2013 2013 2013 2013 ...
+##  $ month         : int [1:336776] 1 1 1 1 1 1 1 1 1 1 ...
+##  $ day           : int [1:336776] 1 1 1 1 1 1 1 1 1 1 ...
+##  $ dep_time      : int [1:336776] 517 533 542 544 554 554 555 557 557 558 ...
+##  $ sched_dep_time: int [1:336776] 515 529 540 545 600 558 600 600 600 600 ...
+##  $ dep_delay     : num [1:336776] 2 4 2 -1 -6 -4 -5 -3 -3 -2 ...
+##  $ arr_time      : int [1:336776] 830 850 923 1004 812 740 913 709 838 753 ...
+##  $ sched_arr_time: int [1:336776] 819 830 850 1022 837 728 854 723 846 745 ...
+##  $ arr_delay     : num [1:336776] 11 20 33 -18 -25 12 19 -14 -8 8 ...
+##  $ carrier       : chr [1:336776] "UA" "UA" "AA" "B6" ...
+##  $ flight        : int [1:336776] 1545 1714 1141 725 461 1696 507 5708 79 301 ...
+##  $ tailnum       : chr [1:336776] "N14228" "N24211" "N619AA" "N804JB" ...
+##  $ origin        : chr [1:336776] "EWR" "LGA" "JFK" "JFK" ...
+##  $ dest          : chr [1:336776] "IAH" "IAH" "MIA" "BQN" ...
+##  $ air_time      : num [1:336776] 227 227 160 183 116 150 158 53 140 138 ...
+##  $ distance      : num [1:336776] 1400 1416 1089 1576 762 ...
+##  $ hour          : num [1:336776] 5 5 5 5 6 5 6 6 6 6 ...
+##  $ minute        : num [1:336776] 15 29 40 45 0 58 0 0 0 0 ...
+##  $ time_hour     : POSIXct[1:336776], format: "2013-01-01 05:00:00" ...
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{names}\NormalTok{(flights)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] "year"           "month"          "day"           
+##  [4] "dep_time"       "sched_dep_time" "dep_delay"     
+##  [7] "arr_time"       "sched_arr_time" "arr_delay"     
+## [10] "carrier"        "flight"         "tailnum"       
+## [13] "origin"         "dest"           "air_time"      
+## [16] "distance"       "hour"           "minute"        
+## [19] "time_hour"
+\end{verbatim}
+
+You can also know more about the flights data set (built-in data set in packages) by the following code - \texttt{help\ ("flights")} or \texttt{?flights}
+
+If you want to see the data set in excel-like spread sheet, you have to write \texttt{View\ (flights)}. This code will open the data in an excel-like spreadsheet. Note that the \textbf{V} in view is \textbf{capital} letter.
+
+\hypertarget{changing-the-type-of-the-variable}{%
+\section{Changing the type of the variable}\label{changing-the-type-of-the-variable}}
+
+Sometimes we might need to change the type of the variable; e.g., converting an integer variable to a character variable. In such case, we need to write code. If we want to convert ``flight'' variable from \textbf{int} type to \textbf{chr}, you need to write the following code -
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{flights}\SpecialCharTok{$}\NormalTok{flight }\OtherTok{\textless{}{-}} \FunctionTok{as.character}\NormalTok{(flights}\SpecialCharTok{$}\NormalTok{flight)}
+\end{Highlighting}
+\end{Shaded}
+
+Other codes for the conversion should be like this - \texttt{as.character()}, \texttt{as.factor()}
+
+Also by writing code, you can check the type of the variable. For example -
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{is.character}\NormalTok{(flights}\SpecialCharTok{$}\NormalTok{hour)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] FALSE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{is.numeric}\NormalTok{(flights}\SpecialCharTok{$}\NormalTok{hour)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] TRUE
+\end{verbatim}
+
+Alternatively, you can use \texttt{class()} function to know the type of the variable. For example -
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{class}\NormalTok{(flights}\SpecialCharTok{$}\NormalTok{year)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "integer"
+\end{verbatim}
+
+\hypertarget{count-function}{%
+\section{\texorpdfstring{\texttt{count()} function}{count() function}}\label{count-function}}
+
+To know the frequency of different variables (particularly categorical variables), we can use the \texttt{count()} function. For example - we want to know whether the dataset includes information about American Airlines (AA); we should write -
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{flights }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{count}\NormalTok{(carrier)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 16 x 2
+##    carrier     n
+##    <chr>   <int>
+##  1 9E      18460
+##  2 AA      32729
+##  3 AS        714
+##  4 B6      54635
+##  5 DL      48110
+##  6 EV      54173
+##  7 F9        685
+##  8 FL       3260
+##  9 HA        342
+## 10 MQ      26397
+## 11 OO         32
+## 12 UA      58665
+## 13 US      20536
+## 14 VX       5162
+## 15 WN      12275
+## 16 YV        601
+\end{verbatim}
+
+If we want to know the name and the numbers of airports the flights left, we need to use the ``origin'' variable -
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{flights }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{count}\NormalTok{(origin)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 3 x 2
+##   origin      n
+##   <chr>   <int>
+## 1 EWR    120835
+## 2 JFK    111279
+## 3 LGA    104662
+\end{verbatim}
+
+Simialrly, we can see where these flights go by the following code -
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{flights }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{count}\NormalTok{(dest)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 105 x 2
+##    dest      n
+##    <chr> <int>
+##  1 ABQ     254
+##  2 ACK     265
+##  3 ALB     439
+##  4 ANC       8
+##  5 ATL   17215
+##  6 AUS    2439
+##  7 AVL     275
+##  8 BDL     443
+##  9 BGR     375
+## 10 BHM     297
+## # ... with 95 more rows
+\end{verbatim}
+
+If we want to order the rows when we use \texttt{count()} function, then we have to use additional argument such as \texttt{sort\ =\ TRUE} in the function
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{flights }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{count}\NormalTok{(dest, }\AttributeTok{sort =} \ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 105 x 2
+##    dest      n
+##    <chr> <int>
+##  1 ORD   17283
+##  2 ATL   17215
+##  3 LAX   16174
+##  4 BOS   15508
+##  5 MCO   14082
+##  6 CLT   14064
+##  7 SFO   13331
+##  8 FLL   12055
+##  9 MIA   11728
+## 10 DCA    9705
+## # ... with 95 more rows
+\end{verbatim}
+
+We can see from the table that most of the flights' destination was Chicago Airport (ORD), followed by Atlanta Airport (ATL)
+
+\hypertarget{st-first-verb---select}{%
+\section{\texorpdfstring{1st (First) verb - \texttt{select\ ()}}{1st (First) verb - select ()}}\label{st-first-verb---select}}
+
+The \texttt{select\ ()} function is used to select some \textbf{columns} from your data set. For example, if you want to select the variables \textbf{year, month, day, dep\_time} from your data set. Then you should write the following code (We created a new data set called \textbf{flights2})
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{flights2 }\OtherTok{\textless{}{-}}\NormalTok{ flights }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{select}\NormalTok{(year, month, day, dep\_time)}
+\FunctionTok{glimpse}\NormalTok{(flights2)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Rows: 336,776
+## Columns: 4
+## $ year     <int> 2013, 2013, 2013, 2013, 2013, 201...
+## $ month    <int> 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+## $ day      <int> 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+## $ dep_time <int> 517, 533, 542, 544, 554, 554, 555...
+\end{verbatim}
+
+Alternatively, you can write the following code to get the same results -
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{flights2 }\OtherTok{\textless{}{-}}\NormalTok{ flights }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{select}\NormalTok{(year}\SpecialCharTok{:}\NormalTok{dep\_time)}
+\FunctionTok{glimpse}\NormalTok{(flights2)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Rows: 336,776
+## Columns: 4
+## $ year     <int> 2013, 2013, 2013, 2013, 2013, 201...
+## $ month    <int> 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+## $ day      <int> 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+## $ dep_time <int> 517, 533, 542, 544, 554, 554, 555...
+\end{verbatim}
+
+There is another function called \texttt{starts\_with()}, which we use to select those variables that start with some pre-selected phrases. For example - if we want to selet all variables that start with \textbf{arr}, then we should write the following code (the new data set is called - arr)
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{arr }\OtherTok{\textless{}{-}}\NormalTok{ flights }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{select}\NormalTok{(}\FunctionTok{starts\_with}\NormalTok{(}\StringTok{"arr"}\NormalTok{))}
+\FunctionTok{glimpse}\NormalTok{(arr)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Rows: 336,776
+## Columns: 2
+## $ arr_time  <int> 830, 850, 923, 1004, 812, 740, 9...
+## $ arr_delay <dbl> 11, 20, 33, -18, -25, 12, 19, -1...
+\end{verbatim}
+
+A similar function like \texttt{starts\_with()} is \texttt{ends\_with()}. \texttt{contains()} function can be used as well to select those variables that contain specific pharases/words. \texttt{matches()} function also serves the similar objective. Some of the applications of these arguments are given below -
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{flights }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{select}\NormalTok{(}\FunctionTok{starts\_with}\NormalTok{(}\StringTok{"dep"}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{glimpse}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Rows: 336,776
+## Columns: 2
+## $ dep_time  <int> 517, 533, 542, 544, 554, 554, 55...
+## $ dep_delay <dbl> 2, 4, 2, -1, -6, -4, -5, -3, -3,...
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{flights }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{select}\NormalTok{(}\FunctionTok{ends\_with}\NormalTok{(}\StringTok{"time"}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{glimpse}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Rows: 336,776
+## Columns: 5
+## $ dep_time       <int> 517, 533, 542, 544, 554, 55...
+## $ sched_dep_time <int> 515, 529, 540, 545, 600, 55...
+## $ arr_time       <int> 830, 850, 923, 1004, 812, 7...
+## $ sched_arr_time <int> 819, 830, 850, 1022, 837, 7...
+## $ air_time       <dbl> 227, 227, 160, 183, 116, 15...
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{flights }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{select}\NormalTok{(}\FunctionTok{contains}\NormalTok{(}\StringTok{"time"}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{glimpse}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Rows: 336,776
+## Columns: 6
+## $ dep_time       <int> 517, 533, 542, 544, 554, 55...
+## $ sched_dep_time <int> 515, 529, 540, 545, 600, 55...
+## $ arr_time       <int> 830, 850, 923, 1004, 812, 7...
+## $ sched_arr_time <int> 819, 830, 850, 1022, 837, 7...
+## $ air_time       <dbl> 227, 227, 160, 183, 116, 15...
+## $ time_hour      <dttm> 2013-01-01 05:00:00, 2013-...
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{flights }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{select}\NormalTok{(}\FunctionTok{matches}\NormalTok{(}\StringTok{"time"}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{glimpse}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Rows: 336,776
+## Columns: 6
+## $ dep_time       <int> 517, 533, 542, 544, 554, 55...
+## $ sched_dep_time <int> 515, 529, 540, 545, 600, 55...
+## $ arr_time       <int> 830, 850, 923, 1004, 812, 7...
+## $ sched_arr_time <int> 819, 830, 850, 1022, 837, 7...
+## $ air_time       <dbl> 227, 227, 160, 183, 116, 15...
+## $ time_hour      <dttm> 2013-01-01 05:00:00, 2013-...
+\end{verbatim}
+
+If you want to rearrange the column (Variables) of your data set, then you can use \texttt{everything()} function. For example - you want to first put the \textbf{carrier} and \textbf{flight} variable and all variables after these two variables. In such case, you have to write the following code -
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{flights }\OtherTok{\textless{}{-}}\NormalTok{ flights }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{select}\NormalTok{(carrier, flight, }\FunctionTok{everything}\NormalTok{())}
+\FunctionTok{glimpse}\NormalTok{(flights)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Rows: 336,776
+## Columns: 19
+## $ carrier        <chr> "UA", "UA", "AA", "B6", "DL...
+## $ flight         <chr> "1545", "1714", "1141", "72...
+## $ year           <int> 2013, 2013, 2013, 2013, 201...
+## $ month          <int> 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+## $ day            <int> 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+## $ dep_time       <int> 517, 533, 542, 544, 554, 55...
+## $ sched_dep_time <int> 515, 529, 540, 545, 600, 55...
+## $ dep_delay      <dbl> 2, 4, 2, -1, -6, -4, -5, -3...
+## $ arr_time       <int> 830, 850, 923, 1004, 812, 7...
+## $ sched_arr_time <int> 819, 830, 850, 1022, 837, 7...
+## $ arr_delay      <dbl> 11, 20, 33, -18, -25, 12, 1...
+## $ tailnum        <chr> "N14228", "N24211", "N619AA...
+## $ origin         <chr> "EWR", "LGA", "JFK", "JFK",...
+## $ dest           <chr> "IAH", "IAH", "MIA", "BQN",...
+## $ air_time       <dbl> 227, 227, 160, 183, 116, 15...
+## $ distance       <dbl> 1400, 1416, 1089, 1576, 762...
+## $ hour           <dbl> 5, 5, 5, 5, 6, 5, 6, 6, 6, ...
+## $ minute         <dbl> 15, 29, 40, 45, 0, 58, 0, 0...
+## $ time_hour      <dttm> 2013-01-01 05:00:00, 2013-...
+\end{verbatim}
+
+\hypertarget{nd-second-verb---filter}{%
+\section{\texorpdfstring{2nd (Second) verb - \texttt{filter\ ()}}{2nd (Second) verb - filter ()}}\label{nd-second-verb---filter}}
+
+If we want to subset our dataset by \textbf{rows}, then \texttt{filter\ ()} is used. For example - we want the flights whose destination was Chicgo Airport (ORD).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{chicago }\OtherTok{\textless{}{-}}\NormalTok{ flights }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{filter}\NormalTok{(dest }\SpecialCharTok{==} \StringTok{"ORD"}\NormalTok{)}
+\FunctionTok{glimpse}\NormalTok{(chicago)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Rows: 17,283
+## Columns: 19
+## $ carrier        <chr> "UA", "AA", "MQ", "AA", "AA...
+## $ flight         <chr> "1696", "301", "3768", "303...
+## $ year           <int> 2013, 2013, 2013, 2013, 201...
+## $ month          <int> 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+## $ day            <int> 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+## $ dep_time       <int> 554, 558, 608, 629, 656, 70...
+## $ sched_dep_time <int> 558, 600, 600, 630, 700, 70...
+## $ dep_delay      <dbl> -4, -2, 8, -1, -4, 9, 2, -6...
+## $ arr_time       <int> 740, 753, 807, 824, 854, 85...
+## $ sched_arr_time <int> 728, 745, 735, 810, 850, 83...
+## $ arr_delay      <dbl> 12, 8, 32, 14, 4, 20, 21, -...
+## $ tailnum        <chr> "N39463", "N3ALAA", "N9EAMQ...
+## $ origin         <chr> "EWR", "LGA", "EWR", "LGA",...
+## $ dest           <chr> "ORD", "ORD", "ORD", "ORD",...
+## $ air_time       <dbl> 150, 138, 139, 140, 143, 13...
+## $ distance       <dbl> 719, 733, 719, 733, 733, 73...
+## $ hour           <dbl> 5, 6, 6, 6, 7, 7, 7, 7, 7, ...
+## $ minute         <dbl> 58, 0, 0, 30, 0, 0, 13, 45,...
+## $ time_hour      <dttm> 2013-01-01 05:00:00, 2013-...
+\end{verbatim}
+
+Similarly, we want to subset the data for the month of January.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{january }\OtherTok{\textless{}{-}}\NormalTok{ flights }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{filter}\NormalTok{(month }\SpecialCharTok{==} \StringTok{"1"}\NormalTok{)}
+\FunctionTok{glimpse}\NormalTok{(january)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Rows: 27,004
+## Columns: 19
+## $ carrier        <chr> "UA", "UA", "AA", "B6", "DL...
+## $ flight         <chr> "1545", "1714", "1141", "72...
+## $ year           <int> 2013, 2013, 2013, 2013, 201...
+## $ month          <int> 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+## $ day            <int> 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+## $ dep_time       <int> 517, 533, 542, 544, 554, 55...
+## $ sched_dep_time <int> 515, 529, 540, 545, 600, 55...
+## $ dep_delay      <dbl> 2, 4, 2, -1, -6, -4, -5, -3...
+## $ arr_time       <int> 830, 850, 923, 1004, 812, 7...
+## $ sched_arr_time <int> 819, 830, 850, 1022, 837, 7...
+## $ arr_delay      <dbl> 11, 20, 33, -18, -25, 12, 1...
+## $ tailnum        <chr> "N14228", "N24211", "N619AA...
+## $ origin         <chr> "EWR", "LGA", "JFK", "JFK",...
+## $ dest           <chr> "IAH", "IAH", "MIA", "BQN",...
+## $ air_time       <dbl> 227, 227, 160, 183, 116, 15...
+## $ distance       <dbl> 1400, 1416, 1089, 1576, 762...
+## $ hour           <dbl> 5, 5, 5, 5, 6, 5, 6, 6, 6, ...
+## $ minute         <dbl> 15, 29, 40, 45, 0, 58, 0, 0...
+## $ time_hour      <dttm> 2013-01-01 05:00:00, 2013-...
+\end{verbatim}
+
+If we to subset the data for the month of January and February, the following code should be run
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{jan\_feb }\OtherTok{\textless{}{-}}\NormalTok{ flights }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{filter}\NormalTok{(month }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{))}
+\FunctionTok{glimpse}\NormalTok{(jan\_feb)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Rows: 51,955
+## Columns: 19
+## $ carrier        <chr> "UA", "UA", "AA", "B6", "DL...
+## $ flight         <chr> "1545", "1714", "1141", "72...
+## $ year           <int> 2013, 2013, 2013, 2013, 201...
+## $ month          <int> 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+## $ day            <int> 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+## $ dep_time       <int> 517, 533, 542, 544, 554, 55...
+## $ sched_dep_time <int> 515, 529, 540, 545, 600, 55...
+## $ dep_delay      <dbl> 2, 4, 2, -1, -6, -4, -5, -3...
+## $ arr_time       <int> 830, 850, 923, 1004, 812, 7...
+## $ sched_arr_time <int> 819, 830, 850, 1022, 837, 7...
+## $ arr_delay      <dbl> 11, 20, 33, -18, -25, 12, 1...
+## $ tailnum        <chr> "N14228", "N24211", "N619AA...
+## $ origin         <chr> "EWR", "LGA", "JFK", "JFK",...
+## $ dest           <chr> "IAH", "IAH", "MIA", "BQN",...
+## $ air_time       <dbl> 227, 227, 160, 183, 116, 15...
+## $ distance       <dbl> 1400, 1416, 1089, 1576, 762...
+## $ hour           <dbl> 5, 5, 5, 5, 6, 5, 6, 6, 6, ...
+## $ minute         <dbl> 15, 29, 40, 45, 0, 58, 0, 0...
+## $ time_hour      <dttm> 2013-01-01 05:00:00, 2013-...
+\end{verbatim}
+
+If we want to subset the data for all airlines other than American Airlines (AA), for the month of January and February and for the distance greater than 100, then the following code should be executed.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{naa }\OtherTok{\textless{}{-}}\NormalTok{ flights }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{filter}\NormalTok{(carrier }\SpecialCharTok{!=} \StringTok{"AA"}\NormalTok{, month }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{), distance }\SpecialCharTok{\textgreater{}} \DecValTok{1000}
+\NormalTok{  )}
+\FunctionTok{glimpse}\NormalTok{(naa)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Rows: 18,456
+## Columns: 19
+## $ carrier        <chr> "UA", "UA", "B6", "B6", "B6...
+## $ flight         <chr> "1545", "1714", "725", "507...
+## $ year           <int> 2013, 2013, 2013, 2013, 201...
+## $ month          <int> 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+## $ day            <int> 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+## $ dep_time       <int> 517, 533, 544, 555, 558, 55...
+## $ sched_dep_time <int> 515, 529, 545, 600, 600, 60...
+## $ dep_delay      <dbl> 2, 4, -1, -5, -2, -2, -2, -...
+## $ arr_time       <int> 830, 850, 1004, 913, 849, 8...
+## $ sched_arr_time <int> 819, 830, 1022, 854, 851, 8...
+## $ arr_delay      <dbl> 11, 20, -18, 19, -2, -3, 7,...
+## $ tailnum        <chr> "N14228", "N24211", "N804JB...
+## $ origin         <chr> "EWR", "LGA", "JFK", "EWR",...
+## $ dest           <chr> "IAH", "IAH", "BQN", "FLL",...
+## $ air_time       <dbl> 227, 227, 183, 158, 149, 15...
+## $ distance       <dbl> 1400, 1416, 1576, 1065, 102...
+## $ hour           <dbl> 5, 5, 5, 6, 6, 6, 6, 6, 6, ...
+## $ minute         <dbl> 15, 29, 45, 0, 0, 0, 0, 0, ...
+## $ time_hour      <dttm> 2013-01-01 05:00:00, 2013-...
+\end{verbatim}
+
+Like the \texttt{select\_*}, the verb \texttt{filter} has scoped versions such as \texttt{filter\_if}, \texttt{filter\_at}, and \texttt{filter\_all}. If we want to learn more about these functions, we can use help functions such as \texttt{?filter\_if} or \texttt{help(filter\_if)} to know more about these functions.
+
+\hypertarget{rd-third-verb---arrange}{%
+\section{\texorpdfstring{3rd (Third) verb - \texttt{arrange\ ()}}{3rd (Third) verb - arrange ()}}\label{rd-third-verb---arrange}}
+
+The \texttt{arrange\ ()}function allows you to reorder your data set by one or more variables.
+For example, if you want to reorder the \texttt{flights} dataset by distance, you need to execute the following code -
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{flights }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{arrange}\NormalTok{(distance)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 336,776 x 19
+##    carrier flight  year month   day dep_time
+##    <chr>   <chr>  <int> <int> <int>    <int>
+##  1 US      1632    2013     7    27       NA
+##  2 EV      3833    2013     1     3     2127
+##  3 EV      4193    2013     1     4     1240
+##  4 EV      4502    2013     1     4     1829
+##  5 EV      4645    2013     1     4     2128
+##  6 EV      4193    2013     1     5     1155
+##  7 EV      4619    2013     1     6     2125
+##  8 EV      4619    2013     1     7     2124
+##  9 EV      4619    2013     1     8     2127
+## 10 EV      4619    2013     1     9     2126
+## # ... with 336,766 more rows, and 13 more variables:
+## #   sched_dep_time <int>, dep_delay <dbl>,
+## #   arr_time <int>, sched_arr_time <int>,
+## #   arr_delay <dbl>, tailnum <chr>, origin <chr>,
+## #   dest <chr>, air_time <dbl>, distance <dbl>,
+## #   hour <dbl>, minute <dbl>, time_hour <dttm>
+\end{verbatim}
+
+From the results, we can see the lowest distance was 17-mile flight between EWR and LGA. The next lowest distance was 80-mile flight between EWR and PHL. However, if you want to see the longest distance, then you have to use \texttt{desc\ ()} function becasue \texttt{arrange\ ()} function reorders the rows in ascending order (from lowest to highest).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{flights }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{arrange}\NormalTok{(}\FunctionTok{desc}\NormalTok{(distance))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 336,776 x 19
+##    carrier flight  year month   day dep_time
+##    <chr>   <chr>  <int> <int> <int>    <int>
+##  1 HA      51      2013     1     1      857
+##  2 HA      51      2013     1     2      909
+##  3 HA      51      2013     1     3      914
+##  4 HA      51      2013     1     4      900
+##  5 HA      51      2013     1     5      858
+##  6 HA      51      2013     1     6     1019
+##  7 HA      51      2013     1     7     1042
+##  8 HA      51      2013     1     8      901
+##  9 HA      51      2013     1     9      641
+## 10 HA      51      2013     1    10      859
+## # ... with 336,766 more rows, and 13 more variables:
+## #   sched_dep_time <int>, dep_delay <dbl>,
+## #   arr_time <int>, sched_arr_time <int>,
+## #   arr_delay <dbl>, tailnum <chr>, origin <chr>,
+## #   dest <chr>, air_time <dbl>, distance <dbl>,
+## #   hour <dbl>, minute <dbl>, time_hour <dttm>
+\end{verbatim}
+
+It is evident that the highest distance was 4983 miles between JFK and HNL.
+
+\hypertarget{th-fourth-verb---mutate}{%
+\section{\texorpdfstring{4th (Fourth) verb - \texttt{mutate\ ()}}{4th (Fourth) verb - mutate ()}}\label{th-fourth-verb---mutate}}
+
+The function \texttt{mutate\ ()} is used to \textbf{create new variables (columns)}. For example, we want to know the \texttt{total\ delay}, which is the sum of the \texttt{dep\_delay} and \texttt{arr\_delay}; then, we should write the following code -
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{flights }\OtherTok{\textless{}{-}}\NormalTok{ flights }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{total\_delay =}\NormalTok{ dep\_delay }\SpecialCharTok{+}\NormalTok{ arr\_delay)}
+\FunctionTok{glimpse}\NormalTok{(flights)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Rows: 336,776
+## Columns: 20
+## $ carrier        <chr> "UA", "UA", "AA", "B6", "DL...
+## $ flight         <chr> "1545", "1714", "1141", "72...
+## $ year           <int> 2013, 2013, 2013, 2013, 201...
+## $ month          <int> 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+## $ day            <int> 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+## $ dep_time       <int> 517, 533, 542, 544, 554, 55...
+## $ sched_dep_time <int> 515, 529, 540, 545, 600, 55...
+## $ dep_delay      <dbl> 2, 4, 2, -1, -6, -4, -5, -3...
+## $ arr_time       <int> 830, 850, 923, 1004, 812, 7...
+## $ sched_arr_time <int> 819, 830, 850, 1022, 837, 7...
+## $ arr_delay      <dbl> 11, 20, 33, -18, -25, 12, 1...
+## $ tailnum        <chr> "N14228", "N24211", "N619AA...
+## $ origin         <chr> "EWR", "LGA", "JFK", "JFK",...
+## $ dest           <chr> "IAH", "IAH", "MIA", "BQN",...
+## $ air_time       <dbl> 227, 227, 160, 183, 116, 15...
+## $ distance       <dbl> 1400, 1416, 1089, 1576, 762...
+## $ hour           <dbl> 5, 5, 5, 5, 6, 5, 6, 6, 6, ...
+## $ minute         <dbl> 15, 29, 40, 45, 0, 58, 0, 0...
+## $ time_hour      <dttm> 2013-01-01 05:00:00, 2013-...
+## $ total_delay    <dbl> 13, 24, 35, -19, -31, 8, 14...
+\end{verbatim}
+
+We can use \texttt{mutate} function with other functions such as \texttt{ifelse} or \texttt{case\_when} to create new variables. Examples are given below -
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{flights }\OtherTok{\textless{}{-}}\NormalTok{ flights }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{total\_delay\_Dummy =} \FunctionTok{ifelse}\NormalTok{(total\_delay }\SpecialCharTok{\textgreater{}} \FunctionTok{mean}\NormalTok{(total\_delay, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{), }\StringTok{"Delayed"}\NormalTok{, }\StringTok{"Not Delayed"}\NormalTok{)) }
+\FunctionTok{glimpse}\NormalTok{(flights)  }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Rows: 336,776
+## Columns: 21
+## $ carrier           <chr> "UA", "UA", "AA", "B6", ...
+## $ flight            <chr> "1545", "1714", "1141", ...
+## $ year              <int> 2013, 2013, 2013, 2013, ...
+## $ month             <int> 1, 1, 1, 1, 1, 1, 1, 1, ...
+## $ day               <int> 1, 1, 1, 1, 1, 1, 1, 1, ...
+## $ dep_time          <int> 517, 533, 542, 544, 554,...
+## $ sched_dep_time    <int> 515, 529, 540, 545, 600,...
+## $ dep_delay         <dbl> 2, 4, 2, -1, -6, -4, -5,...
+## $ arr_time          <int> 830, 850, 923, 1004, 812...
+## $ sched_arr_time    <int> 819, 830, 850, 1022, 837...
+## $ arr_delay         <dbl> 11, 20, 33, -18, -25, 12...
+## $ tailnum           <chr> "N14228", "N24211", "N61...
+## $ origin            <chr> "EWR", "LGA", "JFK", "JF...
+## $ dest              <chr> "IAH", "IAH", "MIA", "BQ...
+## $ air_time          <dbl> 227, 227, 160, 183, 116,...
+## $ distance          <dbl> 1400, 1416, 1089, 1576, ...
+## $ hour              <dbl> 5, 5, 5, 5, 6, 5, 6, 6, ...
+## $ minute            <dbl> 15, 29, 40, 45, 0, 58, 0...
+## $ time_hour         <dttm> 2013-01-01 05:00:00, 20...
+## $ total_delay       <dbl> 13, 24, 35, -19, -31, 8,...
+## $ total_delay_Dummy <chr> "Not Delayed", "Delayed"...
+\end{verbatim}
+
+Note that we can now use the \texttt{count} function to know the number of flights delayed -
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{flights }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{count}\NormalTok{(total\_delay\_Dummy)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 3 x 2
+##   total_delay_Dummy      n
+##   <chr>              <int>
+## 1 Delayed            86255
+## 2 Not Delayed       241091
+## 3 <NA>                9430
+\end{verbatim}
+
+\hypertarget{th-fifth-verb---summarize}{%
+\section{\texorpdfstring{5th (Fifth) verb - \texttt{summarize\ ()}}{5th (Fifth) verb - summarize ()}}\label{th-fifth-verb---summarize}}
+
+The \texttt{summarize\ ()} function is used to calculate different statistics such as mean, median, standard deviation, maximum, and minimum value. For example, we want to calucate the average distance and average delay of all flights in the month of January -
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{flights }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{filter}\NormalTok{(month }\SpecialCharTok{==} \StringTok{"1"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{summarise}\NormalTok{(}\AttributeTok{avg\_distance =} \FunctionTok{mean}\NormalTok{ (distance),}
+            \AttributeTok{avg\_delay =} \FunctionTok{mean}\NormalTok{ (total\_delay, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{),}
+            \AttributeTok{max\_distance =} \FunctionTok{max}\NormalTok{ (distance),}
+            \AttributeTok{min\_distance =} \FunctionTok{min}\NormalTok{ (distance, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{),}
+            \AttributeTok{std\_distance =} \FunctionTok{sd}\NormalTok{ (distance),}
+            \AttributeTok{med\_distance =} \FunctionTok{median}\NormalTok{ (distance)}
+\NormalTok{            )}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 1 x 6
+##   avg_distance avg_delay max_distance min_distance
+##          <dbl>     <dbl>        <dbl>        <dbl>
+## 1        1007.      16.1         4983           80
+## # ... with 2 more variables: std_distance <dbl>,
+## #   med_distance <dbl>
+\end{verbatim}
+
+\hypertarget{th-sixth-verb---group_by}{%
+\section{\texorpdfstring{6th (Sixth) verb - \texttt{group\_by\ ()}}{6th (Sixth) verb - group\_by ()}}\label{th-sixth-verb---group_by}}
+
+The \texttt{group\_by\ ()} function is very useful when it is used with \texttt{summarize\ ()} function. For example, we want to know the average delay of each airport in New York in descending order; then, we should write the following code -
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{flights }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{group\_by}\NormalTok{(origin) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{summarize}\NormalTok{(}\AttributeTok{avg\_delay =} \FunctionTok{mean}\NormalTok{ (total\_delay, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{arrange}\NormalTok{(}\FunctionTok{desc}\NormalTok{(avg\_delay))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## `summarise()` ungrouping output (override with `.groups` argument)
+\end{verbatim}
+
+\begin{verbatim}
+## # A tibble: 3 x 2
+##   origin avg_delay
+##   <chr>      <dbl>
+## 1 EWR         24.1
+## 2 JFK         17.6
+## 3 LGA         16.1
+\end{verbatim}
+
+If you want to know the average delay of each carrier, then you need to write the following code -
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{flights }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{group\_by}\NormalTok{(carrier) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{summarize}\NormalTok{(}\AttributeTok{avg\_delay =} \FunctionTok{mean}\NormalTok{ (total\_delay, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{arrange}\NormalTok{(}\FunctionTok{desc}\NormalTok{(avg\_delay))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## `summarise()` ungrouping output (override with `.groups` argument)
+\end{verbatim}
+
+\begin{verbatim}
+## # A tibble: 16 x 2
+##    carrier avg_delay
+##    <chr>       <dbl>
+##  1 F9          42.1 
+##  2 FL          38.7 
+##  3 EV          35.6 
+##  4 YV          34.5 
+##  5 WN          27.3 
+##  6 OO          24.5 
+##  7 9E          23.8 
+##  8 B6          22.4 
+##  9 MQ          21.2 
+## 10 UA          15.6 
+## 11 VX          14.5 
+## 12 DL          10.9 
+## 13 AA           8.93
+## 14 US           5.87
+## 15 HA          -2.01
+## 16 AS          -4.10
+\end{verbatim}
+
+If you want to know the average delay of each month, then you need to write the following code -
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{flights }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{group\_by}\NormalTok{(month) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{summarize}\NormalTok{(}\AttributeTok{avg\_delay =} \FunctionTok{mean}\NormalTok{ (total\_delay, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{arrange}\NormalTok{(}\FunctionTok{desc}\NormalTok{(avg\_delay))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## `summarise()` ungrouping output (override with `.groups` argument)
+\end{verbatim}
+
+\begin{verbatim}
+## # A tibble: 12 x 2
+##    month avg_delay
+##    <int>     <dbl>
+##  1     7     38.2 
+##  2     6     37.2 
+##  3    12     31.4 
+##  4     4     25.0 
+##  5     3     19.0 
+##  6     8     18.6 
+##  7     5     16.4 
+##  8     2     16.4 
+##  9     1     16.1 
+## 10    10      6.07
+## 11    11      5.88
+## 12     9      2.61
+\end{verbatim}
+
+\hypertarget{data-visualization}{%
+\chapter{Data Visualization}\label{data-visualization}}
+
+\hypertarget{ggplot2-package---data-visualization-tool}{%
+\section{\texorpdfstring{\texttt{ggplot2\ ()} Package - Data Visualization Tool}{ggplot2 () Package - Data Visualization Tool}}\label{ggplot2-package---data-visualization-tool}}
+
+The package \texttt{ggplot2\ ()} is a very powerful tool for data visualization.
+
+Please use the following website to develop this chapter -
+\url{https://r-graphics.org/index.html}
+
+\hypertarget{scatter-plot}{%
+\section{Scatter Plot}\label{scatter-plot}}
+
+In scatter Plot, we use to continuous variables in x axis and y axis. The following code is run to create a scatter plot of two variables called \texttt{time\_hour} and \texttt{total\_delay}. See Figure \ref{fig:scatterplot1}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(nycflights13)}
+\FunctionTok{library}\NormalTok{(tidyverse)}
+\NormalTok{flights }\OtherTok{\textless{}{-}}\NormalTok{ flights }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{total\_delay =}\NormalTok{ dep\_delay }\SpecialCharTok{+}\NormalTok{ arr\_delay)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{flights }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\AttributeTok{mapping =} \FunctionTok{aes}\NormalTok{( }\AttributeTok{x =}\NormalTok{ time\_hour, }\AttributeTok{y =}\NormalTok{ total\_delay))}\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: Removed 9430 rows containing missing values
+## (geom_point).
+\end{verbatim}
+
+\begin{figure}
+
+{\centering \includegraphics{bookdown-demo_files/figure-latex/scatterplot1-1} 
+
+}
+
+\caption{A Scatterplot of Total Delay and Month}\label{fig:scatterplot1}
+\end{figure}
+
+However, we can also use a third variable in scatter plot. See Figure \ref{fig:scatterplot2}. Also see Figure \ref{fig:scatterplot3}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{flights }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\AttributeTok{mapping =} \FunctionTok{aes}\NormalTok{( }\AttributeTok{x =}\NormalTok{ time\_hour, }\AttributeTok{y =}\NormalTok{ total\_delay))}\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{()}\SpecialCharTok{+}
+  \FunctionTok{facet\_wrap}\NormalTok{(}\SpecialCharTok{\textasciitilde{}}\NormalTok{origin)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: Removed 9430 rows containing missing values
+## (geom_point).
+\end{verbatim}
+
+\begin{figure}
+
+{\centering \includegraphics{bookdown-demo_files/figure-latex/scatterplot2-1} 
+
+}
+
+\caption{A Scatterplot of Total Delay and Month in Departing Airports in New York}\label{fig:scatterplot2}
+\end{figure}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{flights }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\AttributeTok{mapping =} \FunctionTok{aes}\NormalTok{( time\_hour, total\_delay, }\AttributeTok{color =}\NormalTok{ origin))}\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: Removed 9430 rows containing missing values
+## (geom_point).
+\end{verbatim}
+
+\begin{figure}
+
+{\centering \includegraphics{bookdown-demo_files/figure-latex/scatterplot3-1} 
+
+}
+
+\caption{A Scatterplot of Total Delay and Month Using Origin as Third Variable}\label{fig:scatterplot3}
+\end{figure}
+
+\hypertarget{line-plot}{%
+\section{Line Plot}\label{line-plot}}
+
+In line plot, we draw line for the points of two continuous variables. See Figure \ref{fig:lineplot1}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{flights }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{group\_by}\NormalTok{(month) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{summarize}\NormalTok{(}\AttributeTok{avg\_delay =} \FunctionTok{mean}\NormalTok{ (total\_delay, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{ggplot}\NormalTok{(}\AttributeTok{mapping =} \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ month, }\AttributeTok{y =}\NormalTok{ avg\_delay)) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_smooth}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## `summarise()` ungrouping output (override with `.groups` argument)
+\end{verbatim}
+
+\begin{verbatim}
+## `geom_smooth()` using method = 'loess' and formula 'y ~ x'
+\end{verbatim}
+
+\begin{figure}
+
+{\centering \includegraphics{bookdown-demo_files/figure-latex/lineplot1-1} 
+
+}
+
+\caption{A lineplot of Average Delay and Month}\label{fig:lineplot1}
+\end{figure}
+
+Like scatter plot, a third variable can also be added to the line plot. See Figure \ref{fig:lineplot2}. Also see Figure \ref{fig:lineplot3}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{flights }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\AttributeTok{mapping =} \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ month, }\AttributeTok{y =}\NormalTok{ total\_delay, }\AttributeTok{color =}\NormalTok{ origin)) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_smooth}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## `geom_smooth()` using method = 'gam' and formula 'y ~ s(x, bs = "cs")'
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: Removed 9430 rows containing non-finite values
+## (stat_smooth).
+\end{verbatim}
+
+\begin{figure}
+
+{\centering \includegraphics{bookdown-demo_files/figure-latex/lineplot2-1} 
+
+}
+
+\caption{A lineplot of Average Delay and Month Using Origin as Third Variable}\label{fig:lineplot2}
+\end{figure}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{flights }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\AttributeTok{mapping =} \FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ day, }\AttributeTok{y =}\NormalTok{ total\_delay, }\AttributeTok{color =}\NormalTok{ origin)) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_smooth}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## `geom_smooth()` using method = 'gam' and formula 'y ~ s(x, bs = "cs")'
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: Removed 9430 rows containing non-finite values
+## (stat_smooth).
+\end{verbatim}
+
+\begin{figure}
+
+{\centering \includegraphics{bookdown-demo_files/figure-latex/lineplot3-1} 
+
+}
+
+\caption{A lineplot of Total Delay and Day of the Week Using Origin as Third Variable}\label{fig:lineplot3}
+\end{figure}
+
+\hypertarget{bar-plot}{%
+\section{Bar Plot}\label{bar-plot}}
+
+We can also create bar diagram. See Figure \ref{fig:barplot1}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(flights, }\FunctionTok{aes}\NormalTok{(origin))}\SpecialCharTok{+}
+  \FunctionTok{geom\_bar}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+
+{\centering \includegraphics{bookdown-demo_files/figure-latex/barplot1-1} 
+
+}
+
+\caption{A barplot of Number of Flights from Departing Airports in New York}\label{fig:barplot1}
+\end{figure}
+
+We can also include a second variable in bar diagram. Please see Figure \ref{fig:barplot2}. Also see Figure \ref{fig:barplot3}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(flights, }\FunctionTok{aes}\NormalTok{(origin))}\SpecialCharTok{+}
+  \FunctionTok{geom\_bar}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{fill =} \FunctionTok{as.character}\NormalTok{(month)))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+
+{\centering \includegraphics{bookdown-demo_files/figure-latex/barplot2-1} 
+
+}
+
+\caption{A barplot of Number of Flights from Departing Airports in New York in Different Months}\label{fig:barplot2}
+\end{figure}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(flights, }\FunctionTok{aes}\NormalTok{(origin))}\SpecialCharTok{+}
+  \FunctionTok{geom\_bar}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{fill =}\NormalTok{ carrier))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+
+{\centering \includegraphics{bookdown-demo_files/figure-latex/barplot3-1} 
+
+}
+
+\caption{A barplot of Number of Flights from Departing Airports in New York by Different Carriers}\label{fig:barplot3}
+\end{figure}
+
+From the graph, we can figure out which carriers use which airport most.
+
+\hypertarget{box-plot}{%
+\section{Box Plot}\label{box-plot}}
+
+We can also create boxplot using \texttt{ggplot2}. Please see Figure \ref{fig:boxplot1}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(flights, }\FunctionTok{aes}\NormalTok{ ( origin,distance))}\SpecialCharTok{+}
+  \FunctionTok{geom\_boxplot}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+
+{\centering \includegraphics{bookdown-demo_files/figure-latex/boxplot1-1} 
+
+}
+
+\caption{A boxplot of Distance from Departing Airports in New York}\label{fig:boxplot1}
+\end{figure}
+
+It is evident that long distance flights use JFK because it has the highest distance. A thrid variable also can be included in box plot. Please see Figure \ref{fig:boxplot2}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(flights, }\FunctionTok{aes}\NormalTok{ ( origin,distance))}\SpecialCharTok{+}
+  \FunctionTok{geom\_boxplot}\NormalTok{()}\SpecialCharTok{+}
+  \FunctionTok{facet\_wrap}\NormalTok{(}\SpecialCharTok{\textasciitilde{}}\NormalTok{ month)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+
+{\centering \includegraphics{bookdown-demo_files/figure-latex/boxplot2-1} 
+
+}
+
+\caption{A boxplot of Distance from Departing Airports in New York in Different Months}\label{fig:boxplot2}
+\end{figure}
+
+Here boxplot is created for the \texttt{distance} variables by \texttt{origin} and \texttt{month} variables
+
+\hypertarget{data-modeling}{%
+\chapter{Data Modeling}\label{data-modeling}}
+
+This is the \_\_\_ real chapter. The best link for modelling in R - \url{https://ademos.people.uic.edu/}
+
+\hypertarget{communication-of-analytics-an-rmarkdown-approach}{%
+\chapter{\texorpdfstring{Communication of Analytics: An \texttt{Rmarkdown} Approach}{Communication of Analytics: An Rmarkdown Approach}}\label{communication-of-analytics-an-rmarkdown-approach}}
+
+\hypertarget{learning-objectives}{%
+\section*{Learning Objectives}\label{learning-objectives}}
+
+
+By the end of this chapter, students should have learned the importance of communication in data science and particulary in auditing and accounting. The students should specifically learn the following:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  The importance of communication in data science.
+\item
+  The importance of communication in Auditing
+\item
+  What \texttt{Shiny} is
+\item
+  How \texttt{Shiny} could improve the communication of data/audit analytics.
+\end{enumerate}
+
+\hypertarget{what-is-rmarkdown}{%
+\section{What is Rmarkdown}\label{what-is-rmarkdown}}
+
+RMarkdown enables analysts to engage with code interactively, embrace literate programming, and rapidly produce a wide variety of high-quality data products such as documents, emails, dashboards, and websites. Emily Riederer\footnote{\url{https://rstudio.com/resources/rstudioconf-2020/rmarkdown-driven-development/}}, an analytics manager at Capital One, describes how reproducible programming using RMarkdown can help R users develop better software programming practices.
+
+Use the following website to develop this chapter -
+\url{https://m-clark.github.io/Introduction-to-Rmarkdown/}
+
+Another good Website -
+
+\url{https://rpubs.com/thealk/academic-writing}
+This one is one of the best - \url{https://rc2e.com/rmarkdown}
+
+For other forms of communication of analytics - \url{https://rmd4sci.njtierney.com/different-outputs-and-extensions.html}
+
+\hypertarget{communication-of-analytics-a-shiny-approach}{%
+\chapter{\texorpdfstring{Communication of Analytics: A \texttt{Shiny} Approach}{Communication of Analytics: A Shiny Approach}}\label{communication-of-analytics-a-shiny-approach}}
+
+\hypertarget{learning-objectives-1}{%
+\section*{Learning Objectives}\label{learning-objectives-1}}
+
+
+\hypertarget{introduction-to-r-shiny}{%
+\section{\texorpdfstring{Introduction to \texttt{R\ Shiny}}{Introduction to R Shiny}}\label{introduction-to-r-shiny}}
+
+This is the \_\_\_ real chapter. Good Website for \texttt{R\ Shiny} - \url{https://uvastatlab.github.io/phdplus/shinyr.html}.
+
+\hypertarget{conclusion}{%
+\chapter{Conclusion}\label{conclusion}}
+
+This is the \_\_\_ real chapter.
+
+\backmatter
+
+\appendix
+
+\hypertarget{appendix-appendix}{%
+\appendix \addcontentsline{toc}{chapter}{\appendixname}}
+
+
+\hypertarget{appendix-a}{%
+\chapter{Appendix A}\label{appendix-a}}
+
+\hypertarget{basic-data-structure-in-r}{%
+\section{\texorpdfstring{Basic Data Structure in \texttt{R}}{Basic Data Structure in R}}\label{basic-data-structure-in-r}}
+
+Though in the book, most of the time we talk about \texttt{data\ frames} (sometimes \texttt{tibble}), \texttt{vectors} are the buliding blocks of them. Traditional learners of \texttt{R} usually start learning it using \texttt{vectors}. However, for accountants (or would-be accountants) it is better to begin with \texttt{tibbles} and work down to the underlying concepts such as \texttt{vectors}.
+
+Basically there are two types of vectors in \texttt{R}; one is called \texttt{Atomic} vectors (also called \texttt{homogeneous\ vectors}) and the other is called \texttt{lists}. \texttt{Atomic} vectors contain similar types of elements, while \texttt{lists} vectors do not; \texttt{lists} can hold differnet types elements in a vector. There are six types of \texttt{Atomic} vectors - \texttt{logical}, \texttt{integer}, \texttt{double}, \texttt{character}, \texttt{complex}, and \texttt{raw}. The \texttt{integer}and \texttt{double} are together called \texttt{numeric}. Of these types, the first four are widely used and most relevant for accounting analytics.
+
+Each vector has 2 major characteristis - \texttt{type} and \texttt{length}. The function \texttt{typeof} can be used to know about the \texttt{types} of the vectors - namely \texttt{logical}, \texttt{integer}, \texttt{double}, \texttt{character}, \texttt{complex}, or \texttt{raw}. The \texttt{length} function is used to get or set the length of a vector. The function \texttt{nchar} can be used to get the length of a string. Some examples of vectors are given below -
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Character type }
+\NormalTok{a }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"1933"}\NormalTok{,}\StringTok{"1934"}\NormalTok{,}\StringTok{"2002"}\NormalTok{)}
+\FunctionTok{length}\NormalTok{(a)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 3
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{typeof}\NormalTok{(a)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "character"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{a}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "1933" "1934" "2002"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{b }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"The Securities Act"}\NormalTok{, }\StringTok{"The Securities Exchange Act"}\NormalTok{, }\StringTok{"Sarbanes{-}Oxley Act"}\NormalTok{)}
+\FunctionTok{length}\NormalTok{(b)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 3
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{typeof}\NormalTok{(b)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "character"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{nchar}\NormalTok{(b)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 18 27 18
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{b}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "The Securities Act"         
+## [2] "The Securities Exchange Act"
+## [3] "Sarbanes-Oxley Act"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Logical type }
+\NormalTok{c }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\ConstantTok{TRUE}\NormalTok{, }\ConstantTok{FALSE}\NormalTok{, }\ConstantTok{TRUE}\NormalTok{, }\ConstantTok{TRUE}\NormalTok{, }\ConstantTok{TRUE}\NormalTok{, }\ConstantTok{FALSE}\NormalTok{)}
+\FunctionTok{length}\NormalTok{(c)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 6
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{typeof}\NormalTok{(c)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "logical"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{c}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1]  TRUE FALSE  TRUE  TRUE  TRUE FALSE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Double type }
+\NormalTok{d }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{1933}\NormalTok{, }\DecValTok{1934}\NormalTok{, }\DecValTok{2002}\NormalTok{)}
+\FunctionTok{length}\NormalTok{(d)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 3
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{typeof}\NormalTok{(d)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "double"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{d}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1933 1934 2002
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Integer type }
+\NormalTok{e }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(1933L, 1934L, 2002L)}
+\FunctionTok{length}\NormalTok{(e)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 3
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{typeof}\NormalTok{(e)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "integer"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{e}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1933 1934 2002
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{f }\OtherTok{\textless{}{-}} \FunctionTok{list}\NormalTok{(a,b,c,d,e)}
+\FunctionTok{length}\NormalTok{(f)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 5
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{typeof}\NormalTok{(f)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "list"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{f}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [[1]]
+## [1] "1933" "1934" "2002"
+## 
+## [[2]]
+## [1] "The Securities Act"         
+## [2] "The Securities Exchange Act"
+## [3] "Sarbanes-Oxley Act"         
+## 
+## [[3]]
+## [1]  TRUE FALSE  TRUE  TRUE  TRUE FALSE
+## 
+## [[4]]
+## [1] 1933 1934 2002
+## 
+## [[5]]
+## [1] 1933 1934 2002
+\end{verbatim}
+
+Very good website - \url{https://rc2e.com/somebasics\#recipe-id017}
+
+\hypertarget{appendix-b}{%
+\chapter{Appendix B}\label{appendix-b}}
+
+\hypertarget{rproject}{%
+\section{\texorpdfstring{Starting a Project in \texttt{R}}{Starting a Project in R}}\label{rproject}}
+
+\hypertarget{text-mining-in-r}{%
+\section{\texorpdfstring{Text Mining in \texttt{R}}{Text Mining in R}}\label{text-mining-in-r}}
+
+This is the text mining in \texttt{R}.
+
+\hypertarget{social-media-analytics-in-r}{%
+\section{\texorpdfstring{Social Media Analytics in \texttt{R}}{Social Media Analytics in R}}\label{social-media-analytics-in-r}}
+
+This is the social media analytics in \texttt{R}.
+
+\hypertarget{web-scrapping-using-r}{%
+\section{\texorpdfstring{Web Scrapping Using \texttt{R}}{Web Scrapping Using R}}\label{web-scrapping-using-r}}
+
+This is web scrapping in \texttt{R}.
+
+\hypertarget{big-data-in-r-with-sparklyr}{%
+\section{\texorpdfstring{Big Data in \texttt{R} with \texttt{sparklyr}}{Big Data in R with sparklyr}}\label{big-data-in-r-with-sparklyr}}
+
+The best website to learn about how to use \texttt{R} with \texttt{sparklyr} for big data analytics is - \url{https://therinspark.com/}
+
+\backmatter
+
+  \bibliography{book2.bib,packages.bib}
+
+\end{document}

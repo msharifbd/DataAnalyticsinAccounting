@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>1.2 Data Analytics &amp; Accountancy | Data Analytics in Accounting An R Programming Approach</title>
+  <meta name="description" content="Everything you need (and nothing more) to start Data Analytics in Accounting." />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="1.2 Data Analytics &amp; Accountancy | Data Analytics in Accounting An R Programming Approach" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:image" content="images/cover.png" />
+  <meta property="og:description" content="Everything you need (and nothing more) to start Data Analytics in Accounting." />
+  <meta name="github-repo" content="https://github.com/msharifbd/DataAnalyticsinAccounting" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="1.2 Data Analytics &amp; Accountancy | Data Analytics in Accounting An R Programming Approach" />
+  
+  <meta name="twitter:description" content="Everything you need (and nothing more) to start Data Analytics in Accounting." />
+  <meta name="twitter:image" content="images/cover.png" />
+
+<meta name="author" content="Sharif Islam, DBA, CPA, CMA Assistant Professor School of Accountancy College of Business &amp; Analytics Southern Illinois University Carbondale" />
+
+
+<meta name="date" content="2021-01-31" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="data-analytics.html"/>
+<link rel="next" href="r-programming-a-great-tool-for-data-science.html"/>
+<script src="libs/header-attrs/header-attrs.js"></script>
+<script src="libs/jquery/jquery.min.js"></script>
+<link href="libs/gitbook/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Data Analytics in Accounting  \nAn R Programming Approach</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
+<ul>
+<li class="chapter" data-level="" data-path="how-to-read-this-book.html"><a href="how-to-read-this-book.html"><i class="fa fa-check"></i>How to Read this Book</a></li>
+<li class="chapter" data-level="" data-path="structure-of-the-book.html"><a href="structure-of-the-book.html"><i class="fa fa-check"></i>Structure of the Book</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="acknowledgements.html"><a href="acknowledgements.html"><i class="fa fa-check"></i>Acknowledgements</a></li>
+<li class="chapter" data-level="" data-path="about-the-author.html"><a href="about-the-author.html"><i class="fa fa-check"></i>About the Author</a></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="data-analytics.html"><a href="data-analytics.html"><i class="fa fa-check"></i><b>1.1</b> Data Analytics</a></li>
+<li class="chapter" data-level="1.2" data-path="data-analytics-accountancy.html"><a href="data-analytics-accountancy.html"><i class="fa fa-check"></i><b>1.2</b> Data Analytics &amp; Accountancy</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="data-analytics-accountancy.html"><a href="data-analytics-accountancy.html#data-analytics-in-financial-accounting"><i class="fa fa-check"></i><b>1.2.1</b> Data Analytics in Financial Accounting</a></li>
+<li class="chapter" data-level="1.2.2" data-path="data-analytics-accountancy.html"><a href="data-analytics-accountancy.html#data-analytics-in-management-accounting"><i class="fa fa-check"></i><b>1.2.2</b> Data Analytics in Management Accounting</a></li>
+<li class="chapter" data-level="1.2.3" data-path="data-analytics-accountancy.html"><a href="data-analytics-accountancy.html#data-analytics-in-auditing"><i class="fa fa-check"></i><b>1.2.3</b> Data Analytics in Auditing</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="r-programming-a-great-tool-for-data-science.html"><a href="r-programming-a-great-tool-for-data-science.html"><i class="fa fa-check"></i><b>2</b> <code>R</code> Programming - A Great Tool for Data Science</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="starting-with-r-program.html"><a href="starting-with-r-program.html"><i class="fa fa-check"></i><b>2.1</b> Starting with <code>R</code> Program</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="starting-with-r-program.html"><a href="starting-with-r-program.html#installing-r"><i class="fa fa-check"></i><b>2.1.1</b> Installing <code>R</code></a></li>
+<li class="chapter" data-level="2.1.2" data-path="starting-with-r-program.html"><a href="starting-with-r-program.html#installing-rstudio"><i class="fa fa-check"></i><b>2.1.2</b> Installing <code>RStudio</code></a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="data-analytics-ecosystem-in-r.html"><a href="data-analytics-ecosystem-in-r.html"><i class="fa fa-check"></i><b>2.2</b> Data Analytics Ecosystem in <code>R</code></a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="getting-data-into-r.html"><a href="getting-data-into-r.html"><i class="fa fa-check"></i><b>3</b> Getting Data into <code>R</code></a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="packages-that-could-be-used-to-import-data-into-r.html"><a href="packages-that-could-be-used-to-import-data-into-r.html"><i class="fa fa-check"></i><b>3.1</b> Packages That Could Be Used to Import Data into <code>R</code></a></li>
+<li class="chapter" data-level="3.2" data-path="importing-data-into-r-from-excel.html"><a href="importing-data-into-r-from-excel.html"><i class="fa fa-check"></i><b>3.2</b> Importing Data into <code>R</code> from Excel</a></li>
+<li class="chapter" data-level="3.3" data-path="importing-data-into-r-from-local-directory-of-computer.html"><a href="importing-data-into-r-from-local-directory-of-computer.html"><i class="fa fa-check"></i><b>3.3</b> Importing Data into <code>R</code> from Local Directory of Computer</a></li>
+<li class="chapter" data-level="3.4" data-path="importing-data-into-r-from-internet.html"><a href="importing-data-into-r-from-internet.html"><i class="fa fa-check"></i><b>3.4</b> Importing Data into <code>R</code> from Internet</a></li>
+<li class="chapter" data-level="3.5" data-path="importing-data-into-r-from-wrds-database.html"><a href="importing-data-into-r-from-wrds-database.html"><i class="fa fa-check"></i><b>3.5</b> Importing Data into <code>R</code> from <code>WRDS</code> Database</a></li>
+<li class="chapter" data-level="3.6" data-path="some-other-sources.html"><a href="some-other-sources.html"><i class="fa fa-check"></i><b>3.6</b> Some Other Sources</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="data-wrangling.html"><a href="data-wrangling.html"><i class="fa fa-check"></i><b>4</b> Data Wrangling</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="tidy-data.html"><a href="tidy-data.html"><i class="fa fa-check"></i><b>4.1</b> <code>tidy</code> data</a></li>
+<li class="chapter" data-level="4.2" data-path="same-data-but-different-formats-presentations.html"><a href="same-data-but-different-formats-presentations.html"><i class="fa fa-check"></i><b>4.2</b> Same Data, but Different Formats (Presentations)</a></li>
+<li class="chapter" data-level="4.3" data-path="tidying-messy-data.html"><a href="tidying-messy-data.html"><i class="fa fa-check"></i><b>4.3</b> Tidying Messy Data</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="tidying-messy-data.html"><a href="tidying-messy-data.html#column-hearders-are-values-not-variable-names"><i class="fa fa-check"></i><b>4.3.1</b> Column Hearders are Values, not Variable Names</a></li>
+<li class="chapter" data-level="4.3.2" data-path="tidying-messy-data.html"><a href="tidying-messy-data.html#multiple-variables-are-stored-in-one-column"><i class="fa fa-check"></i><b>4.3.2</b> Multiple Variables are Stored in One Column</a></li>
+<li class="chapter" data-level="4.3.3" data-path="tidying-messy-data.html"><a href="tidying-messy-data.html#variables-are-stored-in-both-rows-and-columns"><i class="fa fa-check"></i><b>4.3.3</b> Variables are Stored in Both Rows and Columns</a></li>
+<li class="chapter" data-level="4.3.4" data-path="tidying-messy-data.html"><a href="tidying-messy-data.html#multiple-types-of-observational-units-are-stored-in-the-same-table"><i class="fa fa-check"></i><b>4.3.4</b> Multiple Types of Observational Units are Stored in the Same Table</a></li>
+<li class="chapter" data-level="4.3.5" data-path="tidying-messy-data.html"><a href="tidying-messy-data.html#section"><i class="fa fa-check"></i><b>4.3.5</b> </a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="tidyr-package-for-tidy-data.html"><a href="tidyr-package-for-tidy-data.html"><i class="fa fa-check"></i><b>4.4</b> <code>tidyr</code> Package for <code>tidy</code> Data</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="tidyr-package-for-tidy-data.html"><a href="tidyr-package-for-tidy-data.html#pivot_longer-function"><i class="fa fa-check"></i><b>4.4.1</b> <code>pivot_longer ()</code> function</a></li>
+<li class="chapter" data-level="4.4.2" data-path="tidyr-package-for-tidy-data.html"><a href="tidyr-package-for-tidy-data.html#pivot_wider-function"><i class="fa fa-check"></i><b>4.4.2</b> <code>pivot_wider ()</code> function</a></li>
+<li class="chapter" data-level="4.4.3" data-path="tidyr-package-for-tidy-data.html"><a href="tidyr-package-for-tidy-data.html#separate-function"><i class="fa fa-check"></i><b>4.4.3</b> <code>separate ()</code> function</a></li>
+<li class="chapter" data-level="4.4.4" data-path="tidyr-package-for-tidy-data.html"><a href="tidyr-package-for-tidy-data.html#extract-function"><i class="fa fa-check"></i><b>4.4.4</b> <code>extract ()</code> function</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="exploratory-data-analysis-eda.html"><a href="exploratory-data-analysis-eda.html"><i class="fa fa-check"></i><b>5</b> Exploratory Data Analysis (EDA)</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="tidyverse-package-in-r.html"><a href="tidyverse-package-in-r.html"><i class="fa fa-check"></i><b>5.1</b> <code>tidyverse</code> package in R</a></li>
+<li class="chapter" data-level="5.2" data-path="dplyr-package-data-manipulation-tool.html"><a href="dplyr-package-data-manipulation-tool.html"><i class="fa fa-check"></i><b>5.2</b> <code>dplyr</code> Package - Data Manipulation Tool</a></li>
+<li class="chapter" data-level="5.3" data-path="data-set-for-classroom-practice.html"><a href="data-set-for-classroom-practice.html"><i class="fa fa-check"></i><b>5.3</b> Data Set for Classroom Practice</a></li>
+<li class="chapter" data-level="5.4" data-path="assignment-pipe-operator.html"><a href="assignment-pipe-operator.html"><i class="fa fa-check"></i><b>5.4</b> Assignment <code>&lt;-</code> &amp; Pipe <code>%&gt;%</code> operator</a></li>
+<li class="chapter" data-level="5.5" data-path="meta-data-data-about-data.html"><a href="meta-data-data-about-data.html"><i class="fa fa-check"></i><b>5.5</b> Meta Data - Data About Data</a></li>
+<li class="chapter" data-level="5.6" data-path="changing-the-type-of-the-variable.html"><a href="changing-the-type-of-the-variable.html"><i class="fa fa-check"></i><b>5.6</b> Changing the type of the variable</a></li>
+<li class="chapter" data-level="5.7" data-path="count-function.html"><a href="count-function.html"><i class="fa fa-check"></i><b>5.7</b> <code>count()</code> function</a></li>
+<li class="chapter" data-level="5.8" data-path="st-first-verb-select.html"><a href="st-first-verb-select.html"><i class="fa fa-check"></i><b>5.8</b> 1st (First) verb - <code>select ()</code></a></li>
+<li class="chapter" data-level="5.9" data-path="nd-second-verb-filter.html"><a href="nd-second-verb-filter.html"><i class="fa fa-check"></i><b>5.9</b> 2nd (Second) verb - <code>filter ()</code></a></li>
+<li class="chapter" data-level="5.10" data-path="rd-third-verb-arrange.html"><a href="rd-third-verb-arrange.html"><i class="fa fa-check"></i><b>5.10</b> 3rd (Third) verb - <code>arrange ()</code></a></li>
+<li class="chapter" data-level="5.11" data-path="th-fourth-verb-mutate.html"><a href="th-fourth-verb-mutate.html"><i class="fa fa-check"></i><b>5.11</b> 4th (Fourth) verb - <code>mutate ()</code></a></li>
+<li class="chapter" data-level="5.12" data-path="th-fifth-verb-summarize.html"><a href="th-fifth-verb-summarize.html"><i class="fa fa-check"></i><b>5.12</b> 5th (Fifth) verb - <code>summarize ()</code></a></li>
+<li class="chapter" data-level="5.13" data-path="th-sixth-verb-group-by.html"><a href="th-sixth-verb-group-by.html"><i class="fa fa-check"></i><b>5.13</b> 6th (Sixth) verb - <code>group_by ()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="data-visualization.html"><a href="data-visualization.html"><i class="fa fa-check"></i><b>6</b> Data Visualization</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="ggplot2-package-data-visualization-tool.html"><a href="ggplot2-package-data-visualization-tool.html"><i class="fa fa-check"></i><b>6.1</b> <code>ggplot2 ()</code> Package - Data Visualization Tool</a></li>
+<li class="chapter" data-level="6.2" data-path="scatter-plot.html"><a href="scatter-plot.html"><i class="fa fa-check"></i><b>6.2</b> Scatter Plot</a></li>
+<li class="chapter" data-level="6.3" data-path="line-plot.html"><a href="line-plot.html"><i class="fa fa-check"></i><b>6.3</b> Line Plot</a></li>
+<li class="chapter" data-level="6.4" data-path="bar-plot.html"><a href="bar-plot.html"><i class="fa fa-check"></i><b>6.4</b> Bar Plot</a></li>
+<li class="chapter" data-level="6.5" data-path="box-plot.html"><a href="box-plot.html"><i class="fa fa-check"></i><b>6.5</b> Box Plot</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="data-modeling.html"><a href="data-modeling.html"><i class="fa fa-check"></i><b>7</b> Data Modeling</a></li>
+<li class="chapter" data-level="8" data-path="communication-of-analytics-an-rmarkdown-approach.html"><a href="communication-of-analytics-an-rmarkdown-approach.html"><i class="fa fa-check"></i><b>8</b> Communication of Analytics: An <code>Rmarkdown</code> Approach</a>
+<ul>
+<li class="chapter" data-level="" data-path="learning-objectives.html"><a href="learning-objectives.html"><i class="fa fa-check"></i>Learning Objectives</a></li>
+<li class="chapter" data-level="8.1" data-path="what-is-rmarkdown.html"><a href="what-is-rmarkdown.html"><i class="fa fa-check"></i><b>8.1</b> What is Rmarkdown</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="communication-of-analytics-a-shiny-approach.html"><a href="communication-of-analytics-a-shiny-approach.html"><i class="fa fa-check"></i><b>9</b> Communication of Analytics: A <code>Shiny</code> Approach</a>
+<ul>
+<li class="chapter" data-level="" data-path="learning-objectives-1.html"><a href="learning-objectives-1.html"><i class="fa fa-check"></i>Learning Objectives</a></li>
+<li class="chapter" data-level="9.1" data-path="introduction-to-r-shiny.html"><a href="introduction-to-r-shiny.html"><i class="fa fa-check"></i><b>9.1</b> Introduction to <code>R Shiny</code></a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>10</b> Conclusion</a></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="appendix-a.html"><a href="appendix-a.html"><i class="fa fa-check"></i><b>A</b> Appendix A</a>
+<ul>
+<li class="chapter" data-level="A.1" data-path="basic-data-structure-in-r.html"><a href="basic-data-structure-in-r.html"><i class="fa fa-check"></i><b>A.1</b> Basic Data Structure in <code>R</code></a></li>
+<li class="chapter" data-level="A.2" data-path="text-mining-in-r.html"><a href="text-mining-in-r.html"><i class="fa fa-check"></i><b>A.2</b> Text Mining in <code>R</code></a></li>
+<li class="chapter" data-level="A.3" data-path="social-media-analytics-in-r.html"><a href="social-media-analytics-in-r.html"><i class="fa fa-check"></i><b>A.3</b> Social Media Analytics in <code>R</code></a></li>
+<li class="chapter" data-level="A.4" data-path="web-scrapping-using-r.html"><a href="web-scrapping-using-r.html"><i class="fa fa-check"></i><b>A.4</b> Web Scrapping Using <code>R</code></a></li>
+<li class="chapter" data-level="A.5" data-path="big-data-in-r-with-sparklyr.html"><a href="big-data-in-r-with-sparklyr.html"><i class="fa fa-check"></i><b>A.5</b> Big Data in <code>R</code> with <code>sparklyr</code></a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Data Analytics in Accounting<br />
+An R Programming Approach</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="data-analytics-accountancy" class="section level2" number="1.2">
+<h2><span class="header-section-number">1.2</span> Data Analytics &amp; Accountancy</h2>
+<p>Data analytics is important for accounting profession because data gathering and analytics technologies have the potential to fundamentally change accounting and auditing task processes <span class="citation">(<a href="references.html#ref-schneider_infer_2015" role="doc-biblioref">Schneider et al. 2015</a>)</span>. Scholars note that the emergence of data analytics will significantly change the infer/predict/assure (e.g., insight/foresight/oversight) tasks performed by accountants and auditors. Big data and analytics have increasingly important implications for accounting and will provide the means to improve managerial accounting, financial accounting, and financial reporting practices <span class="citation">(<a href="references.html#ref-warren_jr_how_2015" role="doc-biblioref">Warren Jr, Moffitt, and Byrnes 2015</a>)</span>. It is further suggested that big data offers an unprecedented potential for diverse, voluminous datasets and sophisticated analyses. Research indicates that big data has great potential to produce better forecast estimates, going concern calculations, fraud, and other variables that are of concern to both internal and external auditors <span class="citation">(<a href="references.html#ref-alles_drivers_2015" role="doc-biblioref">Alles 2015</a>)</span>. Moreover, auditors might reduce audit costs and enhance profitability and effectiveness by means of big data or data analytics. Sixty-six percent of internal audit departments currently utilize some form of data analytics as part of the audit process <span class="citation">(<a href="references.html#ref-protiviti_embracing_2017" role="doc-biblioref">Protiviti 2017</a>)</span>.</p>
+<div id="data-analytics-in-financial-accounting" class="section level3" number="1.2.1">
+<h3><span class="header-section-number">1.2.1</span> Data Analytics in Financial Accounting</h3>
+<p>Warren et al.<span class="citation">(<a href="references.html#ref-warren_jr_how_2015" role="doc-biblioref">2015</a>)</span> note that “in financial accounting, big data will improve the quality and relevance of accounting information, thereby enhancing transparency and stakeholder decision-making. In reporting, big data can assist with the creation and refinement of accounting standards, helping to ensure that the accounting profession will continue to provide useful information as the dynamic, real-time, global economy evolves.” In particular, they suggest that big data could significantly impact the future of financial accounting and Generally Accepted Accounting Principles (GAAP). Big data can also help to supplement financial statement disclosures by accumulating, processing, and analyzing information about a given intangible of interest. Furthermore, big data or data analytics can help in narrowing the differences between accounting standards such US GAAP and International Financial Reporting Standards (IFRS) and facilitate different measurement processes such as Fair Value Accounting (FVA) by analyzing different kinds of unstructured data <span class="citation">(<a href="references.html#ref-warren_jr_how_2015" role="doc-biblioref">Warren Jr, Moffitt, and Byrnes 2015</a>)</span>.</p>
+<p>Crawley and Wahlen <span class="citation">(<a href="references.html#ref-crawley_analytics_2014" role="doc-biblioref">2014</a>)</span> noted that data analytics allows researchers to explore a large amount of qualitative information disclosed by organizations, and examines the consequences of such disclosures. Moreover, data analytics now provides the opportunity to judge the informational content of qualitative financial information. For example, Davis, Piger, and Sedor <span class="citation">(<a href="references.html#ref-davis_beyond_2012" role="doc-biblioref">2012</a>)</span> found that the extent of optimism expressed in firms’ earnings announcements is positively associated with Return on Assets (ROA) and stock reactions. By the same token, Li <span class="citation">(<a href="references.html#ref-li_information_2010" role="doc-biblioref">2010</a>)</span> suggested that the tone of forward-looking statements is positively associated with future earnings performance. In addition, Feldman, Govindaraj, Livnat, and Segal <span class="citation">(<a href="references.html#ref-feldman_managements_2010" role="doc-biblioref">2010</a>)</span> found that changes in disclosure tone is indicative of future changes in earnings. Interestingly, research shows that even information on social media such as Twitter can predict stock market responses <span class="citation">(<a href="references.html#ref-bollen_twitter_2011" role="doc-biblioref">Bollen, Mao, and Zeng 2011</a>)</span>.</p>
+<p>Data analytics helps to relate textual data to earnings quality. For example, firms having more complicated and less transparent financial statement disclosures are more likely to have poor quality earnings, less persistent positive earnings and more persistent negative earnings <span class="citation">(<a href="references.html#ref-li_annual_2008" role="doc-biblioref">Li 2008</a>)</span> . Li, Lundholm, and Minnis <span class="citation">(<a href="references.html#ref-li_measure_2013" role="doc-biblioref">2013</a>)</span> confirmed that firms discussing their competition frequently have ROAs that mean returns more severely than the firms discussing the competition infrequently.</p>
+<p>With the help of textual data analytics, researchers recently documented the role that qualitative disclosures have in forming the information environment of organizations; such information environments include factors such as the number of analyst following a firm, characteristics of its investors, its trading activities, and the litigation it is involved with. Less readable 10-Ks are associated with greater number of analysts following the firm and a greater amount of effort needed to generate report about it <span class="citation">(<a href="references.html#ref-lehavy_effect_2011" role="doc-biblioref">Lehavy, Li, and Merkley 2011</a>)</span>. They also find that less readable 10-Ks are associated with greater dispersion, lower accuracy, and greater uncertainty in analyst’s earnings forecasts about a given firm.</p>
+</div>
+<div id="data-analytics-in-management-accounting" class="section level3" number="1.2.2">
+<h3><span class="header-section-number">1.2.2</span> Data Analytics in Management Accounting</h3>
+<p>Warren et al. (2015, 397) noted that “in managerial accounting, big data will contribute to the development and evolution of effective management control systems and budgeting processes.” In particular, they elaborate on how big data or data analytics can play a role in management control systems by discovering behaviors that have correlation with specific goal outcomes. Essentially, big data analytics can locate new kinds of behaviors that might impact goal outcomes by simplifying the identification of important motivational measurement tools linked to organizational goals. Moreover, by analyzing non-structured data, big data analytics can help discern employee morale, productivity, and customer satisfaction. Data analytics can also be used to improve “beyond budgeting practices” since traditional budgeting sometimes creates barriers to creativity and flexibility (Warren, Moffitt, and Byrnes 2015).</p>
+<p>Richins, Stapleton, Stratopoulos, and Wong (2017) suggest that big data analytics could improve customer service quality. They suggest that most of the time organizations use structured data that are in their records to evaluate customer service quality; however, this approach does not take into account the customer perspective. Big data analytics allow organizations to evaluate this customer perspective by using unstructured data from social media or e-commerce sites, thus permitting organizations to have a holistic view of customer service quality.</p>
+<p>Managers recognize that financial measures, alone, are insufficient to forecast future financial success or to use for performance management. Big data analytics provides opportunities to incorporate non-financial measures by incorporating unstructured data (Richins et al. 2017). Using big data analytics (particularly the analysis of unstructured data) accountants can identify the causes of underlying problems, understand ramifications, and develop plans to mitigate adverse impacts (Richins et al. 2017). Data analytics can also provide accountants with additional tools to monitor operations and product quality, discover opportunities to reduce costs, and contribute to decision-making (Dai and Vasarhelyi 2016).</p>
+</div>
+<div id="data-analytics-in-auditing" class="section level3" number="1.2.3">
+<h3><span class="header-section-number">1.2.3</span> Data Analytics in Auditing</h3>
+<p>Data analytics has the potential to improve the effectiveness of auditing by providing new forms of audit evidence. Data analytics can be used in both auditing planning and in audit procedures, helping auditors to identify and assess risk by analyzing large volumes of data. Even organizations that have very immature capabilities indicate that a strong level of value is derived from including analytics in the audit process (Protiviti 2017).</p>
+<p>Big data is being seen by practitioners as an essential part of assurance services (Alles and Gray 2016), but its application in auditing is not as straightforward as it is in marketing and medical research. Appelbaum (2016) and Cao et al. (2015) identified several areas that are likely to benefit from the use of big data analytics. Some of the areas are:</p>
+<ol style="list-style-type: lower-alpha">
+<li>At the engagement phase – supplementing auditors’ industry and client knowledge</li>
+<li>At the planning phase – supplementing auditors’ risk assessment process</li>
+<li>At the substantive test phase – verifying the management assertions</li>
+<li>At the review phase – advanced data analytical tools as analytical procedures</li>
+<li>At the continuous auditing phase – enhancing knowledge about the clients</li>
+</ol>
+<p>Yoon, Hoogduin, and Zhang (2015) suggest that big data create great opportunities through providing audit evidence. They focused on the “sufficiency” and “appropriate” criteria and noted that though there are some issues about the propriety of big data due to different kinds of “noise,” big data can be used as complementary audit evidence. Additionally, they discussed how big data can be integrated with traditional audit evidence in order to add value in the process. Big data or data analytics can also help auditors to test the existence of assertions (e.g. fixed assets) using non-conventional data such as video recording (Warren, Moffitt, and Byrnes 2015). In the world of big data, potential types and sources of audit evidence have changed (Appelbaum 2016). For this reason, Krahel and Titera (2015) suggest that big data might change the focus of auditors, shifting emphasis from management to the verification of data.</p>
+<p>Data quality and reliability or verifiability have become important issues in auditors’ evaluations of audit evidence. In this way, big data can be used as part of analytical procedures, which are required at the planning and review phase, but which are optional at the substantive procedure phase. However, many issues remain unresolved about how to use big data since analytical procedures and auditing standards are not very specific about the selection of analytical audit procedures; the choice depends on the professional judgment of auditors (Appelbaum, Kogan, and Vasarhelyi 2017). For this reason, auditors need to exercise increased professional skepticism in the big data era because in many cases sources of big data lack provenance and, subsequently, veracity, and sometimes auditors (particularly internal auditors) have little or no involvement in data quality evaluation of such sources (Appelbaum 2016). Considering the prediction that analytics will spell the demise of auditing, Richins et al. (2017) suggest that auditors in the big data era are still essential because they know “the language of business.” Particularly, they suggest that big data analytics cannot replace the professional judgment used by auditors, suggesting that analytics will instead complement auditors’ professional judgment.</p>
+<p>Alles and Gray (2016) identify four potential advantages of incorporating big data into audit practices: strong predictive power to set expectations for financial statement audits, great opportunities to identify potential fraudulent activities, increased probabilities of discovering red flags, and the possibility of developing more predictive models for going concern assumptions. To that end, internal audit groups with dedicated analytics functions and organizations that have attained a managed or optimized to the state of analytics maturity are far more likely to conduct continuous auditing (Protiviti 2017). Though big data creates many opportunities for improving auditing, it also suffers from different shortcomings that hinder its application in Continuous Auditing (CA). For example, Zhang, Yang, and Appelbaum (2015) suggest big data characteristics such as volume, velocity, variety, and veracity creates problems in its application in CA through different gaps such as data consistency, data integrity, data identification, data aggregation, and data confidentiality.</p>
+<p>Rose, Rose, Sanderson, and Thibodeau (2017) found that the timing of the introduction of data analytics tools into the audit process affects the evaluation of evidence and professional judgment. Barr-Pulliam, Brown-Liburd, and Sanderson (2017) found that jurors consider auditors more negligent when they use traditional auditing technique rather than audit data analytics techniques. Additionally, they confirmed that audit data analytics tools increase the perceptions of audit quality. Schneider et al. (2015) suggest that data analytics can be used by auditors to evaluate the internal control effectiveness and policy compliance. They further suggest that by analyzing unusual data flows, unexpected large volumes of data, high frequency transactions, or duplicate vendor payments, auditors can better detect fraud.</p>
+
+</div>
+</div>
+<!-- </div> -->
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="data-analytics.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="r-programming-a-great-tool-for-data-science.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook/js/app.min.js"></script>
+<script src="libs/gitbook/js/lunr.js"></script>
+<script src="libs/gitbook/js/clipboard.min.js"></script>
+<script src="libs/gitbook/js/plugin-search.js"></script>
+<script src="libs/gitbook/js/plugin-sharing.js"></script>
+<script src="libs/gitbook/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook/js/jquery.highlight.js"></script>
+<script src="libs/gitbook/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

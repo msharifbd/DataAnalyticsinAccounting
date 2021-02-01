@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 4 Data Wrangling | Data Analytics in Accounting An R Programming Approach</title>
+  <meta name="description" content="Everything you need (and nothing more) to start Data Analytics in Accounting." />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 4 Data Wrangling | Data Analytics in Accounting An R Programming Approach" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:image" content="images/cover.png" />
+  <meta property="og:description" content="Everything you need (and nothing more) to start Data Analytics in Accounting." />
+  <meta name="github-repo" content="https://github.com/msharifbd/DataAnalyticsinAccounting" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 4 Data Wrangling | Data Analytics in Accounting An R Programming Approach" />
+  
+  <meta name="twitter:description" content="Everything you need (and nothing more) to start Data Analytics in Accounting." />
+  <meta name="twitter:image" content="images/cover.png" />
+
+<meta name="author" content="Sharif Islam, DBA, CPA, CMA Assistant Professor School of Accountancy College of Business &amp; Analytics Southern Illinois University Carbondale" />
+
+
+<meta name="date" content="2021-02-01" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="getting-data-into-r.html"/>
+<link rel="next" href="exploratory-data-analysis-eda.html"/>
+<script src="libs/header-attrs/header-attrs.js"></script>
+<script src="libs/jquery/jquery.min.js"></script>
+<link href="libs/gitbook/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Data Analytics in Accounting  \nAn R Programming Approach</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#how-to-read-this-book"><i class="fa fa-check"></i>How to Read this Book</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#structure-of-the-book"><i class="fa fa-check"></i>Structure of the Book</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="acknowledgements.html"><a href="acknowledgements.html"><i class="fa fa-check"></i>Acknowledgements</a></li>
+<li class="chapter" data-level="" data-path="about-the-author.html"><a href="about-the-author.html"><i class="fa fa-check"></i>About the Author</a></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#data-analytics"><i class="fa fa-check"></i><b>1.1</b> Data Analytics</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#data-analytics-accountancy"><i class="fa fa-check"></i><b>1.2</b> Data Analytics &amp; Accountancy</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="introduction.html"><a href="introduction.html#data-analytics-in-financial-accounting"><i class="fa fa-check"></i><b>1.2.1</b> Data Analytics in Financial Accounting</a></li>
+<li class="chapter" data-level="1.2.2" data-path="introduction.html"><a href="introduction.html#data-analytics-in-management-accounting"><i class="fa fa-check"></i><b>1.2.2</b> Data Analytics in Management Accounting</a></li>
+<li class="chapter" data-level="1.2.3" data-path="introduction.html"><a href="introduction.html#data-analytics-in-auditing"><i class="fa fa-check"></i><b>1.2.3</b> Data Analytics in Auditing</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="r-programming-a-great-tool-for-data-science.html"><a href="r-programming-a-great-tool-for-data-science.html"><i class="fa fa-check"></i><b>2</b> <code>R</code> Programming - A Great Tool for Data Science</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="r-programming-a-great-tool-for-data-science.html"><a href="r-programming-a-great-tool-for-data-science.html#starting-with-r-program"><i class="fa fa-check"></i><b>2.1</b> Starting with <code>R</code> Program</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="r-programming-a-great-tool-for-data-science.html"><a href="r-programming-a-great-tool-for-data-science.html#installing-r"><i class="fa fa-check"></i><b>2.1.1</b> Installing <code>R</code></a></li>
+<li class="chapter" data-level="2.1.2" data-path="r-programming-a-great-tool-for-data-science.html"><a href="r-programming-a-great-tool-for-data-science.html#installing-rstudio"><i class="fa fa-check"></i><b>2.1.2</b> Installing <code>RStudio</code></a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="r-programming-a-great-tool-for-data-science.html"><a href="r-programming-a-great-tool-for-data-science.html#data-analytics-ecosystem-in-r"><i class="fa fa-check"></i><b>2.2</b> Data Analytics Ecosystem in <code>R</code></a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="getting-data-into-r.html"><a href="getting-data-into-r.html"><i class="fa fa-check"></i><b>3</b> Getting Data into <code>R</code></a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="getting-data-into-r.html"><a href="getting-data-into-r.html#packages-that-could-be-used-to-import-data-into-r."><i class="fa fa-check"></i><b>3.1</b> Packages That Could Be Used to Import Data into <code>R</code>.</a></li>
+<li class="chapter" data-level="3.2" data-path="getting-data-into-r.html"><a href="getting-data-into-r.html#knowing-setting-your-current-working-directory"><i class="fa fa-check"></i><b>3.2</b> Knowing &amp; Setting Your Current (Working) Directory</a></li>
+<li class="chapter" data-level="3.3" data-path="getting-data-into-r.html"><a href="getting-data-into-r.html#importing-data-into-r-from-excel"><i class="fa fa-check"></i><b>3.3</b> Importing Data into <code>R</code> from Excel</a></li>
+<li class="chapter" data-level="3.4" data-path="getting-data-into-r.html"><a href="getting-data-into-r.html#importing-data-into-r-from-local-directory-of-computer"><i class="fa fa-check"></i><b>3.4</b> Importing Data into <code>R</code> from Local Directory of Computer</a></li>
+<li class="chapter" data-level="3.5" data-path="getting-data-into-r.html"><a href="getting-data-into-r.html#importing-data-into-r-from-internet"><i class="fa fa-check"></i><b>3.5</b> Importing Data into <code>R</code> from Internet</a></li>
+<li class="chapter" data-level="3.6" data-path="getting-data-into-r.html"><a href="getting-data-into-r.html#importing-data-into-r-from-wrds-database"><i class="fa fa-check"></i><b>3.6</b> Importing Data into <code>R</code> from <code>WRDS</code> Database</a></li>
+<li class="chapter" data-level="3.7" data-path="getting-data-into-r.html"><a href="getting-data-into-r.html#some-other-sources"><i class="fa fa-check"></i><b>3.7</b> Some Other Sources</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="data-wrangling.html"><a href="data-wrangling.html"><i class="fa fa-check"></i><b>4</b> Data Wrangling</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="data-wrangling.html"><a href="data-wrangling.html#tidy-data"><i class="fa fa-check"></i><b>4.1</b> <code>tidy</code> data</a></li>
+<li class="chapter" data-level="4.2" data-path="data-wrangling.html"><a href="data-wrangling.html#same-data-but-different-formats-presentations"><i class="fa fa-check"></i><b>4.2</b> Same Data, but Different Formats (Presentations)</a></li>
+<li class="chapter" data-level="4.3" data-path="data-wrangling.html"><a href="data-wrangling.html#tidying-messy-data"><i class="fa fa-check"></i><b>4.3</b> Tidying Messy Data</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="data-wrangling.html"><a href="data-wrangling.html#column-hearders-are-values-not-variable-names"><i class="fa fa-check"></i><b>4.3.1</b> Column Hearders are Values, not Variable Names</a></li>
+<li class="chapter" data-level="4.3.2" data-path="data-wrangling.html"><a href="data-wrangling.html#multiple-variables-are-stored-in-one-column"><i class="fa fa-check"></i><b>4.3.2</b> Multiple Variables are Stored in One Column</a></li>
+<li class="chapter" data-level="4.3.3" data-path="data-wrangling.html"><a href="data-wrangling.html#variables-are-stored-in-both-rows-and-columns"><i class="fa fa-check"></i><b>4.3.3</b> Variables are Stored in Both Rows and Columns</a></li>
+<li class="chapter" data-level="4.3.4" data-path="data-wrangling.html"><a href="data-wrangling.html#multiple-types-of-observational-units-are-stored-in-the-same-table"><i class="fa fa-check"></i><b>4.3.4</b> Multiple Types of Observational Units are Stored in the Same Table</a></li>
+<li class="chapter" data-level="4.3.5" data-path="data-wrangling.html"><a href="data-wrangling.html#section"><i class="fa fa-check"></i><b>4.3.5</b> </a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="data-wrangling.html"><a href="data-wrangling.html#tidyr-package-for-tidy-data"><i class="fa fa-check"></i><b>4.4</b> <code>tidyr</code> Package for <code>tidy</code> Data</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="data-wrangling.html"><a href="data-wrangling.html#pivot_longer-function"><i class="fa fa-check"></i><b>4.4.1</b> <code>pivot_longer ()</code> function</a></li>
+<li class="chapter" data-level="4.4.2" data-path="data-wrangling.html"><a href="data-wrangling.html#pivot_wider-function"><i class="fa fa-check"></i><b>4.4.2</b> <code>pivot_wider ()</code> function</a></li>
+<li class="chapter" data-level="4.4.3" data-path="data-wrangling.html"><a href="data-wrangling.html#separate-function"><i class="fa fa-check"></i><b>4.4.3</b> <code>separate ()</code> function</a></li>
+<li class="chapter" data-level="4.4.4" data-path="data-wrangling.html"><a href="data-wrangling.html#extract-function"><i class="fa fa-check"></i><b>4.4.4</b> <code>extract ()</code> function</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="exploratory-data-analysis-eda.html"><a href="exploratory-data-analysis-eda.html"><i class="fa fa-check"></i><b>5</b> Exploratory Data Analysis (EDA)</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="exploratory-data-analysis-eda.html"><a href="exploratory-data-analysis-eda.html#tidyverse-package-in-r"><i class="fa fa-check"></i><b>5.1</b> <code>tidyverse</code> package in R</a></li>
+<li class="chapter" data-level="5.2" data-path="exploratory-data-analysis-eda.html"><a href="exploratory-data-analysis-eda.html#dplyr-package---data-manipulation-tool"><i class="fa fa-check"></i><b>5.2</b> <code>dplyr</code> Package - Data Manipulation Tool</a></li>
+<li class="chapter" data-level="5.3" data-path="exploratory-data-analysis-eda.html"><a href="exploratory-data-analysis-eda.html#data-set-for-classroom-practice"><i class="fa fa-check"></i><b>5.3</b> Data Set for Classroom Practice</a></li>
+<li class="chapter" data-level="5.4" data-path="exploratory-data-analysis-eda.html"><a href="exploratory-data-analysis-eda.html#assignment---pipe-operator"><i class="fa fa-check"></i><b>5.4</b> Assignment <code>&lt;-</code> &amp; Pipe <code>%&gt;%</code> operator</a></li>
+<li class="chapter" data-level="5.5" data-path="exploratory-data-analysis-eda.html"><a href="exploratory-data-analysis-eda.html#meta-data---data-about-data"><i class="fa fa-check"></i><b>5.5</b> Meta Data - Data About Data</a></li>
+<li class="chapter" data-level="5.6" data-path="exploratory-data-analysis-eda.html"><a href="exploratory-data-analysis-eda.html#changing-the-type-of-the-variable"><i class="fa fa-check"></i><b>5.6</b> Changing the type of the variable</a></li>
+<li class="chapter" data-level="5.7" data-path="exploratory-data-analysis-eda.html"><a href="exploratory-data-analysis-eda.html#count-function"><i class="fa fa-check"></i><b>5.7</b> <code>count()</code> function</a></li>
+<li class="chapter" data-level="5.8" data-path="exploratory-data-analysis-eda.html"><a href="exploratory-data-analysis-eda.html#st-first-verb---select"><i class="fa fa-check"></i><b>5.8</b> 1st (First) verb - <code>select ()</code></a></li>
+<li class="chapter" data-level="5.9" data-path="exploratory-data-analysis-eda.html"><a href="exploratory-data-analysis-eda.html#nd-second-verb---filter"><i class="fa fa-check"></i><b>5.9</b> 2nd (Second) verb - <code>filter ()</code></a></li>
+<li class="chapter" data-level="5.10" data-path="exploratory-data-analysis-eda.html"><a href="exploratory-data-analysis-eda.html#rd-third-verb---arrange"><i class="fa fa-check"></i><b>5.10</b> 3rd (Third) verb - <code>arrange ()</code></a></li>
+<li class="chapter" data-level="5.11" data-path="exploratory-data-analysis-eda.html"><a href="exploratory-data-analysis-eda.html#th-fourth-verb---mutate"><i class="fa fa-check"></i><b>5.11</b> 4th (Fourth) verb - <code>mutate ()</code></a></li>
+<li class="chapter" data-level="5.12" data-path="exploratory-data-analysis-eda.html"><a href="exploratory-data-analysis-eda.html#th-fifth-verb---summarize"><i class="fa fa-check"></i><b>5.12</b> 5th (Fifth) verb - <code>summarize ()</code></a></li>
+<li class="chapter" data-level="5.13" data-path="exploratory-data-analysis-eda.html"><a href="exploratory-data-analysis-eda.html#th-sixth-verb---group_by"><i class="fa fa-check"></i><b>5.13</b> 6th (Sixth) verb - <code>group_by ()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="data-visualization.html"><a href="data-visualization.html"><i class="fa fa-check"></i><b>6</b> Data Visualization</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="data-visualization.html"><a href="data-visualization.html#ggplot2-package---data-visualization-tool"><i class="fa fa-check"></i><b>6.1</b> <code>ggplot2 ()</code> Package - Data Visualization Tool</a></li>
+<li class="chapter" data-level="6.2" data-path="data-visualization.html"><a href="data-visualization.html#scatter-plot"><i class="fa fa-check"></i><b>6.2</b> Scatter Plot</a></li>
+<li class="chapter" data-level="6.3" data-path="data-visualization.html"><a href="data-visualization.html#line-plot"><i class="fa fa-check"></i><b>6.3</b> Line Plot</a></li>
+<li class="chapter" data-level="6.4" data-path="data-visualization.html"><a href="data-visualization.html#bar-plot"><i class="fa fa-check"></i><b>6.4</b> Bar Plot</a></li>
+<li class="chapter" data-level="6.5" data-path="data-visualization.html"><a href="data-visualization.html#box-plot"><i class="fa fa-check"></i><b>6.5</b> Box Plot</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="data-modeling.html"><a href="data-modeling.html"><i class="fa fa-check"></i><b>7</b> Data Modeling</a></li>
+<li class="chapter" data-level="8" data-path="communication-of-analytics-an-rmarkdown-approach.html"><a href="communication-of-analytics-an-rmarkdown-approach.html"><i class="fa fa-check"></i><b>8</b> Communication of Analytics: An <code>Rmarkdown</code> Approach</a>
+<ul>
+<li class="chapter" data-level="" data-path="communication-of-analytics-an-rmarkdown-approach.html"><a href="communication-of-analytics-an-rmarkdown-approach.html#learning-objectives"><i class="fa fa-check"></i>Learning Objectives</a></li>
+<li class="chapter" data-level="8.1" data-path="communication-of-analytics-an-rmarkdown-approach.html"><a href="communication-of-analytics-an-rmarkdown-approach.html#what-is-rmarkdown"><i class="fa fa-check"></i><b>8.1</b> What is Rmarkdown</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="communication-of-analytics-a-shiny-approach.html"><a href="communication-of-analytics-a-shiny-approach.html"><i class="fa fa-check"></i><b>9</b> Communication of Analytics: A <code>Shiny</code> Approach</a>
+<ul>
+<li class="chapter" data-level="" data-path="communication-of-analytics-a-shiny-approach.html"><a href="communication-of-analytics-a-shiny-approach.html#learning-objectives-1"><i class="fa fa-check"></i>Learning Objectives</a></li>
+<li class="chapter" data-level="9.1" data-path="communication-of-analytics-a-shiny-approach.html"><a href="communication-of-analytics-a-shiny-approach.html#introduction-to-r-shiny"><i class="fa fa-check"></i><b>9.1</b> Introduction to <code>R Shiny</code></a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>10</b> Conclusion</a></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="appendix-a.html"><a href="appendix-a.html"><i class="fa fa-check"></i><b>A</b> Appendix A</a>
+<ul>
+<li class="chapter" data-level="A.1" data-path="appendix-a.html"><a href="appendix-a.html#basic-data-structure-in-r"><i class="fa fa-check"></i><b>A.1</b> Basic Data Structure in <code>R</code></a></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="appendix-b.html"><a href="appendix-b.html"><i class="fa fa-check"></i><b>B</b> Appendix B</a>
+<ul>
+<li class="chapter" data-level="B.1" data-path="appendix-b.html"><a href="appendix-b.html#rproject"><i class="fa fa-check"></i><b>B.1</b> Starting a Project in <code>R</code></a></li>
+<li class="chapter" data-level="B.2" data-path="appendix-b.html"><a href="appendix-b.html#text-mining-in-r"><i class="fa fa-check"></i><b>B.2</b> Text Mining in <code>R</code></a></li>
+<li class="chapter" data-level="B.3" data-path="appendix-b.html"><a href="appendix-b.html#social-media-analytics-in-r"><i class="fa fa-check"></i><b>B.3</b> Social Media Analytics in <code>R</code></a></li>
+<li class="chapter" data-level="B.4" data-path="appendix-b.html"><a href="appendix-b.html#web-scrapping-using-r"><i class="fa fa-check"></i><b>B.4</b> Web Scrapping Using <code>R</code></a></li>
+<li class="chapter" data-level="B.5" data-path="appendix-b.html"><a href="appendix-b.html#big-data-in-r-with-sparklyr"><i class="fa fa-check"></i><b>B.5</b> Big Data in <code>R</code> with <code>sparklyr</code></a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Data Analytics in Accounting<br />
+An R Programming Approach</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="data-wrangling" class="section level1" number="4">
+<h1><span class="header-section-number">Chapter 4</span> Data Wrangling</h1>
+<p>Data wrangling is the process of cleaning data, so that data become ready for further manipulation such as visualization and modeling. Sometimes, data wrangling is also called <code>Data Munging</code>. More specifically, data wrangling involves transforming and mapping data from one from to another form - particularly from <em>raw</em> form to <em>tidy</em> form.</p>
+<p>There is an old saying that 90% of data science involves data wrangling. In many cases, data wrangling is difficult as it involves dealing with missing entries, ambiguous values, and different types of mixed data. In data analytics ecosystem in <code>R</code>, data wrangling involves three jobs - importing data into <code>R</code>, cleaning (tidying) the data, and transforming the data. Please see Figure <a href="data-wrangling.html#fig:datawrangling">4.1</a> to learn about the data wrangling process.</p>
+<div class="figure" style="text-align: center"><span id="fig:datawrangling"></span>
+<img src="images/data-science-wrangle.png" alt="Data Wrangling in R"  />
+<p class="caption">
+FIGURE4.1: Data Wrangling in R
+</p>
+</div>
+<p>The first job - importing data into <code>R</code> - is discussed in chapter 03. In this chapter, cleaning (tidying) the data in <code>R</code> will be discussed. The last job will be discussed in next chapter - Exploratory Data Analysis (EDA).</p>
+<div id="tidy-data" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> <code>tidy</code> data</h2>
+<p>Data wrangling or data munging results in <code>tidy</code> data - which is storing data that makes further manipulation on data such as transformation, visualization, and modeling easier. The following rules make a dataset <code>tidy</code> -</p>
+<ul>
+<li>Each variable must have its own column</li>
+<li>Each observation must have its own row</li>
+<li>Each value must have its own cell</li>
+</ul>
+</div>
+<div id="same-data-but-different-formats-presentations" class="section level2" number="4.2">
+<h2><span class="header-section-number">4.2</span> Same Data, but Different Formats (Presentations)</h2>
+</div>
+<div id="tidying-messy-data" class="section level2" number="4.3">
+<h2><span class="header-section-number">4.3</span> Tidying Messy Data</h2>
+<p>According to Hadley Wickham, “Tidy datasets are all alike, but every messy dataset is messy in its own way” <span class="citation">(<a href="references.html#ref-wickham_r_2017" role="doc-biblioref">Wickham and Grolemund 2017</a>)</span>. Messy data can be in many forms; for example - Wickham <span class="citation">(<a href="references.html#ref-wickham_tidy_2014" role="doc-biblioref">2014</a>)</span> mentions the five <em>most common problems</em> with messy datasets. These problems include -</p>
+<ul>
+<li>Column headers are values, not variable names</li>
+<li>Multiple variables are stored in one column</li>
+<li>Variables are stored in both rows and columns</li>
+<li>Multiple types of observational units are stored in the same table</li>
+<li>A single observational unit is stored in multiple tables</li>
+</ul>
+<div id="column-hearders-are-values-not-variable-names" class="section level3" number="4.3.1">
+<h3><span class="header-section-number">4.3.1</span> Column Hearders are Values, not Variable Names</h3>
+<p>The following dataset (<code>total_assets</code>) is an example of this case, in which the name of the variables (columns) are numbers. Though in some cases, this data format might be useful, in many cases usually it is not useful.</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="data-wrangling.html#cb16-1" aria-hidden="true" tabindex="-1"></a>total_assets</span></code></pre></div>
+<pre><code>## # A tibble: 5 x 7
+##   TICKER COMPANYNAME `2000` `2001` `2002` `2003` `2004`
+##   &lt;chr&gt;  &lt;chr&gt;        &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
+## 1 AAPL   APPLE INC    6803   6021   6298   6815  8.05e3
+## 2 WMT    WALMART INC 70349  78130  83451  94685  1.05e5
+## 3 AABA   ALTABA INC   2270.  2379.  2790.  5932. 9.18e3
+## 4 AMZN   AMAZON.COM~  2135.  1638.  1990.  2162. 3.25e3
+## 5 GOOGL  ALPHABET I~    NA     NA    287.   871. 3.31e3</code></pre>
+</div>
+<div id="multiple-variables-are-stored-in-one-column" class="section level3" number="4.3.2">
+<h3><span class="header-section-number">4.3.2</span> Multiple Variables are Stored in One Column</h3>
+<p>The <code>netincome_asset</code> dataset is a good example of this kind of dataset. For example, the variable <code>VALUES</code> includes <code>net income</code> and <code>total assets</code> separated by <code>/</code>. This variable is very hard to manipulate. For example, if we want to calculate <code>Return on Assets (ROA)</code>, which equals to net income divided by total assets, then it is not possible to use <code>VALUES</code> column to calculate <code>ROA</code>.</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="data-wrangling.html#cb18-1" aria-hidden="true" tabindex="-1"></a>netincome_asset</span></code></pre></div>
+<pre><code>## # A tibble: 23 x 4
+##     year TICKER COMPANYNAME VALUES     
+##    &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;       &lt;chr&gt;      
+##  1  2000 AAPL   APPLE INC   786/6803   
+##  2  2001 AAPL   APPLE INC   -25/6021   
+##  3  2002 AAPL   APPLE INC   65/6298    
+##  4  2003 AAPL   APPLE INC   69/6815    
+##  5  2004 AAPL   APPLE INC   276/8050   
+##  6  2000 WMT    WALMART INC 5377/70349 
+##  7  2001 WMT    WALMART INC 6295/78130 
+##  8  2002 WMT    WALMART INC 6671/83451 
+##  9  2003 WMT    WALMART INC 8039/94685 
+## 10  2004 WMT    WALMART INC 9054/104912
+## # ... with 13 more rows</code></pre>
+</div>
+<div id="variables-are-stored-in-both-rows-and-columns" class="section level3" number="4.3.3">
+<h3><span class="header-section-number">4.3.3</span> Variables are Stored in Both Rows and Columns</h3>
+<p>The <code>sales_profit</code> dataset is an example of this type. Here in the <code>ITEM</code> column, actually variables are included (such as <code>SALES</code> and <code>NETINCOME</code>). Also, the columns such as <code>2000</code> through <code>2004</code> should be a variable (e.g., <code>year</code>).</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="data-wrangling.html#cb20-1" aria-hidden="true" tabindex="-1"></a>sales_profit </span></code></pre></div>
+<pre><code>## # A tibble: 10 x 8
+##    TICKER COMPANYNAME ITEM   `2000`  `2001`  `2002`
+##    &lt;chr&gt;  &lt;chr&gt;       &lt;chr&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
+##  1 AAPL   APPLE INC   SALES  7.98e3  5.36e3  5.74e3
+##  2 AAPL   APPLE INC   NETI~  7.86e2 -2.50e1  6.50e1
+##  3 WMT    WALMART INC SALES  1.66e5  1.92e5  2.19e5
+##  4 WMT    WALMART INC NETI~  5.38e3  6.30e3  6.67e3
+##  5 AABA   ALTABA INC  SALES  1.11e3  7.17e2  9.53e2
+##  6 AABA   ALTABA INC  NETI~  7.08e1 -9.28e1  4.28e1
+##  7 AMZN   AMAZON.COM~ SALES  2.76e3  3.12e3  3.93e3
+##  8 AMZN   AMAZON.COM~ NETI~ -1.41e3 -5.67e2 -1.49e2
+##  9 GOOGL  ALPHABET I~ SALES NA      NA       4.40e2
+## 10 GOOGL  ALPHABET I~ NETI~ NA      NA       9.97e1
+## # ... with 2 more variables: `2003` &lt;dbl&gt;,
+## #   `2004` &lt;dbl&gt;</code></pre>
+</div>
+<div id="multiple-types-of-observational-units-are-stored-in-the-same-table" class="section level3" number="4.3.4">
+<h3><span class="header-section-number">4.3.4</span> Multiple Types of Observational Units are Stored in the Same Table</h3>
+</div>
+<div id="section" class="section level3" number="4.3.5">
+<h3><span class="header-section-number">4.3.5</span> </h3>
+</div>
+</div>
+<div id="tidyr-package-for-tidy-data" class="section level2" number="4.4">
+<h2><span class="header-section-number">4.4</span> <code>tidyr</code> Package for <code>tidy</code> Data</h2>
+<p>The <code>tidyr</code> package is widley used to <code>tidy</code> data in <code>R</code>. Specifically, <code>pivot_longer</code>, <code>pivot_wider</code>, <code>separate</code>, and <code>extract</code> functions are widely used to make a messy data into <code>tidy</code>.</p>
+<div id="pivot_longer-function" class="section level3" number="4.4.1">
+<h3><span class="header-section-number">4.4.1</span> <code>pivot_longer ()</code> function</h3>
+<p>If the <code>total_assets</code> dataset above (Column headers are values, not variable names) is made <code>tidy</code> using <code>pivot_longer</code> function, then it will be look like this (Assuming the name of the dataset is variable_number) -</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="data-wrangling.html#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># using pivot_longer () function </span></span>
+<span id="cb22-2"><a href="data-wrangling.html#cb22-2" aria-hidden="true" tabindex="-1"></a>total_assets <span class="sc">%&gt;%</span> </span>
+<span id="cb22-3"><a href="data-wrangling.html#cb22-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">-</span><span class="fu">c</span>(<span class="st">&quot;TICKER&quot;</span>, <span class="st">&quot;COMPANYNAME&quot;</span>),</span>
+<span id="cb22-4"><a href="data-wrangling.html#cb22-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">&quot;year&quot;</span>,</span>
+<span id="cb22-5"><a href="data-wrangling.html#cb22-5" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">&quot;TOTALASSETS&quot;</span></span>
+<span id="cb22-6"><a href="data-wrangling.html#cb22-6" aria-hidden="true" tabindex="-1"></a>               ) <span class="sc">%&gt;%</span> </span>
+<span id="cb22-7"><a href="data-wrangling.html#cb22-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>()</span></code></pre></div>
+<pre><code>## # A tibble: 6 x 4
+##   TICKER COMPANYNAME year  TOTALASSETS
+##   &lt;chr&gt;  &lt;chr&gt;       &lt;chr&gt;       &lt;dbl&gt;
+## 1 AAPL   APPLE INC   2000         6803
+## 2 AAPL   APPLE INC   2001         6021
+## 3 AAPL   APPLE INC   2002         6298
+## 4 AAPL   APPLE INC   2003         6815
+## 5 AAPL   APPLE INC   2004         8050
+## 6 WMT    WALMART INC 2000        70349</code></pre>
+<p>There are several arguments of <code>pivot_longer</code> function. Here three arguments are used. The <code>cols</code> argument specifies which columns should (not) be used in <code>pivot_longer</code> function. In this case, we select the variables that should not be used while using <code>pivot_longer</code> function. The second argument <code>names_to</code> specifies the name of the variable in which existing column values will be stored and finally <code>values_to</code> specifies the name of the column in which the cell values will be stored. Now, the dataset is a <code>tidy</code> dataset.</p>
+</div>
+<div id="pivot_wider-function" class="section level3" number="4.4.2">
+<h3><span class="header-section-number">4.4.2</span> <code>pivot_wider ()</code> function</h3>
+<p>The <code>sales_profit</code> dataset can be put into <code>tidy</code> format using both <code>pivot_longer</code> and <code>pivot_wider</code> function.</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="data-wrangling.html#cb24-1" aria-hidden="true" tabindex="-1"></a>sales_profit <span class="sc">%&gt;%</span> </span>
+<span id="cb24-2"><a href="data-wrangling.html#cb24-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb24-3"><a href="data-wrangling.html#cb24-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">cols =</span> <span class="sc">!</span><span class="fu">c</span> (<span class="st">&quot;TICKER&quot;</span>, <span class="st">&quot;COMPANYNAME&quot;</span>, <span class="st">&quot;ITEM&quot;</span>),</span>
+<span id="cb24-4"><a href="data-wrangling.html#cb24-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_to =</span> <span class="st">&quot;year&quot;</span>,</span>
+<span id="cb24-5"><a href="data-wrangling.html#cb24-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_to =</span> <span class="st">&quot;AMOUNT&quot;</span></span>
+<span id="cb24-6"><a href="data-wrangling.html#cb24-6" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb24-7"><a href="data-wrangling.html#cb24-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(</span>
+<span id="cb24-8"><a href="data-wrangling.html#cb24-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_from =</span> ITEM, </span>
+<span id="cb24-9"><a href="data-wrangling.html#cb24-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_from =</span> AMOUNT</span>
+<span id="cb24-10"><a href="data-wrangling.html#cb24-10" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<pre><code>## # A tibble: 25 x 5
+##    TICKER COMPANYNAME year   SALES NETINCOME
+##    &lt;chr&gt;  &lt;chr&gt;       &lt;chr&gt;  &lt;dbl&gt;     &lt;dbl&gt;
+##  1 AAPL   APPLE INC   2000    7983       786
+##  2 AAPL   APPLE INC   2001    5363       -25
+##  3 AAPL   APPLE INC   2002    5742        65
+##  4 AAPL   APPLE INC   2003    6207        69
+##  5 AAPL   APPLE INC   2004    8279       276
+##  6 WMT    WALMART INC 2000  165639      5377
+##  7 WMT    WALMART INC 2001  192003      6295
+##  8 WMT    WALMART INC 2002  218529      6671
+##  9 WMT    WALMART INC 2003  245308      8039
+## 10 WMT    WALMART INC 2004  257157      9054
+## # ... with 15 more rows</code></pre>
+</div>
+<div id="separate-function" class="section level3" number="4.4.3">
+<h3><span class="header-section-number">4.4.3</span> <code>separate ()</code> function</h3>
+<p>The <code>separate</code> function can be used when multiple variables are stored in one column. The function separates one column into multiple columns. For example, in <code>netincome_asset</code> data, the column <code>VALUES</code> should be converted into two columns called <code>NETINCOME</code> and <code>TOTALASSETS</code>. In <code>separate</code> function, <code>col</code> argument is ued to select the column that needs to be broken; <code>into</code> argument is used to create new columns; and <code>sep</code> argument is ued to identify the character in which the column will be separated. In this case, it is <code>/</code>. Finally <code>remove</code> argument is used to decide whether the column (here <code>VALUES</code>) that is separated should be in new dataset.</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="data-wrangling.html#cb26-1" aria-hidden="true" tabindex="-1"></a>netincome_asset <span class="sc">%&gt;%</span> </span>
+<span id="cb26-2"><a href="data-wrangling.html#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate</span>(</span>
+<span id="cb26-3"><a href="data-wrangling.html#cb26-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">col =</span> VALUES, <span class="at">into =</span> <span class="fu">c</span> (<span class="st">&quot;NETINCMOE&quot;</span>, <span class="st">&quot;TOTALASSETS&quot;</span>), <span class="at">sep =</span><span class="st">&quot;/&quot;</span>,</span>
+<span id="cb26-4"><a href="data-wrangling.html#cb26-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">remove =</span><span class="cn">TRUE</span></span>
+<span id="cb26-5"><a href="data-wrangling.html#cb26-5" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<pre><code>## # A tibble: 23 x 5
+##     year TICKER COMPANYNAME NETINCMOE TOTALASSETS
+##    &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;       &lt;chr&gt;     &lt;chr&gt;      
+##  1  2000 AAPL   APPLE INC   786       6803       
+##  2  2001 AAPL   APPLE INC   -25       6021       
+##  3  2002 AAPL   APPLE INC   65        6298       
+##  4  2003 AAPL   APPLE INC   69        6815       
+##  5  2004 AAPL   APPLE INC   276       8050       
+##  6  2000 WMT    WALMART INC 5377      70349      
+##  7  2001 WMT    WALMART INC 6295      78130      
+##  8  2002 WMT    WALMART INC 6671      83451      
+##  9  2003 WMT    WALMART INC 8039      94685      
+## 10  2004 WMT    WALMART INC 9054      104912     
+## # ... with 13 more rows</code></pre>
+<p>It is clear from the above dataset that the type of columns <code>NETINCOME</code> and <code>TOTALASSETS</code> are <code>chr</code>, but they should be number (e.g., <code>dbl</code>). Actually, <code>separate</code> functions maintain the type of the columns that are separated. The type of <code>VALUES</code> column was <code>chr</code> and it is maintained in new dataset. In order to get the true type, we can use <code>convert</code> argument, which is done below.</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="data-wrangling.html#cb28-1" aria-hidden="true" tabindex="-1"></a>netincome_asset  <span class="sc">%&gt;%</span> </span>
+<span id="cb28-2"><a href="data-wrangling.html#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate</span>(</span>
+<span id="cb28-3"><a href="data-wrangling.html#cb28-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">col =</span> VALUES, <span class="at">into =</span> <span class="fu">c</span> (<span class="st">&quot;NETINCMOE&quot;</span>, <span class="st">&quot;TOTALASSETS&quot;</span>), <span class="at">sep =</span><span class="st">&quot;/&quot;</span>,</span>
+<span id="cb28-4"><a href="data-wrangling.html#cb28-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">remove =</span><span class="cn">TRUE</span>,<span class="at">convert =</span> <span class="cn">TRUE</span></span>
+<span id="cb28-5"><a href="data-wrangling.html#cb28-5" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<pre><code>## # A tibble: 23 x 5
+##     year TICKER COMPANYNAME NETINCMOE TOTALASSETS
+##    &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;           &lt;dbl&gt;       &lt;dbl&gt;
+##  1  2000 AAPL   APPLE INC         786        6803
+##  2  2001 AAPL   APPLE INC         -25        6021
+##  3  2002 AAPL   APPLE INC          65        6298
+##  4  2003 AAPL   APPLE INC          69        6815
+##  5  2004 AAPL   APPLE INC         276        8050
+##  6  2000 WMT    WALMART INC      5377       70349
+##  7  2001 WMT    WALMART INC      6295       78130
+##  8  2002 WMT    WALMART INC      6671       83451
+##  9  2003 WMT    WALMART INC      8039       94685
+## 10  2004 WMT    WALMART INC      9054      104912
+## # ... with 13 more rows</code></pre>
+</div>
+<div id="extract-function" class="section level3" number="4.4.4">
+<h3><span class="header-section-number">4.4.4</span> <code>extract ()</code> function</h3>
+<p>This is a very good source to discuss about data wrangling - <a href="https://dsapps-2020.github.io/Class_Slides/" class="uri">https://dsapps-2020.github.io/Class_Slides/</a></p>
+<p>This is the best data wrangling website -
+<a href="https://dcl-wrangle.stanford.edu/" class="uri">https://dcl-wrangle.stanford.edu/</a></p>
+<p>The above link is also best about why <code>EXCEL</code> is not be best for Accounting &amp; Audit Analytics.</p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="getting-data-into-r.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="exploratory-data-analysis-eda.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook/js/app.min.js"></script>
+<script src="libs/gitbook/js/lunr.js"></script>
+<script src="libs/gitbook/js/clipboard.min.js"></script>
+<script src="libs/gitbook/js/plugin-search.js"></script>
+<script src="libs/gitbook/js/plugin-sharing.js"></script>
+<script src="libs/gitbook/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook/js/jquery.highlight.js"></script>
+<script src="libs/gitbook/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

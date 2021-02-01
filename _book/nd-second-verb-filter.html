@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>5.9 2nd (Second) verb - filter () | Data Analytics in Accounting An R Programming Approach</title>
+  <meta name="description" content="Everything you need (and nothing more) to start Data Analytics in Accounting." />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="5.9 2nd (Second) verb - filter () | Data Analytics in Accounting An R Programming Approach" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:image" content="images/cover.png" />
+  <meta property="og:description" content="Everything you need (and nothing more) to start Data Analytics in Accounting." />
+  <meta name="github-repo" content="https://github.com/msharifbd/DataAnalyticsinAccounting" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="5.9 2nd (Second) verb - filter () | Data Analytics in Accounting An R Programming Approach" />
+  
+  <meta name="twitter:description" content="Everything you need (and nothing more) to start Data Analytics in Accounting." />
+  <meta name="twitter:image" content="images/cover.png" />
+
+<meta name="author" content="Sharif Islam, DBA, CPA, CMA Assistant Professor School of Accountancy College of Business &amp; Analytics Southern Illinois University Carbondale" />
+
+
+<meta name="date" content="2021-01-31" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="st-first-verb-select.html"/>
+<link rel="next" href="rd-third-verb-arrange.html"/>
+<script src="libs/header-attrs/header-attrs.js"></script>
+<script src="libs/jquery/jquery.min.js"></script>
+<link href="libs/gitbook/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Data Analytics in Accounting  \nAn R Programming Approach</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
+<ul>
+<li class="chapter" data-level="" data-path="how-to-read-this-book.html"><a href="how-to-read-this-book.html"><i class="fa fa-check"></i>How to Read this Book</a></li>
+<li class="chapter" data-level="" data-path="structure-of-the-book.html"><a href="structure-of-the-book.html"><i class="fa fa-check"></i>Structure of the Book</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="acknowledgements.html"><a href="acknowledgements.html"><i class="fa fa-check"></i>Acknowledgements</a></li>
+<li class="chapter" data-level="" data-path="about-the-author.html"><a href="about-the-author.html"><i class="fa fa-check"></i>About the Author</a></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="data-analytics.html"><a href="data-analytics.html"><i class="fa fa-check"></i><b>1.1</b> Data Analytics</a></li>
+<li class="chapter" data-level="1.2" data-path="data-analytics-accountancy.html"><a href="data-analytics-accountancy.html"><i class="fa fa-check"></i><b>1.2</b> Data Analytics &amp; Accountancy</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="data-analytics-accountancy.html"><a href="data-analytics-accountancy.html#data-analytics-in-financial-accounting"><i class="fa fa-check"></i><b>1.2.1</b> Data Analytics in Financial Accounting</a></li>
+<li class="chapter" data-level="1.2.2" data-path="data-analytics-accountancy.html"><a href="data-analytics-accountancy.html#data-analytics-in-management-accounting"><i class="fa fa-check"></i><b>1.2.2</b> Data Analytics in Management Accounting</a></li>
+<li class="chapter" data-level="1.2.3" data-path="data-analytics-accountancy.html"><a href="data-analytics-accountancy.html#data-analytics-in-auditing"><i class="fa fa-check"></i><b>1.2.3</b> Data Analytics in Auditing</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="r-programming-a-great-tool-for-data-science.html"><a href="r-programming-a-great-tool-for-data-science.html"><i class="fa fa-check"></i><b>2</b> <code>R</code> Programming - A Great Tool for Data Science</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="starting-with-r-program.html"><a href="starting-with-r-program.html"><i class="fa fa-check"></i><b>2.1</b> Starting with <code>R</code> Program</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="starting-with-r-program.html"><a href="starting-with-r-program.html#installing-r"><i class="fa fa-check"></i><b>2.1.1</b> Installing <code>R</code></a></li>
+<li class="chapter" data-level="2.1.2" data-path="starting-with-r-program.html"><a href="starting-with-r-program.html#installing-rstudio"><i class="fa fa-check"></i><b>2.1.2</b> Installing <code>RStudio</code></a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="data-analytics-ecosystem-in-r.html"><a href="data-analytics-ecosystem-in-r.html"><i class="fa fa-check"></i><b>2.2</b> Data Analytics Ecosystem in <code>R</code></a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="getting-data-into-r.html"><a href="getting-data-into-r.html"><i class="fa fa-check"></i><b>3</b> Getting Data into <code>R</code></a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="packages-that-could-be-used-to-import-data-into-r.html"><a href="packages-that-could-be-used-to-import-data-into-r.html"><i class="fa fa-check"></i><b>3.1</b> Packages That Could Be Used to Import Data into <code>R</code></a></li>
+<li class="chapter" data-level="3.2" data-path="importing-data-into-r-from-excel.html"><a href="importing-data-into-r-from-excel.html"><i class="fa fa-check"></i><b>3.2</b> Importing Data into <code>R</code> from Excel</a></li>
+<li class="chapter" data-level="3.3" data-path="importing-data-into-r-from-local-directory-of-computer.html"><a href="importing-data-into-r-from-local-directory-of-computer.html"><i class="fa fa-check"></i><b>3.3</b> Importing Data into <code>R</code> from Local Directory of Computer</a></li>
+<li class="chapter" data-level="3.4" data-path="importing-data-into-r-from-internet.html"><a href="importing-data-into-r-from-internet.html"><i class="fa fa-check"></i><b>3.4</b> Importing Data into <code>R</code> from Internet</a></li>
+<li class="chapter" data-level="3.5" data-path="importing-data-into-r-from-wrds-database.html"><a href="importing-data-into-r-from-wrds-database.html"><i class="fa fa-check"></i><b>3.5</b> Importing Data into <code>R</code> from <code>WRDS</code> Database</a></li>
+<li class="chapter" data-level="3.6" data-path="some-other-sources.html"><a href="some-other-sources.html"><i class="fa fa-check"></i><b>3.6</b> Some Other Sources</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="data-wrangling.html"><a href="data-wrangling.html"><i class="fa fa-check"></i><b>4</b> Data Wrangling</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="tidy-data.html"><a href="tidy-data.html"><i class="fa fa-check"></i><b>4.1</b> <code>tidy</code> data</a></li>
+<li class="chapter" data-level="4.2" data-path="same-data-but-different-formats-presentations.html"><a href="same-data-but-different-formats-presentations.html"><i class="fa fa-check"></i><b>4.2</b> Same Data, but Different Formats (Presentations)</a></li>
+<li class="chapter" data-level="4.3" data-path="tidying-messy-data.html"><a href="tidying-messy-data.html"><i class="fa fa-check"></i><b>4.3</b> Tidying Messy Data</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="tidying-messy-data.html"><a href="tidying-messy-data.html#column-hearders-are-values-not-variable-names"><i class="fa fa-check"></i><b>4.3.1</b> Column Hearders are Values, not Variable Names</a></li>
+<li class="chapter" data-level="4.3.2" data-path="tidying-messy-data.html"><a href="tidying-messy-data.html#multiple-variables-are-stored-in-one-column"><i class="fa fa-check"></i><b>4.3.2</b> Multiple Variables are Stored in One Column</a></li>
+<li class="chapter" data-level="4.3.3" data-path="tidying-messy-data.html"><a href="tidying-messy-data.html#variables-are-stored-in-both-rows-and-columns"><i class="fa fa-check"></i><b>4.3.3</b> Variables are Stored in Both Rows and Columns</a></li>
+<li class="chapter" data-level="4.3.4" data-path="tidying-messy-data.html"><a href="tidying-messy-data.html#multiple-types-of-observational-units-are-stored-in-the-same-table"><i class="fa fa-check"></i><b>4.3.4</b> Multiple Types of Observational Units are Stored in the Same Table</a></li>
+<li class="chapter" data-level="4.3.5" data-path="tidying-messy-data.html"><a href="tidying-messy-data.html#section"><i class="fa fa-check"></i><b>4.3.5</b> </a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="tidyr-package-for-tidy-data.html"><a href="tidyr-package-for-tidy-data.html"><i class="fa fa-check"></i><b>4.4</b> <code>tidyr</code> Package for <code>tidy</code> Data</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="tidyr-package-for-tidy-data.html"><a href="tidyr-package-for-tidy-data.html#pivot_longer-function"><i class="fa fa-check"></i><b>4.4.1</b> <code>pivot_longer ()</code> function</a></li>
+<li class="chapter" data-level="4.4.2" data-path="tidyr-package-for-tidy-data.html"><a href="tidyr-package-for-tidy-data.html#pivot_wider-function"><i class="fa fa-check"></i><b>4.4.2</b> <code>pivot_wider ()</code> function</a></li>
+<li class="chapter" data-level="4.4.3" data-path="tidyr-package-for-tidy-data.html"><a href="tidyr-package-for-tidy-data.html#separate-function"><i class="fa fa-check"></i><b>4.4.3</b> <code>separate ()</code> function</a></li>
+<li class="chapter" data-level="4.4.4" data-path="tidyr-package-for-tidy-data.html"><a href="tidyr-package-for-tidy-data.html#extract-function"><i class="fa fa-check"></i><b>4.4.4</b> <code>extract ()</code> function</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="exploratory-data-analysis-eda.html"><a href="exploratory-data-analysis-eda.html"><i class="fa fa-check"></i><b>5</b> Exploratory Data Analysis (EDA)</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="tidyverse-package-in-r.html"><a href="tidyverse-package-in-r.html"><i class="fa fa-check"></i><b>5.1</b> <code>tidyverse</code> package in R</a></li>
+<li class="chapter" data-level="5.2" data-path="dplyr-package-data-manipulation-tool.html"><a href="dplyr-package-data-manipulation-tool.html"><i class="fa fa-check"></i><b>5.2</b> <code>dplyr</code> Package - Data Manipulation Tool</a></li>
+<li class="chapter" data-level="5.3" data-path="data-set-for-classroom-practice.html"><a href="data-set-for-classroom-practice.html"><i class="fa fa-check"></i><b>5.3</b> Data Set for Classroom Practice</a></li>
+<li class="chapter" data-level="5.4" data-path="assignment-pipe-operator.html"><a href="assignment-pipe-operator.html"><i class="fa fa-check"></i><b>5.4</b> Assignment <code>&lt;-</code> &amp; Pipe <code>%&gt;%</code> operator</a></li>
+<li class="chapter" data-level="5.5" data-path="meta-data-data-about-data.html"><a href="meta-data-data-about-data.html"><i class="fa fa-check"></i><b>5.5</b> Meta Data - Data About Data</a></li>
+<li class="chapter" data-level="5.6" data-path="changing-the-type-of-the-variable.html"><a href="changing-the-type-of-the-variable.html"><i class="fa fa-check"></i><b>5.6</b> Changing the type of the variable</a></li>
+<li class="chapter" data-level="5.7" data-path="count-function.html"><a href="count-function.html"><i class="fa fa-check"></i><b>5.7</b> <code>count()</code> function</a></li>
+<li class="chapter" data-level="5.8" data-path="st-first-verb-select.html"><a href="st-first-verb-select.html"><i class="fa fa-check"></i><b>5.8</b> 1st (First) verb - <code>select ()</code></a></li>
+<li class="chapter" data-level="5.9" data-path="nd-second-verb-filter.html"><a href="nd-second-verb-filter.html"><i class="fa fa-check"></i><b>5.9</b> 2nd (Second) verb - <code>filter ()</code></a></li>
+<li class="chapter" data-level="5.10" data-path="rd-third-verb-arrange.html"><a href="rd-third-verb-arrange.html"><i class="fa fa-check"></i><b>5.10</b> 3rd (Third) verb - <code>arrange ()</code></a></li>
+<li class="chapter" data-level="5.11" data-path="th-fourth-verb-mutate.html"><a href="th-fourth-verb-mutate.html"><i class="fa fa-check"></i><b>5.11</b> 4th (Fourth) verb - <code>mutate ()</code></a></li>
+<li class="chapter" data-level="5.12" data-path="th-fifth-verb-summarize.html"><a href="th-fifth-verb-summarize.html"><i class="fa fa-check"></i><b>5.12</b> 5th (Fifth) verb - <code>summarize ()</code></a></li>
+<li class="chapter" data-level="5.13" data-path="th-sixth-verb-group-by.html"><a href="th-sixth-verb-group-by.html"><i class="fa fa-check"></i><b>5.13</b> 6th (Sixth) verb - <code>group_by ()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="data-visualization.html"><a href="data-visualization.html"><i class="fa fa-check"></i><b>6</b> Data Visualization</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="ggplot2-package-data-visualization-tool.html"><a href="ggplot2-package-data-visualization-tool.html"><i class="fa fa-check"></i><b>6.1</b> <code>ggplot2 ()</code> Package - Data Visualization Tool</a></li>
+<li class="chapter" data-level="6.2" data-path="scatter-plot.html"><a href="scatter-plot.html"><i class="fa fa-check"></i><b>6.2</b> Scatter Plot</a></li>
+<li class="chapter" data-level="6.3" data-path="line-plot.html"><a href="line-plot.html"><i class="fa fa-check"></i><b>6.3</b> Line Plot</a></li>
+<li class="chapter" data-level="6.4" data-path="bar-plot.html"><a href="bar-plot.html"><i class="fa fa-check"></i><b>6.4</b> Bar Plot</a></li>
+<li class="chapter" data-level="6.5" data-path="box-plot.html"><a href="box-plot.html"><i class="fa fa-check"></i><b>6.5</b> Box Plot</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="data-modeling.html"><a href="data-modeling.html"><i class="fa fa-check"></i><b>7</b> Data Modeling</a></li>
+<li class="chapter" data-level="8" data-path="communication-of-analytics-an-rmarkdown-approach.html"><a href="communication-of-analytics-an-rmarkdown-approach.html"><i class="fa fa-check"></i><b>8</b> Communication of Analytics: An <code>Rmarkdown</code> Approach</a>
+<ul>
+<li class="chapter" data-level="" data-path="learning-objectives.html"><a href="learning-objectives.html"><i class="fa fa-check"></i>Learning Objectives</a></li>
+<li class="chapter" data-level="8.1" data-path="what-is-rmarkdown.html"><a href="what-is-rmarkdown.html"><i class="fa fa-check"></i><b>8.1</b> What is Rmarkdown</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="communication-of-analytics-a-shiny-approach.html"><a href="communication-of-analytics-a-shiny-approach.html"><i class="fa fa-check"></i><b>9</b> Communication of Analytics: A <code>Shiny</code> Approach</a>
+<ul>
+<li class="chapter" data-level="" data-path="learning-objectives-1.html"><a href="learning-objectives-1.html"><i class="fa fa-check"></i>Learning Objectives</a></li>
+<li class="chapter" data-level="9.1" data-path="introduction-to-r-shiny.html"><a href="introduction-to-r-shiny.html"><i class="fa fa-check"></i><b>9.1</b> Introduction to <code>R Shiny</code></a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>10</b> Conclusion</a></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="appendix-a.html"><a href="appendix-a.html"><i class="fa fa-check"></i><b>A</b> Appendix A</a>
+<ul>
+<li class="chapter" data-level="A.1" data-path="basic-data-structure-in-r.html"><a href="basic-data-structure-in-r.html"><i class="fa fa-check"></i><b>A.1</b> Basic Data Structure in <code>R</code></a></li>
+<li class="chapter" data-level="A.2" data-path="text-mining-in-r.html"><a href="text-mining-in-r.html"><i class="fa fa-check"></i><b>A.2</b> Text Mining in <code>R</code></a></li>
+<li class="chapter" data-level="A.3" data-path="social-media-analytics-in-r.html"><a href="social-media-analytics-in-r.html"><i class="fa fa-check"></i><b>A.3</b> Social Media Analytics in <code>R</code></a></li>
+<li class="chapter" data-level="A.4" data-path="web-scrapping-using-r.html"><a href="web-scrapping-using-r.html"><i class="fa fa-check"></i><b>A.4</b> Web Scrapping Using <code>R</code></a></li>
+<li class="chapter" data-level="A.5" data-path="big-data-in-r-with-sparklyr.html"><a href="big-data-in-r-with-sparklyr.html"><i class="fa fa-check"></i><b>A.5</b> Big Data in <code>R</code> with <code>sparklyr</code></a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Data Analytics in Accounting<br />
+An R Programming Approach</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="nd-second-verb---filter" class="section level2" number="5.9">
+<h2><span class="header-section-number">5.9</span> 2nd (Second) verb - <code>filter ()</code></h2>
+<p>If we want to subset our dataset by <strong>rows</strong>, then <code>filter ()</code> is used. For example - we want the flights whose destination was Chicgo Airport (ORD).</p>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="nd-second-verb-filter.html#cb57-1" aria-hidden="true" tabindex="-1"></a>chicago <span class="ot">&lt;-</span> flights <span class="sc">%&gt;%</span> </span>
+<span id="cb57-2"><a href="nd-second-verb-filter.html#cb57-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(dest <span class="sc">==</span> <span class="st">&quot;ORD&quot;</span>)</span>
+<span id="cb57-3"><a href="nd-second-verb-filter.html#cb57-3" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(chicago)</span></code></pre></div>
+<pre><code>## Rows: 17,283
+## Columns: 19
+## $ carrier        &lt;chr&gt; &quot;UA&quot;, &quot;AA&quot;, &quot;MQ&quot;, &quot;AA&quot;, &quot;AA...
+## $ flight         &lt;chr&gt; &quot;1696&quot;, &quot;301&quot;, &quot;3768&quot;, &quot;303...
+## $ year           &lt;int&gt; 2013, 2013, 2013, 2013, 201...
+## $ month          &lt;int&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+## $ day            &lt;int&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+## $ dep_time       &lt;int&gt; 554, 558, 608, 629, 656, 70...
+## $ sched_dep_time &lt;int&gt; 558, 600, 600, 630, 700, 70...
+## $ dep_delay      &lt;dbl&gt; -4, -2, 8, -1, -4, 9, 2, -6...
+## $ arr_time       &lt;int&gt; 740, 753, 807, 824, 854, 85...
+## $ sched_arr_time &lt;int&gt; 728, 745, 735, 810, 850, 83...
+## $ arr_delay      &lt;dbl&gt; 12, 8, 32, 14, 4, 20, 21, -...
+## $ tailnum        &lt;chr&gt; &quot;N39463&quot;, &quot;N3ALAA&quot;, &quot;N9EAMQ...
+## $ origin         &lt;chr&gt; &quot;EWR&quot;, &quot;LGA&quot;, &quot;EWR&quot;, &quot;LGA&quot;,...
+## $ dest           &lt;chr&gt; &quot;ORD&quot;, &quot;ORD&quot;, &quot;ORD&quot;, &quot;ORD&quot;,...
+## $ air_time       &lt;dbl&gt; 150, 138, 139, 140, 143, 13...
+## $ distance       &lt;dbl&gt; 719, 733, 719, 733, 733, 73...
+## $ hour           &lt;dbl&gt; 5, 6, 6, 6, 7, 7, 7, 7, 7, ...
+## $ minute         &lt;dbl&gt; 58, 0, 0, 30, 0, 0, 13, 45,...
+## $ time_hour      &lt;dttm&gt; 2013-01-01 05:00:00, 2013-...</code></pre>
+<p>Similarly, we want to subset the data for the month of January.</p>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="nd-second-verb-filter.html#cb59-1" aria-hidden="true" tabindex="-1"></a>january <span class="ot">&lt;-</span> flights <span class="sc">%&gt;%</span> </span>
+<span id="cb59-2"><a href="nd-second-verb-filter.html#cb59-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(month <span class="sc">==</span> <span class="st">&quot;1&quot;</span>)</span>
+<span id="cb59-3"><a href="nd-second-verb-filter.html#cb59-3" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(january)</span></code></pre></div>
+<pre><code>## Rows: 27,004
+## Columns: 19
+## $ carrier        &lt;chr&gt; &quot;UA&quot;, &quot;UA&quot;, &quot;AA&quot;, &quot;B6&quot;, &quot;DL...
+## $ flight         &lt;chr&gt; &quot;1545&quot;, &quot;1714&quot;, &quot;1141&quot;, &quot;72...
+## $ year           &lt;int&gt; 2013, 2013, 2013, 2013, 201...
+## $ month          &lt;int&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+## $ day            &lt;int&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+## $ dep_time       &lt;int&gt; 517, 533, 542, 544, 554, 55...
+## $ sched_dep_time &lt;int&gt; 515, 529, 540, 545, 600, 55...
+## $ dep_delay      &lt;dbl&gt; 2, 4, 2, -1, -6, -4, -5, -3...
+## $ arr_time       &lt;int&gt; 830, 850, 923, 1004, 812, 7...
+## $ sched_arr_time &lt;int&gt; 819, 830, 850, 1022, 837, 7...
+## $ arr_delay      &lt;dbl&gt; 11, 20, 33, -18, -25, 12, 1...
+## $ tailnum        &lt;chr&gt; &quot;N14228&quot;, &quot;N24211&quot;, &quot;N619AA...
+## $ origin         &lt;chr&gt; &quot;EWR&quot;, &quot;LGA&quot;, &quot;JFK&quot;, &quot;JFK&quot;,...
+## $ dest           &lt;chr&gt; &quot;IAH&quot;, &quot;IAH&quot;, &quot;MIA&quot;, &quot;BQN&quot;,...
+## $ air_time       &lt;dbl&gt; 227, 227, 160, 183, 116, 15...
+## $ distance       &lt;dbl&gt; 1400, 1416, 1089, 1576, 762...
+## $ hour           &lt;dbl&gt; 5, 5, 5, 5, 6, 5, 6, 6, 6, ...
+## $ minute         &lt;dbl&gt; 15, 29, 40, 45, 0, 58, 0, 0...
+## $ time_hour      &lt;dttm&gt; 2013-01-01 05:00:00, 2013-...</code></pre>
+<p>If we to subset the data for the month of January and February, the following code should be run</p>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="nd-second-verb-filter.html#cb61-1" aria-hidden="true" tabindex="-1"></a>jan_feb <span class="ot">&lt;-</span> flights <span class="sc">%&gt;%</span> </span>
+<span id="cb61-2"><a href="nd-second-verb-filter.html#cb61-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(month <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</span>
+<span id="cb61-3"><a href="nd-second-verb-filter.html#cb61-3" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(jan_feb)</span></code></pre></div>
+<pre><code>## Rows: 51,955
+## Columns: 19
+## $ carrier        &lt;chr&gt; &quot;UA&quot;, &quot;UA&quot;, &quot;AA&quot;, &quot;B6&quot;, &quot;DL...
+## $ flight         &lt;chr&gt; &quot;1545&quot;, &quot;1714&quot;, &quot;1141&quot;, &quot;72...
+## $ year           &lt;int&gt; 2013, 2013, 2013, 2013, 201...
+## $ month          &lt;int&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+## $ day            &lt;int&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+## $ dep_time       &lt;int&gt; 517, 533, 542, 544, 554, 55...
+## $ sched_dep_time &lt;int&gt; 515, 529, 540, 545, 600, 55...
+## $ dep_delay      &lt;dbl&gt; 2, 4, 2, -1, -6, -4, -5, -3...
+## $ arr_time       &lt;int&gt; 830, 850, 923, 1004, 812, 7...
+## $ sched_arr_time &lt;int&gt; 819, 830, 850, 1022, 837, 7...
+## $ arr_delay      &lt;dbl&gt; 11, 20, 33, -18, -25, 12, 1...
+## $ tailnum        &lt;chr&gt; &quot;N14228&quot;, &quot;N24211&quot;, &quot;N619AA...
+## $ origin         &lt;chr&gt; &quot;EWR&quot;, &quot;LGA&quot;, &quot;JFK&quot;, &quot;JFK&quot;,...
+## $ dest           &lt;chr&gt; &quot;IAH&quot;, &quot;IAH&quot;, &quot;MIA&quot;, &quot;BQN&quot;,...
+## $ air_time       &lt;dbl&gt; 227, 227, 160, 183, 116, 15...
+## $ distance       &lt;dbl&gt; 1400, 1416, 1089, 1576, 762...
+## $ hour           &lt;dbl&gt; 5, 5, 5, 5, 6, 5, 6, 6, 6, ...
+## $ minute         &lt;dbl&gt; 15, 29, 40, 45, 0, 58, 0, 0...
+## $ time_hour      &lt;dttm&gt; 2013-01-01 05:00:00, 2013-...</code></pre>
+<p>If we want to subset the data for all airlines other than American Airlines (AA), for the month of January and February and for the distance greater than 100, then the following code should be executed.</p>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="nd-second-verb-filter.html#cb63-1" aria-hidden="true" tabindex="-1"></a>naa <span class="ot">&lt;-</span> flights <span class="sc">%&gt;%</span> </span>
+<span id="cb63-2"><a href="nd-second-verb-filter.html#cb63-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(carrier <span class="sc">!=</span> <span class="st">&quot;AA&quot;</span>, month <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), distance <span class="sc">&gt;</span> <span class="dv">1000</span></span>
+<span id="cb63-3"><a href="nd-second-verb-filter.html#cb63-3" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb63-4"><a href="nd-second-verb-filter.html#cb63-4" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(naa)</span></code></pre></div>
+<pre><code>## Rows: 18,456
+## Columns: 19
+## $ carrier        &lt;chr&gt; &quot;UA&quot;, &quot;UA&quot;, &quot;B6&quot;, &quot;B6&quot;, &quot;B6...
+## $ flight         &lt;chr&gt; &quot;1545&quot;, &quot;1714&quot;, &quot;725&quot;, &quot;507...
+## $ year           &lt;int&gt; 2013, 2013, 2013, 2013, 201...
+## $ month          &lt;int&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+## $ day            &lt;int&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+## $ dep_time       &lt;int&gt; 517, 533, 544, 555, 558, 55...
+## $ sched_dep_time &lt;int&gt; 515, 529, 545, 600, 600, 60...
+## $ dep_delay      &lt;dbl&gt; 2, 4, -1, -5, -2, -2, -2, -...
+## $ arr_time       &lt;int&gt; 830, 850, 1004, 913, 849, 8...
+## $ sched_arr_time &lt;int&gt; 819, 830, 1022, 854, 851, 8...
+## $ arr_delay      &lt;dbl&gt; 11, 20, -18, 19, -2, -3, 7,...
+## $ tailnum        &lt;chr&gt; &quot;N14228&quot;, &quot;N24211&quot;, &quot;N804JB...
+## $ origin         &lt;chr&gt; &quot;EWR&quot;, &quot;LGA&quot;, &quot;JFK&quot;, &quot;EWR&quot;,...
+## $ dest           &lt;chr&gt; &quot;IAH&quot;, &quot;IAH&quot;, &quot;BQN&quot;, &quot;FLL&quot;,...
+## $ air_time       &lt;dbl&gt; 227, 227, 183, 158, 149, 15...
+## $ distance       &lt;dbl&gt; 1400, 1416, 1576, 1065, 102...
+## $ hour           &lt;dbl&gt; 5, 5, 5, 6, 6, 6, 6, 6, 6, ...
+## $ minute         &lt;dbl&gt; 15, 29, 45, 0, 0, 0, 0, 0, ...
+## $ time_hour      &lt;dttm&gt; 2013-01-01 05:00:00, 2013-...</code></pre>
+<p>Like the <code>select_*</code>, the verb <code>filter</code> has scoped versions such as <code>filter_if</code>, <code>filter_at</code>, and <code>filter_all</code>. If we want to learn more about these functions, we can use help functions such as <code>?filter_if</code> or <code>help(filter_if)</code> to know more about these functions.</p>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="st-first-verb-select.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="rd-third-verb-arrange.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook/js/app.min.js"></script>
+<script src="libs/gitbook/js/lunr.js"></script>
+<script src="libs/gitbook/js/clipboard.min.js"></script>
+<script src="libs/gitbook/js/plugin-search.js"></script>
+<script src="libs/gitbook/js/plugin-sharing.js"></script>
+<script src="libs/gitbook/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook/js/jquery.highlight.js"></script>
+<script src="libs/gitbook/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

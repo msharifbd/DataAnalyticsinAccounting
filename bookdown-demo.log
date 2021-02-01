@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2020.11.21)  31 JAN 2021 16:31
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2020.11.21)  1 FEB 2021 08:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1026,7 +1026,7 @@ File: images/data-science-wrangle.png Graphic file (type bmp)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [17]
-Underfull \hbox (badness 2573) in paragraph at lines 666--667
+Underfull \hbox (badness 2573) in paragraph at lines 668--669
 \TU/lmr/m/n/10 The \TU/lmtt/m/n/10 sales_profit \TU/lmr/m/n/10 dataset can be p
 ut into \TU/lmtt/m/n/10 tidy \TU/lmr/m/n/10 format using both
  []
@@ -1036,98 +1036,98 @@ ut into \TU/lmtt/m/n/10 tidy \TU/lmr/m/n/10 format using both
 ]
 Chapter 5.
 [23] [24]
-Overfull \hbox (127.5pt too wide) in paragraph at lines 911--911
+Overfull \hbox (127.5pt too wide) in paragraph at lines 913--913
 []\TU/lmtt/m/n/10 ##  $ year          : int [1:336776] 2013 2013 2013 2013 2013
  2013 2013 2013 2013 2013 ...[] 
  []
 
 
-Overfull \hbox (75.0pt too wide) in paragraph at lines 911--911
+Overfull \hbox (75.0pt too wide) in paragraph at lines 913--913
 []\TU/lmtt/m/n/10 ##  $ dep_time      : int [1:336776] 517 533 542 544 554 554 
 555 557 557 558 ...[] 
  []
 
 
-Overfull \hbox (75.0pt too wide) in paragraph at lines 911--911
+Overfull \hbox (75.0pt too wide) in paragraph at lines 913--913
 []\TU/lmtt/m/n/10 ##  $ sched_dep_time: int [1:336776] 515 529 540 545 600 558 
 600 600 600 600 ...[] 
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 911--911
+Overfull \hbox (6.75pt too wide) in paragraph at lines 913--913
 []\TU/lmtt/m/n/10 ##  $ dep_delay     : num [1:336776] 2 4 2 -1 -6 -4 -5 -3 -3 
 -2 ...[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 911--911
+Overfull \hbox (80.25pt too wide) in paragraph at lines 913--913
 []\TU/lmtt/m/n/10 ##  $ arr_time      : int [1:336776] 830 850 923 1004 812 740
  913 709 838 753 ...[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 911--911
+Overfull \hbox (80.25pt too wide) in paragraph at lines 913--913
 []\TU/lmtt/m/n/10 ##  $ sched_arr_time: int [1:336776] 819 830 850 1022 837 728
  854 723 846 745 ...[] 
  []
 
 
-Overfull \hbox (33.0pt too wide) in paragraph at lines 911--911
+Overfull \hbox (33.0pt too wide) in paragraph at lines 913--913
 []\TU/lmtt/m/n/10 ##  $ arr_delay     : num [1:336776] 11 20 33 -18 -25 12 19 -
 14 -8 8 ...[] 
  []
 
 
-Overfull \hbox (96.0pt too wide) in paragraph at lines 911--911
+Overfull \hbox (96.0pt too wide) in paragraph at lines 913--913
 []\TU/lmtt/m/n/10 ##  $ flight        : int [1:336776] 1545 1714 1141 725 461 1
 696 507 5708 79 301 ...[] 
  []
 
 
-Overfull \hbox (54.0pt too wide) in paragraph at lines 911--911
+Overfull \hbox (54.0pt too wide) in paragraph at lines 913--913
 []\TU/lmtt/m/n/10 ##  $ tailnum       : chr [1:336776] "N14228" "N24211" "N619A
 A" "N804JB" ...[] 
  []
 
 
-Overfull \hbox (69.75pt too wide) in paragraph at lines 911--911
+Overfull \hbox (69.75pt too wide) in paragraph at lines 913--913
 []\TU/lmtt/m/n/10 ##  $ air_time      : num [1:336776] 227 227 160 183 116 150 
 158 53 140 138 ...[] 
  []
 
 
-Overfull \hbox (43.5pt too wide) in paragraph at lines 911--911
+Overfull \hbox (43.5pt too wide) in paragraph at lines 913--913
 []\TU/lmtt/m/n/10 ##  $ time_hour     : POSIXct[1:336776], format: "2013-01-01 
 05:00:00" ...[] 
  []
 
 [25]
-Underfull \hbox (badness 1571) in paragraph at lines 944--945
+Underfull \hbox (badness 1571) in paragraph at lines 946--947
 []\TU/lmr/m/n/10 Other codes for the conversion should be like this - \TU/lmtt/
 m/n/10 as.character()\TU/lmr/m/n/10 ,
  []
 
 [26] [27] [28]
-Overfull \vbox (0.29993pt too high) detected at line 1167
+Overfull \vbox (0.29993pt too high) detected at line 1169
  []
 
 [29] [30] [31] [32] [33] [34] [35]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [36]
-Overfull \hbox (17.25pt too wide) in paragraph at lines 1597--1597
+Overfull \hbox (17.25pt too wide) in paragraph at lines 1599--1599
 []\TU/lmtt/m/n/10 ## []summarise()[] ungrouping output (override with [].groups
 [] argument)[] 
  []
 
 [37]
-Overfull \hbox (17.25pt too wide) in paragraph at lines 1621--1621
+Overfull \hbox (17.25pt too wide) in paragraph at lines 1623--1623
 []\TU/lmtt/m/n/10 ## []summarise()[] ungrouping output (override with [].groups
 [] argument)[] 
  []
 
 
-Overfull \hbox (17.25pt too wide) in paragraph at lines 1658--1658
+Overfull \hbox (17.25pt too wide) in paragraph at lines 1660--1660
 []\TU/lmtt/m/n/10 ## []summarise()[] ungrouping output (override with [].groups
 [] argument)[] 
  []
@@ -1137,7 +1137,7 @@ Overfull \hbox (17.25pt too wide) in paragraph at lines 1658--1658
 ]
 Chapter 6.
 
-Underfull \hbox (badness 1038) in paragraph at lines 1682--1682
+Underfull \hbox (badness 1038) in paragraph at lines 1684--1684
 []\TU/lmtt/b/n/14.4 ggplot2 () \TU/lmr/bx/n/14.4 Package - Data Visualization
  []
 
@@ -1152,7 +1152,7 @@ File: bookdown-demo_files/figure-latex/scatterplot3-1.pdf Graphic file (type pd
 f)
 <use bookdown-demo_files/figure-latex/scatterplot3-1.pdf>
 [42]
-Overfull \hbox (17.25pt too wide) in paragraph at lines 1789--1789
+Overfull \hbox (17.25pt too wide) in paragraph at lines 1791--1791
 []\TU/lmtt/m/n/10 ## []summarise()[] ungrouping output (override with [].groups
 [] argument)[] 
  []
@@ -1160,7 +1160,7 @@ Overfull \hbox (17.25pt too wide) in paragraph at lines 1789--1789
 File: bookdown-demo_files/figure-latex/lineplot1-1.pdf Graphic file (type pdf)
 <use bookdown-demo_files/figure-latex/lineplot1-1.pdf>
 
-Overfull \hbox (38.25pt too wide) in paragraph at lines 1816--1816
+Overfull \hbox (38.25pt too wide) in paragraph at lines 1818--1818
 []\TU/lmtt/m/n/10 ## []geom_smooth()[] using method = []gam[] and formula []y ~
  s(x, bs = "cs")[][] 
  []
@@ -1168,7 +1168,7 @@ Overfull \hbox (38.25pt too wide) in paragraph at lines 1816--1816
 File: bookdown-demo_files/figure-latex/lineplot2-1.pdf Graphic file (type pdf)
 <use bookdown-demo_files/figure-latex/lineplot2-1.pdf>
 
-Overfull \hbox (38.25pt too wide) in paragraph at lines 1842--1842
+Overfull \hbox (38.25pt too wide) in paragraph at lines 1844--1844
 []\TU/lmtt/m/n/10 ## []geom_smooth()[] using method = []gam[] and formula []y ~
  s(x, bs = "cs")[][] 
  []
@@ -1220,7 +1220,7 @@ Package rerunfilecheck Info: File `bookdown-demo.out' has not changed.
 Here is how much of TeX's memory you used:
  17623 strings out of 479401
  313977 string characters out of 5878151
- 795940 words of memory out of 5000000
+ 795941 words of memory out of 5000000
  36714 multiletter control sequences out of 15000+600000
  539139 words of font info for 80 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191

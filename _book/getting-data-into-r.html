@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 3 Getting Data into R | Data Analytics in Accounting An R Programming Approach</title>
+  <meta name="description" content="Everything you need (and nothing more) to start Data Analytics in Accounting." />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 3 Getting Data into R | Data Analytics in Accounting An R Programming Approach" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:image" content="images/cover.png" />
+  <meta property="og:description" content="Everything you need (and nothing more) to start Data Analytics in Accounting." />
+  <meta name="github-repo" content="https://github.com/msharifbd/DataAnalyticsinAccounting" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 3 Getting Data into R | Data Analytics in Accounting An R Programming Approach" />
+  
+  <meta name="twitter:description" content="Everything you need (and nothing more) to start Data Analytics in Accounting." />
+  <meta name="twitter:image" content="images/cover.png" />
+
+<meta name="author" content="Sharif Islam, DBA, CPA, CMA Assistant Professor School of Accountancy College of Business &amp; Analytics Southern Illinois University Carbondale" />
+
+
+<meta name="date" content="2021-02-01" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="r-programming-a-great-tool-for-data-science.html"/>
+<link rel="next" href="data-wrangling.html"/>
+<script src="libs/header-attrs/header-attrs.js"></script>
+<script src="libs/jquery/jquery.min.js"></script>
+<link href="libs/gitbook/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Data Analytics in Accounting  \nAn R Programming Approach</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#how-to-read-this-book"><i class="fa fa-check"></i>How to Read this Book</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#structure-of-the-book"><i class="fa fa-check"></i>Structure of the Book</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="acknowledgements.html"><a href="acknowledgements.html"><i class="fa fa-check"></i>Acknowledgements</a></li>
+<li class="chapter" data-level="" data-path="about-the-author.html"><a href="about-the-author.html"><i class="fa fa-check"></i>About the Author</a></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#data-analytics"><i class="fa fa-check"></i><b>1.1</b> Data Analytics</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#data-analytics-accountancy"><i class="fa fa-check"></i><b>1.2</b> Data Analytics &amp; Accountancy</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="introduction.html"><a href="introduction.html#data-analytics-in-financial-accounting"><i class="fa fa-check"></i><b>1.2.1</b> Data Analytics in Financial Accounting</a></li>
+<li class="chapter" data-level="1.2.2" data-path="introduction.html"><a href="introduction.html#data-analytics-in-management-accounting"><i class="fa fa-check"></i><b>1.2.2</b> Data Analytics in Management Accounting</a></li>
+<li class="chapter" data-level="1.2.3" data-path="introduction.html"><a href="introduction.html#data-analytics-in-auditing"><i class="fa fa-check"></i><b>1.2.3</b> Data Analytics in Auditing</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="r-programming-a-great-tool-for-data-science.html"><a href="r-programming-a-great-tool-for-data-science.html"><i class="fa fa-check"></i><b>2</b> <code>R</code> Programming - A Great Tool for Data Science</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="r-programming-a-great-tool-for-data-science.html"><a href="r-programming-a-great-tool-for-data-science.html#starting-with-r-program"><i class="fa fa-check"></i><b>2.1</b> Starting with <code>R</code> Program</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="r-programming-a-great-tool-for-data-science.html"><a href="r-programming-a-great-tool-for-data-science.html#installing-r"><i class="fa fa-check"></i><b>2.1.1</b> Installing <code>R</code></a></li>
+<li class="chapter" data-level="2.1.2" data-path="r-programming-a-great-tool-for-data-science.html"><a href="r-programming-a-great-tool-for-data-science.html#installing-rstudio"><i class="fa fa-check"></i><b>2.1.2</b> Installing <code>RStudio</code></a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="r-programming-a-great-tool-for-data-science.html"><a href="r-programming-a-great-tool-for-data-science.html#data-analytics-ecosystem-in-r"><i class="fa fa-check"></i><b>2.2</b> Data Analytics Ecosystem in <code>R</code></a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="getting-data-into-r.html"><a href="getting-data-into-r.html"><i class="fa fa-check"></i><b>3</b> Getting Data into <code>R</code></a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="getting-data-into-r.html"><a href="getting-data-into-r.html#packages-that-could-be-used-to-import-data-into-r."><i class="fa fa-check"></i><b>3.1</b> Packages That Could Be Used to Import Data into <code>R</code>.</a></li>
+<li class="chapter" data-level="3.2" data-path="getting-data-into-r.html"><a href="getting-data-into-r.html#knowing-setting-your-current-working-directory"><i class="fa fa-check"></i><b>3.2</b> Knowing &amp; Setting Your Current (Working) Directory</a></li>
+<li class="chapter" data-level="3.3" data-path="getting-data-into-r.html"><a href="getting-data-into-r.html#importing-data-into-r-from-excel"><i class="fa fa-check"></i><b>3.3</b> Importing Data into <code>R</code> from Excel</a></li>
+<li class="chapter" data-level="3.4" data-path="getting-data-into-r.html"><a href="getting-data-into-r.html#importing-data-into-r-from-local-directory-of-computer"><i class="fa fa-check"></i><b>3.4</b> Importing Data into <code>R</code> from Local Directory of Computer</a></li>
+<li class="chapter" data-level="3.5" data-path="getting-data-into-r.html"><a href="getting-data-into-r.html#importing-data-into-r-from-internet"><i class="fa fa-check"></i><b>3.5</b> Importing Data into <code>R</code> from Internet</a></li>
+<li class="chapter" data-level="3.6" data-path="getting-data-into-r.html"><a href="getting-data-into-r.html#importing-data-into-r-from-wrds-database"><i class="fa fa-check"></i><b>3.6</b> Importing Data into <code>R</code> from <code>WRDS</code> Database</a></li>
+<li class="chapter" data-level="3.7" data-path="getting-data-into-r.html"><a href="getting-data-into-r.html#some-other-sources"><i class="fa fa-check"></i><b>3.7</b> Some Other Sources</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="data-wrangling.html"><a href="data-wrangling.html"><i class="fa fa-check"></i><b>4</b> Data Wrangling</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="data-wrangling.html"><a href="data-wrangling.html#tidy-data"><i class="fa fa-check"></i><b>4.1</b> <code>tidy</code> data</a></li>
+<li class="chapter" data-level="4.2" data-path="data-wrangling.html"><a href="data-wrangling.html#same-data-but-different-formats-presentations"><i class="fa fa-check"></i><b>4.2</b> Same Data, but Different Formats (Presentations)</a></li>
+<li class="chapter" data-level="4.3" data-path="data-wrangling.html"><a href="data-wrangling.html#tidying-messy-data"><i class="fa fa-check"></i><b>4.3</b> Tidying Messy Data</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="data-wrangling.html"><a href="data-wrangling.html#column-hearders-are-values-not-variable-names"><i class="fa fa-check"></i><b>4.3.1</b> Column Hearders are Values, not Variable Names</a></li>
+<li class="chapter" data-level="4.3.2" data-path="data-wrangling.html"><a href="data-wrangling.html#multiple-variables-are-stored-in-one-column"><i class="fa fa-check"></i><b>4.3.2</b> Multiple Variables are Stored in One Column</a></li>
+<li class="chapter" data-level="4.3.3" data-path="data-wrangling.html"><a href="data-wrangling.html#variables-are-stored-in-both-rows-and-columns"><i class="fa fa-check"></i><b>4.3.3</b> Variables are Stored in Both Rows and Columns</a></li>
+<li class="chapter" data-level="4.3.4" data-path="data-wrangling.html"><a href="data-wrangling.html#multiple-types-of-observational-units-are-stored-in-the-same-table"><i class="fa fa-check"></i><b>4.3.4</b> Multiple Types of Observational Units are Stored in the Same Table</a></li>
+<li class="chapter" data-level="4.3.5" data-path="data-wrangling.html"><a href="data-wrangling.html#section"><i class="fa fa-check"></i><b>4.3.5</b> </a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="data-wrangling.html"><a href="data-wrangling.html#tidyr-package-for-tidy-data"><i class="fa fa-check"></i><b>4.4</b> <code>tidyr</code> Package for <code>tidy</code> Data</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="data-wrangling.html"><a href="data-wrangling.html#pivot_longer-function"><i class="fa fa-check"></i><b>4.4.1</b> <code>pivot_longer ()</code> function</a></li>
+<li class="chapter" data-level="4.4.2" data-path="data-wrangling.html"><a href="data-wrangling.html#pivot_wider-function"><i class="fa fa-check"></i><b>4.4.2</b> <code>pivot_wider ()</code> function</a></li>
+<li class="chapter" data-level="4.4.3" data-path="data-wrangling.html"><a href="data-wrangling.html#separate-function"><i class="fa fa-check"></i><b>4.4.3</b> <code>separate ()</code> function</a></li>
+<li class="chapter" data-level="4.4.4" data-path="data-wrangling.html"><a href="data-wrangling.html#extract-function"><i class="fa fa-check"></i><b>4.4.4</b> <code>extract ()</code> function</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="exploratory-data-analysis-eda.html"><a href="exploratory-data-analysis-eda.html"><i class="fa fa-check"></i><b>5</b> Exploratory Data Analysis (EDA)</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="exploratory-data-analysis-eda.html"><a href="exploratory-data-analysis-eda.html#tidyverse-package-in-r"><i class="fa fa-check"></i><b>5.1</b> <code>tidyverse</code> package in R</a></li>
+<li class="chapter" data-level="5.2" data-path="exploratory-data-analysis-eda.html"><a href="exploratory-data-analysis-eda.html#dplyr-package---data-manipulation-tool"><i class="fa fa-check"></i><b>5.2</b> <code>dplyr</code> Package - Data Manipulation Tool</a></li>
+<li class="chapter" data-level="5.3" data-path="exploratory-data-analysis-eda.html"><a href="exploratory-data-analysis-eda.html#data-set-for-classroom-practice"><i class="fa fa-check"></i><b>5.3</b> Data Set for Classroom Practice</a></li>
+<li class="chapter" data-level="5.4" data-path="exploratory-data-analysis-eda.html"><a href="exploratory-data-analysis-eda.html#assignment---pipe-operator"><i class="fa fa-check"></i><b>5.4</b> Assignment <code>&lt;-</code> &amp; Pipe <code>%&gt;%</code> operator</a></li>
+<li class="chapter" data-level="5.5" data-path="exploratory-data-analysis-eda.html"><a href="exploratory-data-analysis-eda.html#meta-data---data-about-data"><i class="fa fa-check"></i><b>5.5</b> Meta Data - Data About Data</a></li>
+<li class="chapter" data-level="5.6" data-path="exploratory-data-analysis-eda.html"><a href="exploratory-data-analysis-eda.html#changing-the-type-of-the-variable"><i class="fa fa-check"></i><b>5.6</b> Changing the type of the variable</a></li>
+<li class="chapter" data-level="5.7" data-path="exploratory-data-analysis-eda.html"><a href="exploratory-data-analysis-eda.html#count-function"><i class="fa fa-check"></i><b>5.7</b> <code>count()</code> function</a></li>
+<li class="chapter" data-level="5.8" data-path="exploratory-data-analysis-eda.html"><a href="exploratory-data-analysis-eda.html#st-first-verb---select"><i class="fa fa-check"></i><b>5.8</b> 1st (First) verb - <code>select ()</code></a></li>
+<li class="chapter" data-level="5.9" data-path="exploratory-data-analysis-eda.html"><a href="exploratory-data-analysis-eda.html#nd-second-verb---filter"><i class="fa fa-check"></i><b>5.9</b> 2nd (Second) verb - <code>filter ()</code></a></li>
+<li class="chapter" data-level="5.10" data-path="exploratory-data-analysis-eda.html"><a href="exploratory-data-analysis-eda.html#rd-third-verb---arrange"><i class="fa fa-check"></i><b>5.10</b> 3rd (Third) verb - <code>arrange ()</code></a></li>
+<li class="chapter" data-level="5.11" data-path="exploratory-data-analysis-eda.html"><a href="exploratory-data-analysis-eda.html#th-fourth-verb---mutate"><i class="fa fa-check"></i><b>5.11</b> 4th (Fourth) verb - <code>mutate ()</code></a></li>
+<li class="chapter" data-level="5.12" data-path="exploratory-data-analysis-eda.html"><a href="exploratory-data-analysis-eda.html#th-fifth-verb---summarize"><i class="fa fa-check"></i><b>5.12</b> 5th (Fifth) verb - <code>summarize ()</code></a></li>
+<li class="chapter" data-level="5.13" data-path="exploratory-data-analysis-eda.html"><a href="exploratory-data-analysis-eda.html#th-sixth-verb---group_by"><i class="fa fa-check"></i><b>5.13</b> 6th (Sixth) verb - <code>group_by ()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="data-visualization.html"><a href="data-visualization.html"><i class="fa fa-check"></i><b>6</b> Data Visualization</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="data-visualization.html"><a href="data-visualization.html#ggplot2-package---data-visualization-tool"><i class="fa fa-check"></i><b>6.1</b> <code>ggplot2 ()</code> Package - Data Visualization Tool</a></li>
+<li class="chapter" data-level="6.2" data-path="data-visualization.html"><a href="data-visualization.html#scatter-plot"><i class="fa fa-check"></i><b>6.2</b> Scatter Plot</a></li>
+<li class="chapter" data-level="6.3" data-path="data-visualization.html"><a href="data-visualization.html#line-plot"><i class="fa fa-check"></i><b>6.3</b> Line Plot</a></li>
+<li class="chapter" data-level="6.4" data-path="data-visualization.html"><a href="data-visualization.html#bar-plot"><i class="fa fa-check"></i><b>6.4</b> Bar Plot</a></li>
+<li class="chapter" data-level="6.5" data-path="data-visualization.html"><a href="data-visualization.html#box-plot"><i class="fa fa-check"></i><b>6.5</b> Box Plot</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="data-modeling.html"><a href="data-modeling.html"><i class="fa fa-check"></i><b>7</b> Data Modeling</a></li>
+<li class="chapter" data-level="8" data-path="communication-of-analytics-an-rmarkdown-approach.html"><a href="communication-of-analytics-an-rmarkdown-approach.html"><i class="fa fa-check"></i><b>8</b> Communication of Analytics: An <code>Rmarkdown</code> Approach</a>
+<ul>
+<li class="chapter" data-level="" data-path="communication-of-analytics-an-rmarkdown-approach.html"><a href="communication-of-analytics-an-rmarkdown-approach.html#learning-objectives"><i class="fa fa-check"></i>Learning Objectives</a></li>
+<li class="chapter" data-level="8.1" data-path="communication-of-analytics-an-rmarkdown-approach.html"><a href="communication-of-analytics-an-rmarkdown-approach.html#what-is-rmarkdown"><i class="fa fa-check"></i><b>8.1</b> What is Rmarkdown</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="communication-of-analytics-a-shiny-approach.html"><a href="communication-of-analytics-a-shiny-approach.html"><i class="fa fa-check"></i><b>9</b> Communication of Analytics: A <code>Shiny</code> Approach</a>
+<ul>
+<li class="chapter" data-level="" data-path="communication-of-analytics-a-shiny-approach.html"><a href="communication-of-analytics-a-shiny-approach.html#learning-objectives-1"><i class="fa fa-check"></i>Learning Objectives</a></li>
+<li class="chapter" data-level="9.1" data-path="communication-of-analytics-a-shiny-approach.html"><a href="communication-of-analytics-a-shiny-approach.html#introduction-to-r-shiny"><i class="fa fa-check"></i><b>9.1</b> Introduction to <code>R Shiny</code></a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>10</b> Conclusion</a></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="appendix-a.html"><a href="appendix-a.html"><i class="fa fa-check"></i><b>A</b> Appendix A</a>
+<ul>
+<li class="chapter" data-level="A.1" data-path="appendix-a.html"><a href="appendix-a.html#basic-data-structure-in-r"><i class="fa fa-check"></i><b>A.1</b> Basic Data Structure in <code>R</code></a></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="appendix-b.html"><a href="appendix-b.html"><i class="fa fa-check"></i><b>B</b> Appendix B</a>
+<ul>
+<li class="chapter" data-level="B.1" data-path="appendix-b.html"><a href="appendix-b.html#rproject"><i class="fa fa-check"></i><b>B.1</b> Starting a Project in <code>R</code></a></li>
+<li class="chapter" data-level="B.2" data-path="appendix-b.html"><a href="appendix-b.html#text-mining-in-r"><i class="fa fa-check"></i><b>B.2</b> Text Mining in <code>R</code></a></li>
+<li class="chapter" data-level="B.3" data-path="appendix-b.html"><a href="appendix-b.html#social-media-analytics-in-r"><i class="fa fa-check"></i><b>B.3</b> Social Media Analytics in <code>R</code></a></li>
+<li class="chapter" data-level="B.4" data-path="appendix-b.html"><a href="appendix-b.html#web-scrapping-using-r"><i class="fa fa-check"></i><b>B.4</b> Web Scrapping Using <code>R</code></a></li>
+<li class="chapter" data-level="B.5" data-path="appendix-b.html"><a href="appendix-b.html#big-data-in-r-with-sparklyr"><i class="fa fa-check"></i><b>B.5</b> Big Data in <code>R</code> with <code>sparklyr</code></a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Data Analytics in Accounting<br />
+An R Programming Approach</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="getting-data-into-r" class="section level1" number="3">
+<h1><span class="header-section-number">Chapter 3</span> Getting Data into <code>R</code></h1>
+<p>Data lie in different places and in different formats. Therefore, getting them into <code>R</code> is not always the same. Some data are stored in local directory in our computer, while other data are available online. Moreover, sometimes we need extract data from databases. To know how to extract different forms of data from different sources is important because the explosion of social media and similar platforms has given birth to tremendous amounts of data in different formats and in different places. Though accountants and auditors are good at dealing with structured data, they should also know how to deal with unstructured and non-conventional data <span class="citation">(<a href="references.html#ref-richins_big_2017" role="doc-biblioref">Richins et al. 2017</a>)</span>.</p>
+<div id="packages-that-could-be-used-to-import-data-into-r." class="section level2" number="3.1">
+<h2><span class="header-section-number">3.1</span> Packages That Could Be Used to Import Data into <code>R</code>.</h2>
+<p>There are many packages that can be used to import data into <code>R</code> from many different sources. Of those packages, <code>readr</code>, <code>readxl</code>, and <code>purrr</code> will be discussed here. Additionally, data can be imported into <code>R</code> using <code>RStudio's Import Wizard</code>. To import data using <code>RStudio's Import Wizard</code>, one needs to go to the Environment tab and select Import Dataset; then, select appropriate type of data one wants to import and finally browse the data one wants to import. Please see Figure <a href="getting-data-into-r.html#fig:importwizard">3.1</a> to learn about how to use <code>RStudio's Import Wizard</code>.</p>
+<div class="figure" style="text-align: center"><span id="fig:importwizard"></span>
+<img src="images/import-data-using-environment.png" alt="Import Data Using RStudio's Import Wizard"  />
+<p class="caption">
+FIGURE3.1: Import Data Using RStudio’s Import Wizard
+</p>
+</div>
+</div>
+<div id="knowing-setting-your-current-working-directory" class="section level2" number="3.2">
+<h2><span class="header-section-number">3.2</span> Knowing &amp; Setting Your Current (Working) Directory</h2>
+<p>When one wants to import the data from Personal Computer (PC), then knowing where the data reside (which is also called “Path”) is necessary as this will help import the data easily. The function <code>getwd()</code> will help to know the current working directory. Unless a specific directory is set as a current (working) directory, <code>R</code> will always look for a file in the current working directory. The function <code>setwd()</code> helps to set any directory (folder) as current working directory. If you are working in an <code>R</code> project (The discussion about <code>R</code> project is in Appendix <a href="appendix-b.html#rproject">B.1</a>), then the project folder (directory) is the current directory. Figure <a href="getting-data-into-r.html#fig:directory">3.2</a> is an example of the address of a directory (folder).</p>
+<div class="figure" style="text-align: center"><span id="fig:directory"></span>
+<img src="images/directory.png" alt="Directory"  />
+<p class="caption">
+FIGURE3.2: Directory
+</p>
+</div>
+<p>If you click on the address bar of the directory (highlighted in Red), it will look like - <code>C:\Documents\Project Docs</code>. If you want to set it as your current working directory, then you have to write the code <code>setwd("C:/Documents/Project Docs")</code>. Note that though the address has back slash (<code>\</code>), in <code>setwd()</code> function, we use forward slash (<code>/</code>) as <code>R</code> cannot deal with back slash. Once you set the working directory, running <code>getwd()</code> will show you your current working directory, which is the default directory for importing and exporting data into <code>R</code> (unless you specifically mention a different path).</p>
+</div>
+<div id="importing-data-into-r-from-excel" class="section level2" number="3.3">
+<h2><span class="header-section-number">3.3</span> Importing Data into <code>R</code> from Excel</h2>
+<p>To import data from excel, <code>readxl</code> package can be excellent. You can install <code>readxl</code> package by <code>install.packages("readxl")</code> or it will be installed when <code>tidyverse</code> package is installed. <code>readxl</code> package can deal with both <code>xls</code> and <code>xlsx</code> files. There are some built-in datasets with <code>readxl</code> package. The function <code>readxl_example</code> generates the names of the built in datasets in <code>readxl</code> package.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="getting-data-into-r.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb1-2"><a href="getting-data-into-r.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">readxl_example</span>() <span class="co"># These are the example files from readxl package. </span></span></code></pre></div>
+<pre><code>##  [1] &quot;clippy.xls&quot;    &quot;clippy.xlsx&quot;   &quot;datasets.xls&quot; 
+##  [4] &quot;datasets.xlsx&quot; &quot;deaths.xls&quot;    &quot;deaths.xlsx&quot;  
+##  [7] &quot;geometry.xls&quot;  &quot;geometry.xlsx&quot; &quot;type-me.xls&quot;  
+## [10] &quot;type-me.xlsx&quot;</code></pre>
+<p>The <code>read_excel</code> function will read the data from excel. For example - if we want to import an excel file such as climate change data from World Bank (<a href="https://datacatalog.worldbank.org/dataset/climate-change-data" class="uri">https://datacatalog.worldbank.org/dataset/climate-change-data</a>), we can use <code>read_excel</code> function.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="getting-data-into-r.html#cb3-1" aria-hidden="true" tabindex="-1"></a>climate_change <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;data/climate_change_download_0.xls&quot;</span>)</span>
+<span id="cb3-2"><a href="getting-data-into-r.html#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># To know the names of the variables of the dataset </span></span>
+<span id="cb3-3"><a href="getting-data-into-r.html#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(climate_change)</span></code></pre></div>
+<pre><code>##  [1] &quot;Country code&quot; &quot;Country name&quot; &quot;Series code&quot; 
+##  [4] &quot;Series name&quot;  &quot;SCALE&quot;        &quot;Decimals&quot;    
+##  [7] &quot;1990&quot;         &quot;1991&quot;         &quot;1992&quot;        
+## [10] &quot;1993&quot;         &quot;1994&quot;         &quot;1995&quot;        
+## [13] &quot;1996&quot;         &quot;1997&quot;         &quot;1998&quot;        
+## [16] &quot;1999&quot;         &quot;2000&quot;         &quot;2001&quot;        
+## [19] &quot;2002&quot;         &quot;2003&quot;         &quot;2004&quot;        
+## [22] &quot;2005&quot;         &quot;2006&quot;         &quot;2007&quot;        
+## [25] &quot;2008&quot;         &quot;2009&quot;         &quot;2010&quot;        
+## [28] &quot;2011&quot;</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="getting-data-into-r.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># OR</span></span>
+<span id="cb5-2"><a href="getting-data-into-r.html#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(climate_change)</span></code></pre></div>
+<pre><code>##  [1] &quot;Country code&quot; &quot;Country name&quot; &quot;Series code&quot; 
+##  [4] &quot;Series name&quot;  &quot;SCALE&quot;        &quot;Decimals&quot;    
+##  [7] &quot;1990&quot;         &quot;1991&quot;         &quot;1992&quot;        
+## [10] &quot;1993&quot;         &quot;1994&quot;         &quot;1995&quot;        
+## [13] &quot;1996&quot;         &quot;1997&quot;         &quot;1998&quot;        
+## [16] &quot;1999&quot;         &quot;2000&quot;         &quot;2001&quot;        
+## [19] &quot;2002&quot;         &quot;2003&quot;         &quot;2004&quot;        
+## [22] &quot;2005&quot;         &quot;2006&quot;         &quot;2007&quot;        
+## [25] &quot;2008&quot;         &quot;2009&quot;         &quot;2010&quot;        
+## [28] &quot;2011&quot;</code></pre>
+<p>If the excel file <code>climate_change_download_0</code> is opened in excel, we can see that there are 3 worksheets in the files, but <code>read_excel</code> function in <code>climate_change</code> dataset only imports the first worksheet called <code>Data</code>. We can use <code>sheet</code> argument in <code>read_excel</code> function to specify which worksheet one wants to import. In <code>sheet</code> argument the position of the worksheet can be specified as well rather than the name of the worksheet. Also, <code>excel_sheets</code> functions can be used to know the names of all worksheets in a given dataset. The function <code>excel_format</code> can be used to know the format of the excel files (<code>xls</code> or <code>xlsx</code>).</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="getting-data-into-r.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">excel_sheets</span>(<span class="st">&quot;data/climate_change_download_0.xls&quot;</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;Data&quot;    &quot;Country&quot; &quot;Series&quot;</code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="getting-data-into-r.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">excel_format</span>(<span class="st">&quot;data/climate_change_download_0.xls&quot;</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;xls&quot;</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="getting-data-into-r.html#cb11-1" aria-hidden="true" tabindex="-1"></a>climate_change_country <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;data/climate_change_download_0.xls&quot;</span>, </span>
+<span id="cb11-2"><a href="getting-data-into-r.html#cb11-2" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">sheet =</span> <span class="st">&quot;Country&quot;</span>)</span>
+<span id="cb11-3"><a href="getting-data-into-r.html#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co"># OR</span></span>
+<span id="cb11-4"><a href="getting-data-into-r.html#cb11-4" aria-hidden="true" tabindex="-1"></a>climate_change_country <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;data/climate_change_download_0.xls&quot;</span>, </span>
+<span id="cb11-5"><a href="getting-data-into-r.html#cb11-5" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">sheet =</span> <span class="dv">2</span>)</span></code></pre></div>
+<p>Other arguments in <code>read_excel</code> function such as <code>range</code> can be used to import a subset of the excel file. The argument <code>na</code> are used for missing values (NA). In our dataset <code>climate_change</code> there are missing values represented by <code>..</code>. This can be replaced by <code>na</code>argument.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="getting-data-into-r.html#cb12-1" aria-hidden="true" tabindex="-1"></a>climate_change2 <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;data/climate_change_download_0.xls&quot;</span>,</span>
+<span id="cb12-2"><a href="getting-data-into-r.html#cb12-2" aria-hidden="true" tabindex="-1"></a>                             <span class="at">na =</span> <span class="st">&quot;..&quot;</span>)</span></code></pre></div>
+<p>Also, we can use <code>writexl</code> package to export (save) a dataset from R in excel format. The function <code>write_xlsx</code> is usually used to save the data in excel format in desired directory.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="getting-data-into-r.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(writexl)</span>
+<span id="cb13-2"><a href="getting-data-into-r.html#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write_xlsx</span>(climate_change_country, <span class="st">&quot;data/climatechange_country.xlsx&quot;</span>)</span></code></pre></div>
+<p>Alternatively, one can use <code>file.choose()</code> function within <code>read_excel</code> function to <strong>manually</strong> import an excel file into <code>R</code>.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="getting-data-into-r.html#cb14-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="fu">file.choose</span>())</span></code></pre></div>
+<p>Also, using <code>read.table</code> function allows one to copy and paste an excel file in <code>R</code>.</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="getting-data-into-r.html#cb15-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="at">file =</span> <span class="st">&quot;clipboard&quot;</span>, </span>
+<span id="cb15-2"><a href="getting-data-into-r.html#cb15-2" aria-hidden="true" tabindex="-1"></a>                      <span class="at">sep =</span> <span class="st">&quot;</span><span class="sc">\t</span><span class="st">&quot;</span>, <span class="at">header=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+</div>
+<div id="importing-data-into-r-from-local-directory-of-computer" class="section level2" number="3.4">
+<h2><span class="header-section-number">3.4</span> Importing Data into <code>R</code> from Local Directory of Computer</h2>
+<p>Importing data from local directory of computer can be done in couple of ways. For example, we can specify the path in which the data is stored. Alternatively, we can set the working directory first; then import the data by specifying the name of the data files.</p>
+</div>
+<div id="importing-data-into-r-from-internet" class="section level2" number="3.5">
+<h2><span class="header-section-number">3.5</span> Importing Data into <code>R</code> from Internet</h2>
+</div>
+<div id="importing-data-into-r-from-wrds-database" class="section level2" number="3.6">
+<h2><span class="header-section-number">3.6</span> Importing Data into <code>R</code> from <code>WRDS</code> Database</h2>
+</div>
+<div id="some-other-sources" class="section level2" number="3.7">
+<h2><span class="header-section-number">3.7</span> Some Other Sources</h2>
+<p>Very good website for the chapter - <a href="https://rc2e.com/inputandoutput#recipe-id245" class="uri">https://rc2e.com/inputandoutput#recipe-id245</a></p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="r-programming-a-great-tool-for-data-science.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="data-wrangling.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook/js/app.min.js"></script>
+<script src="libs/gitbook/js/lunr.js"></script>
+<script src="libs/gitbook/js/clipboard.min.js"></script>
+<script src="libs/gitbook/js/plugin-search.js"></script>
+<script src="libs/gitbook/js/plugin-sharing.js"></script>
+<script src="libs/gitbook/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook/js/jquery.highlight.js"></script>
+<script src="libs/gitbook/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
